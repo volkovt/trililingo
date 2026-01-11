@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:name="logo_v3_split"
+        android:translateX="25.2"
+        android:translateY="25.2"
+        android:scaleX="0.72"
+        android:scaleY="0.72">
+
+    <!-- Glow geral -->
+        <path
+            android:fillColor="#FFFF3B3B"
+            android:fillAlpha="0.12"
+            android:pathData="M40,12 A28,28 0 1,1 39.9,12 Z" />
+
+        <!-- Badge circular -->
+        <path
+            android:fillColor="#0B0005"
+            android:strokeColor="#FFE50914"
+            android:strokeWidth="3"
+            android:pathData="M40,14 A26,26 0 1,1 39.9,14 Z" />
+
+        <!-- Linha de “corte” (mundo normal vs upside) -->
+        <path
+            android:strokeColor="#80E6D5DE"
+            android:strokeWidth="2.0"
+            android:strokeLineCap="round"
+            android:pathData="M22,40 L58,40" />
+
+        <!-- Topo: neon limpo (3 traços) -->
+        <path
+            android:strokeColor="#FFE6D5DE"
+            android:strokeWidth="2.6"
+            android:strokeLineCap="round"
+            android:pathData="M28,26 L52,26" />
+        <path
+            android:strokeColor="#FFE6D5DE"
+            android:strokeWidth="2.6"
+            android:strokeLineCap="round"
+            android:pathData="M32,32 L48,32" />
+        <path
+            android:strokeColor="#FFE6D5DE"
+            android:strokeWidth="2.6"
+            android:strokeLineCap="round"
+            android:pathData="M36,20 L44,20" />
+
+        <!-- Base: “drip” upside down -->
+        <path
+            android:fillColor="#1A000D"
+            android:pathData="M22,40
+                              C28,44 30,46 34,46
+                              C38,46 39,44 40,44
+                              C41,44 42,46 46,46
+                              C50,46 52,44 58,40
+                              L58,56
+                              C56,54 54,54 52,56
+                              C50,58 48,60 46,62
+                              C44,64 42,64 40,62
+                              C38,60 36,58 34,56
+                              C32,54 30,54 22,56
+                              Z" />
+
+        <!-- Brilho no drip -->
+        <path
+            android:fillColor="#FFFF3B3B"
+            android:fillAlpha="0.10"
+            android:pathData="M24,42
+                              C28,45 31,48 34,48
+                              C37,48 39,46 40,46
+                              C41,46 43,48 46,48
+                              C49,48 52,45 56,42
+                              L56,50
+                              C52,52 50,54 46,58
+                              C44,60 42,60 40,58
+                              C38,56 36,54 32,52
+                              C28,50 26,50 24,50
+                              Z" />
+
+        <!-- Galhos laterais (esquerda) -->
+        <path
+            android:strokeColor="#1A000D"
+            android:strokeWidth="4.0"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M22,52 C20,46 20,40 22,34 C24,28 28,26 30,22" />
+        <path
+            android:strokeColor="#1A000D"
+            android:strokeWidth="3.0"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M24,40 C22,39 20,37 18,34" />
+        <path
+            android:strokeColor="#1A000D"
+            android:strokeWidth="3.0"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M24,46 C22,45 20,43 18,41" />
+
+        <!-- Galhos laterais (direita) -->
+        <path
+            android:strokeColor="#1A000D"
+            android:strokeWidth="4.0"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M58,52 C60,46 60,40 58,34 C56,28 52,26 50,22" />
+        <path
+            android:strokeColor="#1A000D"
+            android:strokeWidth="3.0"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M56,40 C58,39 60,37 62,34" />
+        <path
+            android:strokeColor="#1A000D"
+            android:strokeWidth="3.0"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M56,46 C58,45 60,43 62,41" />
+
+        <!-- Glow vermelho nos galhos -->
+        <path
+            android:strokeColor="#66FF3B3B"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M22,52 C20,46 20,40 22,34 C24,28 28,26 30,22
+                              M24,40 C22,39 20,37 18,34
+                              M24,46 C22,45 20,43 18,41
+                              M58,52 C60,46 60,40 58,34 C56,28 52,26 50,22
+                              M56,40 C58,39 60,37 62,34
+                              M56,46 C58,45 60,43 62,41" />
+    </group>
+</vector>

@@ -1,0 +1,3475 @@
+{
+  "packVersion": 1,
+  "subjectId": "system_design",
+  "subjectName": "System Design",
+  "tracks": [
+    {
+      "id": "system_design_fundamentals",
+      "title": "System Design",
+      "subtitle": "Arquitetura, escalabilidade e confiabilidade",
+      "enabled": true,
+      "features": [
+        {
+          "id": "daily_challenge",
+          "type": "DAILY_CHALLENGE",
+          "title": "Desafio Diário",
+          "subtitle": "Perguntas do dia",
+          "emoji": "⚡",
+          "enabled": true
+        },
+        {
+          "id": "free_study",
+          "type": "STUDY",
+          "title": "Estudo Livre",
+          "subtitle": "Sessão aberta de estudo",
+          "emoji": "🧠",
+          "enabled": true
+        }
+      ],
+      "studyContent": {
+        "source": {
+          "book": "generated_system_design_v1",
+          "authors": [],
+          "mdOutline": "",
+          "language": ""
+        },
+        "chapters": [
+          {
+            "chapter": 1,
+            "id": "fundamentos_system_design",
+            "title": "Fundamentos de System Design",
+            "keyTopics": [
+              "Objetivos do system design",
+              "Trade-offs",
+              "Latência vs throughput",
+              "Escalabilidade",
+              "Confiabilidade",
+              "Evolução incremental"
+            ],
+            "questions": [
+              {
+                "id": "ch1_q01",
+                "type": [
+                  "system_design",
+                  "fundamentos"
+                ],
+                "prompt": "O que é *system design* e qual é o objetivo principal de uma entrevista de system design?",
+                "difficulty": 1,
+                "tags": [],
+                "expected": "Projetar sistemas escaláveis/confiáveis; avaliar raciocínio, trade-offs e comunicação."
+              },
+              {
+                "id": "ch1_q02",
+                "type": [
+                  "system_design",
+                  "tradeoffs"
+                ],
+                "prompt": "Defina: latência, throughput, disponibilidade e durabilidade (durability).",
+                "difficulty": 1,
+                "tags": [],
+                "expected": "Latência=tempo por requisição; throughput=requisições/tempo; disponibilidade=tempo no ar; durabilidade=perda de dados improvável."
+              },
+              {
+                "id": "ch1_q03",
+                "type": [
+                  "system_design",
+                  "tradeoffs"
+                ],
+                "prompt": "Explique o trade-off entre *latência* e *consistência* em sistemas distribuídos.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Consistência forte costuma exigir coordenação/quórum, aumentando latência; eventual é mais rápida mas pode ler dados desatualizados."
+              },
+              {
+                "id": "ch1_q04",
+                "type": [
+                  "system_design",
+                  "escala"
+                ],
+                "prompt": "Qual a diferença entre *escala vertical* e *escala horizontal*? Dê exemplos.",
+                "difficulty": 1,
+                "tags": [],
+                "expected": "Vertical = máquina maior; horizontal = mais instâncias/partições."
+              },
+              {
+                "id": "ch1_q05",
+                "type": [
+                  "system_design",
+                  "confiabilidade"
+                ],
+                "prompt": "O que significa um sistema ser *fault-tolerant* e *highly available*? São a mesma coisa?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "HA foca em uptime; fault-tolerant continua operando mesmo com falhas de componentes. Relacionados, mas não idênticos."
+              },
+              {
+                "id": "ch1_q06",
+                "type": [
+                  "system_design",
+                  "tradeoffs"
+                ],
+                "prompt": "O que são *bottlenecks* comuns em sistemas web e como você os identifica?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "CPU, IO, DB, lock contention, rede; identificar via métricas/tracing/profiling e testes de carga."
+              },
+              {
+                "id": "ch1_q07",
+                "type": [
+                  "system_design",
+                  "abordagem"
+                ],
+                "prompt": "Explique uma abordagem em 6 passos para conduzir um design (requisitos → estimativas → arquitetura → detalhes → falhas → custos).",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Começar por requisitos e constraints, estimar carga, desenhar blocos, detalhar componentes, discutir falhas/mitigações e custos."
+              },
+              {
+                "id": "ch1_q08",
+                "type": [
+                  "system_design",
+                  "tradeoffs"
+                ],
+                "prompt": "O que é *single point of failure* (SPOF)? Dê 3 exemplos e como evitar.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Componente único que derruba o sistema; ex: DB único, LB único, fila única. Evitar com redundância e failover."
+              },
+              {
+                "id": "ch1_q09",
+                "type": [
+                  "system_design",
+                  "evolucao"
+                ],
+                "prompt": "Por que projetos de system design costumam ser evolutivos (MVP → escala) em vez de 'tudo pronto'?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Incertezas de requisitos e carga; custo; risco; validação incremental com métricas reais."
+              },
+              {
+                "id": "ch1_q10",
+                "type": [
+                  "system_design",
+                  "SLO"
+                ],
+                "prompt": "Diferencie SLA, SLO e SLI com um exemplo prático.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "SLA=contrato; SLO=meta interna; SLI=métrica medida (ex: latência p95)."
+              },
+              {
+                "id": "ch1_q11",
+                "type": [
+                  "system_design",
+                  "consistencia"
+                ],
+                "prompt": "O que é *consistência forte* vs *eventual*? Em quais produtos cada uma é mais comum?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Forte: leitura sempre atual; eventual: converge com tempo. Forte em bancos transacionais; eventual em caches/feeds."
+              },
+              {
+                "id": "ch1_q12",
+                "type": [
+                  "system_design",
+                  "componentes"
+                ],
+                "prompt": "Explique por que separar *compute* de *storage* ajuda na escalabilidade.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Permite escalar processamento independentemente do armazenamento; reduz acoplamento e melhora elasticidade."
+              },
+              {
+                "id": "ch1_q13",
+                "type": [
+                  "system_design",
+                  "interfaces"
+                ],
+                "prompt": "O que é um *contrato* entre serviços e por que 'quebrar contrato' é caro?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Formato/semântica esperada; quebra gera cascata de falhas e retrabalho em múltiplos times."
+              },
+              {
+                "id": "ch1_q14",
+                "type": [
+                  "system_design",
+                  "complexidade"
+                ],
+                "prompt": "Cite 5 *building blocks* comuns em arquiteturas modernas (LB, cache, fila, DB, CDN etc.) e o papel de cada um.",
+                "difficulty": 1,
+                "tags": [],
+                "expected": "Componentes padrão com funções claras: balancear, acelerar, desacoplar, persistir, distribuir conteúdo."
+              },
+              {
+                "id": "ch1_q15",
+                "type": [
+                  "system_design",
+                  "tradeoffs"
+                ],
+                "prompt": "Por que 'o melhor design' depende do contexto? Dê 2 exemplos de decisões que mudam com o negócio.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Requisitos/custos/risco variam: consistência forte vs eventual; monólito vs microservices; streaming vs batch."
+              },
+              {
+                "id": "ch1_q16",
+                "type": [
+                  "system_design",
+                  "documentacao"
+                ],
+                "prompt": "Quais diagramas você normalmente usa para comunicar um design? (alto nível, sequência, dados).",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "C4/arquitetura alto nível, sequência para fluxos, ER/entidades, deployment/infra."
+              },
+              {
+                "id": "ch1_q17",
+                "type": [
+                  "system_design",
+                  "performance"
+                ],
+                "prompt": "Explique a diferença entre *p50*, *p95* e *p99* de latência e por que p99 importa.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Percentis; p99 mostra cauda (experiência ruim) e afeta SLO e usuários sensíveis."
+              },
+              {
+                "id": "ch1_q18",
+                "type": [
+                  "system_design",
+                  "tradeoffs"
+                ],
+                "prompt": "Qual o impacto de *n+1* chamadas entre serviços e como mitigar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Aumenta latência e falhas; mitigar com agregação, BFF, batch APIs, caching e evitar chatty services."
+              },
+              {
+                "id": "ch1_q19",
+                "type": [
+                  "system_design",
+                  "design_principles"
+                ],
+                "prompt": "O que significa 'stateless' no backend e por que isso facilita scale-out?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Estado não fica na instância; facilita adicionar/remover instâncias sem perder sessões."
+              },
+              {
+                "id": "ch1_q20",
+                "type": [
+                  "system_design",
+                  "tradeoffs"
+                ],
+                "prompt": "Dê exemplos de escolhas que aumentam disponibilidade mas reduzem consistência (e vice-versa).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Multi-master eventual aumenta disponibilidade; strong quorum aumenta consistência mas pode negar escrita em partição."
+              }
+            ]
+          },
+          {
+            "chapter": 2,
+            "id": "requisitos_e_nao_funcionais",
+            "title": "Requisitos e Não-Funcionais (NFRs)",
+            "keyTopics": [
+              "Requisitos funcionais",
+              "NFRs",
+              "SLO/SLA/SLI",
+              "Constraints",
+              "Prioridades",
+              "Anti-requisitos"
+            ],
+            "questions": [
+              {
+                "id": "ch2_q01",
+                "type": [
+                  "requirements",
+                  "funcionais"
+                ],
+                "prompt": "Liste requisitos funcionais típicos em um serviço (criar/ler/atualizar/deletar, busca, autenticação etc.).",
+                "difficulty": 1,
+                "tags": [],
+                "expected": "Operações do produto: CRUD, busca, login, feed, notificações, relatórios."
+              },
+              {
+                "id": "ch2_q02",
+                "type": [
+                  "requirements",
+                  "nfr"
+                ],
+                "prompt": "O que são NFRs? Cite pelo menos 8 (latência, disponibilidade, custo, segurança...).",
+                "difficulty": 1,
+                "tags": [],
+                "expected": "Propriedades do sistema: latência, throughput, disponibilidade, durabilidade, segurança, privacidade, custo, manutenibilidade, observabilidade."
+              },
+              {
+                "id": "ch2_q03",
+                "type": [
+                  "requirements",
+                  "priorizacao"
+                ],
+                "prompt": "Como priorizar requisitos quando eles entram em conflito? Dê um método simples.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Definir objetivos e trade-offs; usar MoSCoW ou ranking por impacto/risco/custo."
+              },
+              {
+                "id": "ch2_q04",
+                "type": [
+                  "requirements",
+                  "constraints"
+                ],
+                "prompt": "Explique a diferença entre *constraints* e *requisitos*. Dê 3 exemplos de constraints.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Constraints são limites (stack, região, custo, compliance); requisitos são comportamentos desejados."
+              },
+              {
+                "id": "ch2_q05",
+                "type": [
+                  "requirements",
+                  "SLO"
+                ],
+                "prompt": "Como você escolheria um SLO de latência para uma API crítica? Que dados você precisa?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Perfil de usuários, picos, UX, benchmarks e custos; definir p95/p99 e budgets."
+              },
+              {
+                "id": "ch2_q06",
+                "type": [
+                  "requirements",
+                  "multi_tenant"
+                ],
+                "prompt": "O que muda quando um sistema é multi-tenant? Cite 3 riscos e 3 mitigacões.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Isolamento, noisy neighbor, segurança; mitigar com quotas, particionamento, RBAC, limites e monitoramento."
+              },
+              {
+                "id": "ch2_q07",
+                "type": [
+                  "requirements",
+                  "consistencia"
+                ],
+                "prompt": "Quando o negócio exige consistência forte? Dê 3 exemplos.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Saldo/transferência, estoque crítico, permissões/ACL, transações financeiras."
+              },
+              {
+                "id": "ch2_q08",
+                "type": [
+                  "requirements",
+                  "eventual"
+                ],
+                "prompt": "Quando eventual consistency é aceitável (ou desejável)? Dê 3 exemplos.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Feed, contadores aproximados, cache, analytics near-real-time."
+              },
+              {
+                "id": "ch2_q09",
+                "type": [
+                  "requirements",
+                  "escalabilidade"
+                ],
+                "prompt": "Defina 'carga média' vs 'pico' e por que projetar só para a média dá ruim.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Pico derruba; dimensionar para picos e usar autoscaling/queues."
+              },
+              {
+                "id": "ch2_q10",
+                "type": [
+                  "requirements",
+                  "regulacao"
+                ],
+                "prompt": "Que perguntas de compliance/privacidade você faria antes de armazenar PII?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Necessidade, retenção, criptografia, acesso mínimo, auditoria, LGPD, consentimento, region constraints."
+              },
+              {
+                "id": "ch2_q11",
+                "type": [
+                  "requirements",
+                  "disponibilidade"
+                ],
+                "prompt": "Como disponibilidade (ex.: 99,9%) se traduz em 'tempo fora do ar' por mês?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "99,9% ≈ 43 min/mês; maior '9' reduz muito o downtime permitido."
+              },
+              {
+                "id": "ch2_q12",
+                "type": [
+                  "requirements",
+                  "SLO_budget"
+                ],
+                "prompt": "O que é *error budget* e como ele orienta trade-offs entre feature e confiabilidade?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Orçamento de falhas permitido; se estoura, prioriza estabilidade e reduz risco de releases."
+              },
+              {
+                "id": "ch2_q13",
+                "type": [
+                  "requirements",
+                  "custos"
+                ],
+                "prompt": "Quais são os principais drivers de custo em um sistema (compute, storage, egress...)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Instâncias/CPU/RAM, IOPS, armazenamento, tráfego (egress), licenças, observabilidade."
+              },
+              {
+                "id": "ch2_q14",
+                "type": [
+                  "requirements",
+                  "operacao"
+                ],
+                "prompt": "Quais perguntas você faria sobre operação/plantão (on-call) e impactos no design?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Alertas, runbooks, fallback, limites, simplicidade; design deve ser operável e depurável."
+              },
+              {
+                "id": "ch2_q15",
+                "type": [
+                  "requirements",
+                  "latencia"
+                ],
+                "prompt": "Explique por que 'latência de cauda' piora com fan-out (muitas chamadas).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Latência total tende ao max das chamadas; mais chamadas aumenta chance de uma ser lenta."
+              },
+              {
+                "id": "ch2_q16",
+                "type": [
+                  "requirements",
+                  "anti_requisitos"
+                ],
+                "prompt": "O que são *anti-requisitos*? Dê um exemplo em design (o que NÃO vamos fazer agora).",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Escopo explicitamente excluído; ex: 'sem busca full-text no MVP'."
+              },
+              {
+                "id": "ch2_q17",
+                "type": [
+                  "requirements",
+                  "SLA"
+                ],
+                "prompt": "O que incluir em um SLA de API (limites, disponibilidade, penalidades, janelas)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Disponibilidade, latência alvo, limites de rate, janelas de manutenção, suporte e penalidades."
+              },
+              {
+                "id": "ch2_q18",
+                "type": [
+                  "requirements",
+                  "observabilidade"
+                ],
+                "prompt": "Por que observabilidade deve entrar como requisito desde o início? Dê 3 consequências de não ter.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Sem métricas/traces não dá para detectar regressões, investigar incidentes e dimensionar corretamente."
+              },
+              {
+                "id": "ch2_q19",
+                "type": [
+                  "requirements",
+                  "seguranca"
+                ],
+                "prompt": "Como requisitos de segurança influenciam arquitetura (ex.: autenticação central, segmentação)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Impõe camadas de auth, segregação de rede, criptografia e auditoria; afeta fluxo e componentes."
+              },
+              {
+                "id": "ch2_q20",
+                "type": [
+                  "requirements",
+                  "produto"
+                ],
+                "prompt": "Crie uma lista de perguntas para esclarecer requisitos de um 'Sistema de Notificações' (canal, SLA, volume, dedupe...).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Canal (push/email/sms), volume, prioridade, garantia de entrega, dedupe, preferências, templates, rastreio e opt-out."
+              }
+            ]
+          },
+          {
+            "chapter": 3,
+            "id": "estimativas",
+            "title": "Estimativas e Back-of-the-envelope",
+            "keyTopics": [
+              "QPS/RPS",
+              "Storage",
+              "Bandwidth",
+              "Picos",
+              "Crescimento",
+              "Margem de segurança"
+            ],
+            "questions": [
+              {
+                "id": "ch3_q01",
+                "type": [
+                  "estimativas",
+                  "qps"
+                ],
+                "prompt": "Explique como estimar QPS/RPS a partir de usuários ativos diários e ações por usuário.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Converter DAU → ações/dia → ações/segundo; considerar picos e fatores de simultaneidade."
+              },
+              {
+                "id": "ch3_q02",
+                "type": [
+                  "estimativas",
+                  "picos"
+                ],
+                "prompt": "Por que estimar apenas média é insuficiente? Como estimar pico com um fator simples?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Distribuição desigual; usar fator 5x–20x dependendo do produto e horário."
+              },
+              {
+                "id": "ch3_q03",
+                "type": [
+                  "estimativas",
+                  "storage"
+                ],
+                "prompt": "Como estimar armazenamento necessário para 1 ano de dados? (tamanho por registro × volume)",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Calcular bytes por item, multiplicar por itens/dia × dias; somar índices e overhead."
+              },
+              {
+                "id": "ch3_q04",
+                "type": [
+                  "estimativas",
+                  "bandwidth"
+                ],
+                "prompt": "Dê um exemplo de estimativa de bandwidth para servir imagens (tamanho médio × req/s).",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "MB por imagem × requests/s = MB/s; converter para Mbps e considerar cache/CDN."
+              },
+              {
+                "id": "ch3_q05",
+                "type": [
+                  "estimativas",
+                  "cache_hit"
+                ],
+                "prompt": "Como *cache hit rate* afeta custo e latência? Faça um raciocínio simples.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Mais hit reduz chamadas ao DB/origem; diminui latência e custo; misses dominam p99 se hit baixo."
+              },
+              {
+                "id": "ch3_q06",
+                "type": [
+                  "estimativas",
+                  "latencia_budget"
+                ],
+                "prompt": "O que é *latency budget*? Divida um orçamento de 200ms entre componentes.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Alocar tempos para rede, auth, lógica, DB/cache; orientar otimizações e limites."
+              },
+              {
+                "id": "ch3_q07",
+                "type": [
+                  "estimativas",
+                  "fanout"
+                ],
+                "prompt": "Como o fan-out (ex.: feed) muda as estimativas de QPS interno vs externo?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Uma request externa pode gerar N internas; QPS interno pode ser N× maior."
+              },
+              {
+                "id": "ch3_q08",
+                "type": [
+                  "estimativas",
+                  "growth"
+                ],
+                "prompt": "Como incorporar crescimento (ex.: 10% ao mês) no capacity planning?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Projetar para horizonte (6–12 meses) e definir gatilhos de re-dimensionamento."
+              },
+              {
+                "id": "ch3_q09",
+                "type": [
+                  "estimativas",
+                  "io_ps"
+                ],
+                "prompt": "O que são IOPS e por que importam para bancos? Dê exemplo de risco por IOPS insuficiente.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Operações de IO por segundo; insuficiente causa filas e latência alta."
+              },
+              {
+                "id": "ch3_q10",
+                "type": [
+                  "estimativas",
+                  "db_indexes"
+                ],
+                "prompt": "Por que índices aumentam storage e custo de escrita? Como isso entra na estimativa?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Índices duplicam dados e atualizam em writes; considerar overhead e impacto em throughput."
+              },
+              {
+                "id": "ch3_q11",
+                "type": [
+                  "estimativas",
+                  "payload"
+                ],
+                "prompt": "Como tamanho de payload (JSON grande) afeta custo e latência? Cite 3 impactos.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Rede/egress, CPU de serialização, tempo de parse; piora p95/p99."
+              },
+              {
+                "id": "ch3_q12",
+                "type": [
+                  "estimativas",
+                  "SLO"
+                ],
+                "prompt": "Como ligar estimativas a SLOs (ex.: quantas instâncias para p95 < X)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Usar benchmarks/load tests e modelos de fila; dimensionar com headroom."
+              },
+              {
+                "id": "ch3_q13",
+                "type": [
+                  "estimativas",
+                  "batch"
+                ],
+                "prompt": "Qual diferença de estimativas para batch vs online serving?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Batch foca throughput/janelas; online foca latência e picos."
+              },
+              {
+                "id": "ch3_q14",
+                "type": [
+                  "estimativas",
+                  "multiregion"
+                ],
+                "prompt": "Como multi-região impacta custos e estimativas? (replicação, egress, latency)",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Duplica infra/replicação, aumenta egress e complexidade; melhora HA global."
+              },
+              {
+                "id": "ch3_q15",
+                "type": [
+                  "estimativas",
+                  "queue"
+                ],
+                "prompt": "Como uma fila ajuda a 'absorver picos'? Explique com um exemplo numérico simples.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Se pico 10k/s e consumo 2k/s, fila armazena e processa ao longo do tempo, evitando queda."
+              },
+              {
+                "id": "ch3_q16",
+                "type": [
+                  "estimativas",
+                  "reserva"
+                ],
+                "prompt": "Qual margem de segurança (headroom) você costuma reservar e por quê?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "20–50% dependendo do risco; cobre picos, falhas e variação de performance."
+              },
+              {
+                "id": "ch3_q17",
+                "type": [
+                  "estimativas",
+                  "ttl"
+                ],
+                "prompt": "Como retenção (TTL) e compressão alteram o storage anual?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "TTL reduz horizonte; compressão reduz bytes/item; ambos reduzem custo."
+              },
+              {
+                "id": "ch3_q18",
+                "type": [
+                  "estimativas",
+                  "S3_cost"
+                ],
+                "prompt": "Por que egress (saída de dados) pode dominar o custo em alguns sistemas?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Transferência para internet/entre regiões; grandes volumes de mídia e downloads."
+              },
+              {
+                "id": "ch3_q19",
+                "type": [
+                  "estimativas",
+                  "bottleneck"
+                ],
+                "prompt": "Como identificar rapidamente o *limite* do sistema (CPU, DB, rede) via estimativas?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Comparar capacidade de cada camada com demanda; o menor 'teto' é o gargalo."
+              },
+              {
+                "id": "ch3_q20",
+                "type": [
+                  "estimativas",
+                  "applied"
+                ],
+                "prompt": "Faça uma estimativa: 1M DAU, 10 ações/dia, pico 10x. Qual QPS no pico (aprox.)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "1M*10=10M/dia ≈116 QPS médio; pico 10x ≈1160 QPS."
+              }
+            ]
+          },
+          {
+            "chapter": 4,
+            "id": "apis_e_contratos",
+            "title": "APIs, Contratos e Integração",
+            "keyTopics": [
+              "REST",
+              "gRPC",
+              "Versionamento",
+              "Idempotência",
+              "Paginação",
+              "Erro e retries",
+              "SLAs de API"
+            ],
+            "questions": [
+              {
+                "id": "ch4_q01",
+                "type": [
+                  "api",
+                  "rest"
+                ],
+                "prompt": "Quais são as características de uma API REST bem desenhada? Cite 5.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Recursos, verbos HTTP, stateless, códigos de status, idempotência, cache, HATEOAS (opcional)."
+              },
+              {
+                "id": "ch4_q02",
+                "type": [
+                  "api",
+                  "grpc"
+                ],
+                "prompt": "Quando gRPC é uma escolha melhor que REST? Cite 3 cenários.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Baixa latência, comunicação serviço-a-serviço, streaming, contratos fortes e schema evolution."
+              },
+              {
+                "id": "ch4_q03",
+                "type": [
+                  "api",
+                  "versioning"
+                ],
+                "prompt": "Compare estratégias de versionamento (URL, header, campo). Qual risco de cada uma?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "URL simples porém duplica endpoints; header/field mais flexível mas pode complicar gateways/clients."
+              },
+              {
+                "id": "ch4_q04",
+                "type": [
+                  "api",
+                  "pagination"
+                ],
+                "prompt": "Explique paginação por *offset* vs *cursor*. Qual é mais estável em dados mutáveis?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Cursor é mais estável; offset sofre com inserts/deletes e páginas inconsistentes."
+              },
+              {
+                "id": "ch4_q05",
+                "type": [
+                  "api",
+                  "idempotency"
+                ],
+                "prompt": "O que é idempotência? Dê exemplos de endpoints idempotentes e não idempotentes.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Repetir mesma chamada não muda efeito: GET/PUT; POST geralmente não (cria duplicado) sem idempotency key."
+              },
+              {
+                "id": "ch4_q06",
+                "type": [
+                  "api",
+                  "idempotency_key"
+                ],
+                "prompt": "Como implementar *idempotency key* para POST de pagamento/criação de pedido?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Cliente envia chave; servidor registra resultado por chave e retorna mesmo response em retries."
+              },
+              {
+                "id": "ch4_q07",
+                "type": [
+                  "api",
+                  "errors"
+                ],
+                "prompt": "Como desenhar um contrato de erros consistente (código, mensagem, detalhes, retryable)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Estrutura padronizada com error_code, message, details, trace_id, e flag retryable."
+              },
+              {
+                "id": "ch4_q08",
+                "type": [
+                  "api",
+                  "timeouts"
+                ],
+                "prompt": "Por que timeouts de cliente e servidor devem ser coordenados?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Evita work inútil; previne cascata; cliente não deve desistir antes do servidor sem cancelamento."
+              },
+              {
+                "id": "ch4_q09",
+                "type": [
+                  "api",
+                  "rate_limit"
+                ],
+                "prompt": "O que é rate limiting e como expor limites ao cliente (headers, docs)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Limitar requisições; expor via headers (limit/remaining/reset) e mensagens 429."
+              },
+              {
+                "id": "ch4_q10",
+                "type": [
+                  "api",
+                  "auth"
+                ],
+                "prompt": "Como autenticação e autorização entram no design de API (scopes/roles)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Tokens e claims; checagens de permissão por recurso; princípio do menor privilégio."
+              },
+              {
+                "id": "ch4_q11",
+                "type": [
+                  "api",
+                  "backward_compat"
+                ],
+                "prompt": "O que significa compatibilidade retroativa em APIs? Dê 4 regras práticas.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Só adicionar campos opcionais, não renomear/remover, não mudar semântica, manter defaults."
+              },
+              {
+                "id": "ch4_q12",
+                "type": [
+                  "api",
+                  "webhooks"
+                ],
+                "prompt": "Quando webhooks são melhores que polling? Cite cuidados (retry, assinatura, dedupe).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Eventos push; cuidados com assinatura, retries, ordering, idempotência e DLQ."
+              },
+              {
+                "id": "ch4_q13",
+                "type": [
+                  "api",
+                  "async"
+                ],
+                "prompt": "Como você desenha uma API assíncrona (202 Accepted + status endpoint)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Retorna job_id, status endpoint, callbacks/webhooks; processamento em background."
+              },
+              {
+                "id": "ch4_q14",
+                "type": [
+                  "api",
+                  "consistency"
+                ],
+                "prompt": "Em uma API eventualmente consistente, como comunicar isso ao cliente?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Documentar; fornecer read-your-writes (quando possível) ou status de propagação."
+              },
+              {
+                "id": "ch4_q15",
+                "type": [
+                  "api",
+                  "contracts"
+                ],
+                "prompt": "Por que contratos (OpenAPI/Protobuf) ajudam governança e manutenção?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Documentação, geração de clients, validação e compatibilidade; reduz ambiguidades."
+              },
+              {
+                "id": "ch4_q16",
+                "type": [
+                  "api",
+                  "observability"
+                ],
+                "prompt": "Que informações você inclui em headers para depuração distribuída?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Trace-id/correlation-id, request-id, version, e informações de rate limit."
+              },
+              {
+                "id": "ch4_q17",
+                "type": [
+                  "api",
+                  "pagination",
+                  "applied"
+                ],
+                "prompt": "Dê um exemplo de cursor (token) e como ele evita saltos em paginação.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Token codifica última chave/tempo; próximo page começa após esse marcador."
+              },
+              {
+                "id": "ch4_q18",
+                "type": [
+                  "api",
+                  "grpc_stream"
+                ],
+                "prompt": "Cite um caso onde streaming (server/client/bidi) é útil.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Chat/telemetria, uploads chunked, notificações em tempo real."
+              },
+              {
+                "id": "ch4_q19",
+                "type": [
+                  "api",
+                  "schema_evolution"
+                ],
+                "prompt": "O que são regras de evolução de schema em Protobuf (campos, números, reserved)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Não reutilizar números; marcar reservados; campos novos opcionais; manter compatibilidade."
+              },
+              {
+                "id": "ch4_q20",
+                "type": [
+                  "api",
+                  "design"
+                ],
+                "prompt": "Desenhe (em alto nível) endpoints para: criar pedido, pagar, consultar status e cancelar.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "POST /orders, POST /payments (idempotency), GET /orders/{id}, POST /orders/{id}/cancel (ou PATCH status)."
+              }
+            ]
+          },
+          {
+            "chapter": 5,
+            "id": "modelagem_e_bancos",
+            "title": "Modelagem de Dados e Bancos (SQL/NoSQL)",
+            "keyTopics": [
+              "Modelagem",
+              "Índices",
+              "Transações",
+              "SQL vs NoSQL",
+              "OLTP vs OLAP",
+              "Consistência",
+              "Desnormalização"
+            ],
+            "questions": [
+              {
+                "id": "ch5_q01",
+                "type": [
+                  "data",
+                  "modelagem"
+                ],
+                "prompt": "Explique a diferença entre modelagem orientada a consultas vs orientada a normalização.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Consultas prioriza leitura/joins mínimos; normalização reduz redundância e anomalias de escrita."
+              },
+              {
+                "id": "ch5_q02",
+                "type": [
+                  "db",
+                  "sql_vs_nosql"
+                ],
+                "prompt": "Compare SQL vs NoSQL: quando cada um tende a ser melhor?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "SQL para transações fortes e joins; NoSQL para escala horizontal e flexibilidade, às vezes com consistência eventual."
+              },
+              {
+                "id": "ch5_q03",
+                "type": [
+                  "db",
+                  "indexes"
+                ],
+                "prompt": "O que é um índice e por que ele acelera leitura mas pode piorar escrita?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Estrutura auxiliar para busca; precisa ser atualizada em inserts/updates."
+              },
+              {
+                "id": "ch5_q04",
+                "type": [
+                  "db",
+                  "primary_key"
+                ],
+                "prompt": "Como escolher uma chave primária (UUID vs incremental) e quais impactos isso tem?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Incremental é ordenado (ótimo para B-Tree) mas pode vazar volume; UUID aleatório cria fragmentação; ULID/KSUID equilibram."
+              },
+              {
+                "id": "ch5_q05",
+                "type": [
+                  "db",
+                  "transactions"
+                ],
+                "prompt": "O que significa ACID? Dê um exemplo concreto do que cada letra protege.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Atomicidade, Consistência, Isolamento, Durabilidade; protegem integridade mesmo com falhas."
+              },
+              {
+                "id": "ch5_q06",
+                "type": [
+                  "db",
+                  "isolation"
+                ],
+                "prompt": "Explique níveis de isolamento e problemas clássicos (dirty read, phantom read).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Níveis controlam visibilidade; evitam leituras sujas e fantasmas com locks/MVCC."
+              },
+              {
+                "id": "ch5_q07",
+                "type": [
+                  "db",
+                  "oltp_olap"
+                ],
+                "prompt": "Diferencie OLTP e OLAP e por que você não costuma usar o mesmo banco para ambos.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "OLTP transacional e muitas escritas; OLAP analítico com scans e agregações; workloads conflitam."
+              },
+              {
+                "id": "ch5_q08",
+                "type": [
+                  "db",
+                  "denormalization"
+                ],
+                "prompt": "Quando desnormalização faz sentido? Cite 3 riscos.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Leitura rápida; riscos: inconsistência, complexidade de atualização, mais storage."
+              },
+              {
+                "id": "ch5_q09",
+                "type": [
+                  "db",
+                  "read_replica"
+                ],
+                "prompt": "O que são read replicas? Como elas afetam consistência e capacidade?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Replicas para leituras; pode haver lag e leituras desatualizadas; aumenta throughput de reads."
+              },
+              {
+                "id": "ch5_q10",
+                "type": [
+                  "db",
+                  "write_scaling"
+                ],
+                "prompt": "Por que escalar escrita é mais difícil que escalar leitura?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Escrita exige coordenação/consistência; replicação e particionamento são complexos."
+              },
+              {
+                "id": "ch5_q11",
+                "type": [
+                  "db",
+                  "no_sql_types"
+                ],
+                "prompt": "Cite 4 tipos de bancos NoSQL (key-value, document, column, graph) e um uso típico.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "KV cache/sessão; documento perfis; coluna/time-series; grafo relações/recomendações."
+              },
+              {
+                "id": "ch5_q12",
+                "type": [
+                  "data",
+                  "event_sourcing"
+                ],
+                "prompt": "O que é Event Sourcing e quando ele é útil?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Persistir eventos imutáveis e reconstruir estado; útil para auditoria e workflows complexos."
+              },
+              {
+                "id": "ch5_q13",
+                "type": [
+                  "data",
+                  "cdc"
+                ],
+                "prompt": "O que é CDC (Change Data Capture) e por que ele é relevante para integrações?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Capturar mudanças do DB para streams; integra serviços e analytics com baixo acoplamento."
+              },
+              {
+                "id": "ch5_q14",
+                "type": [
+                  "db",
+                  "schema_migrations"
+                ],
+                "prompt": "Quais boas práticas para migrations em produção? (backward compat, expand/contract)",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Migrations compatíveis, expand/contract, feature flags, evitar locks longos, executar em etapas."
+              },
+              {
+                "id": "ch5_q15",
+                "type": [
+                  "db",
+                  "hotspots"
+                ],
+                "prompt": "O que causa hotspots em banco/shard (ex.: chave crescente) e como mitigar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Concentração de writes; mitigar com chaves distribuídas, hashing, batching, particionamento."
+              },
+              {
+                "id": "ch5_q16",
+                "type": [
+                  "db",
+                  "consistency"
+                ],
+                "prompt": "Explique consistência de leitura: read-your-writes, monotonic reads, causal consistency.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Garantias de visibilidade de writes e ordem de leituras; úteis para UX consistente."
+              },
+              {
+                "id": "ch5_q17",
+                "type": [
+                  "db",
+                  "index_selectivity"
+                ],
+                "prompt": "O que é seletividade de índice e por que ela importa?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Quão filtrante é; índices pouco seletivos podem não ajudar e custam na escrita."
+              },
+              {
+                "id": "ch5_q18",
+                "type": [
+                  "db",
+                  "joins"
+                ],
+                "prompt": "Por que joins cross-shard são caros? Quais alternativas?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Requer coordenar partições; alternativas: denormalizar, materialized views, fan-out app, aggregator."
+              },
+              {
+                "id": "ch5_q19",
+                "type": [
+                  "db",
+                  "constraints"
+                ],
+                "prompt": "Quando você escolhe *constraints* (FK, unique) no banco vs validar na aplicação?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Banco garante invariantes fortes; app pode falhar; mas constraints podem custar performance dependendo do caso."
+              },
+              {
+                "id": "ch5_q20",
+                "type": [
+                  "db",
+                  "applied"
+                ],
+                "prompt": "Desenhe um schema simples para pedidos e pagamentos e indique quais índices criaria.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Tabelas orders/payments; índices por order_id, user_id+created_at; unique idempotency_key; status."
+              }
+            ]
+          },
+          {
+            "chapter": 6,
+            "id": "cache_e_cdn",
+            "title": "Cache, CDN e Performance",
+            "keyTopics": [
+              "Cache-aside",
+              "Write-through/back",
+              "TTL",
+              "Cache invalidation",
+              "CDN",
+              "Hot keys",
+              "Warming"
+            ],
+            "questions": [
+              {
+                "id": "ch6_q01",
+                "type": [
+                  "cache",
+                  "basics"
+                ],
+                "prompt": "Explique o padrão *cache-aside* e quando ele é usado.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "App lê do cache; se miss, busca no DB e popula cache; comum por simplicidade."
+              },
+              {
+                "id": "ch6_q02",
+                "type": [
+                  "cache",
+                  "write_through"
+                ],
+                "prompt": "Compare write-through, write-back e cache-aside.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Write-through escreve cache+DB; write-back escreve cache e persiste depois; cache-aside escreve DB e invalida/atualiza cache."
+              },
+              {
+                "id": "ch6_q03",
+                "type": [
+                  "cache",
+                  "invalidation"
+                ],
+                "prompt": "Por que 'cache invalidation' é difícil? Cite 3 estratégias.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Mudanças de dados e concorrência; usar TTL, invalidação por evento, versionamento de chaves."
+              },
+              {
+                "id": "ch6_q04",
+                "type": [
+                  "cache",
+                  "ttl"
+                ],
+                "prompt": "Como escolher TTL? Que riscos existem em TTL muito alto ou muito baixo?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Alto: staleness; baixo: baixa taxa de hit e overload no DB."
+              },
+              {
+                "id": "ch6_q05",
+                "type": [
+                  "cache",
+                  "stampede"
+                ],
+                "prompt": "O que é *cache stampede* e como evitar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Muitos misses simultâneos; evitar com lock/singleflight, jitter em TTL, pre-warm."
+              },
+              {
+                "id": "ch6_q06",
+                "type": [
+                  "cache",
+                  "hot_keys"
+                ],
+                "prompt": "O que são *hot keys* e por que elas derrubam caches distribuídos?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Chaves muito acessadas concentrando carga; mitigar com sharding por key, replicação local, caching em camadas."
+              },
+              {
+                "id": "ch6_q07",
+                "type": [
+                  "cdn",
+                  "basics"
+                ],
+                "prompt": "O que é CDN e quais problemas ela resolve?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Entrega conteúdo estático perto do usuário; reduz latência e egress do origin."
+              },
+              {
+                "id": "ch6_q08",
+                "type": [
+                  "cdn",
+                  "cache_control"
+                ],
+                "prompt": "Explique `Cache-Control` e como versionamento de assets ajuda.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Headers definem cache; assets com hash permitem cache longo sem risco de stale."
+              },
+              {
+                "id": "ch6_q09",
+                "type": [
+                  "cache",
+                  "consistency"
+                ],
+                "prompt": "Como cache impacta consistência? Cite 2 garantias que podem se perder.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Read-your-writes e monotonic reads podem falhar; leituras podem ficar desatualizadas."
+              },
+              {
+                "id": "ch6_q10",
+                "type": [
+                  "cache",
+                  "multi_layer"
+                ],
+                "prompt": "Descreva uma estratégia de cache em múltiplas camadas (client, edge, server).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Client cache + CDN edge + cache server (Redis) + DB; cada camada reduz carga/latência."
+              },
+              {
+                "id": "ch6_q11",
+                "type": [
+                  "cache",
+                  "eviction"
+                ],
+                "prompt": "Quais políticas de eviction existem (LRU, LFU) e quando cada uma faz sentido?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "LRU para recência; LFU para popularidade; depende do padrão de acesso."
+              },
+              {
+                "id": "ch6_q12",
+                "type": [
+                  "cache",
+                  "serialization"
+                ],
+                "prompt": "Como serialização (JSON vs binary) afeta performance do cache?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "CPU e tamanho; formatos binários podem ser menores e mais rápidos."
+              },
+              {
+                "id": "ch6_q13",
+                "type": [
+                  "cache",
+                  "negative_cache"
+                ],
+                "prompt": "O que é *negative caching*? Dê um caso útil.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Cache de 'não existe' por curto tempo; evita bater no DB para ids inválidos repetidos."
+              },
+              {
+                "id": "ch6_q14",
+                "type": [
+                  "cache",
+                  "invalidation_events"
+                ],
+                "prompt": "Como usar eventos para invalidação de cache sem acoplar serviços demais?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Publicar eventos de mudança (CDC) e consumidores atualizam/invalida; usar tópicos e schemas estáveis."
+              },
+              {
+                "id": "ch6_q15",
+                "type": [
+                  "cache",
+                  "write_path"
+                ],
+                "prompt": "Por que caches geralmente não são *source of truth*? O que acontece se perder o cache?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Cache é derivado; pode ser reconstruído; perder cache aumenta latência mas não pode perder dados."
+              },
+              {
+                "id": "ch6_q16",
+                "type": [
+                  "cdn",
+                  "uploads"
+                ],
+                "prompt": "Como servir arquivos privados via CDN sem expor conteúdo? (signed URLs/cookies)",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Assinaturas temporárias e validação; controla acesso e expiração."
+              },
+              {
+                "id": "ch6_q17",
+                "type": [
+                  "cache",
+                  "applied"
+                ],
+                "prompt": "Projete cache para um endpoint GET /profile/{id} com 10k QPS e baixa taxa de atualização.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Cache-aside com Redis, TTL moderado, invalidar em update, singleflight e métricas de hit rate."
+              },
+              {
+                "id": "ch6_q18",
+                "type": [
+                  "cache",
+                  "observability"
+                ],
+                "prompt": "Quais métricas de cache você monitora?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Hit rate, latency, evictions, memory, errors/timeouts, hot keys, saturation."
+              },
+              {
+                "id": "ch6_q19",
+                "type": [
+                  "cache",
+                  "consistency",
+                  "applied"
+                ],
+                "prompt": "Como garantir 'read-your-writes' para o próprio usuário mesmo com cache?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Bypass cache após write, versionar por sessão, ou armazenar em cache por user+version/ETag."
+              }
+            ]
+          },
+          {
+            "chapter": 7,
+            "id": "escalabilidade_e_balanceamento",
+            "title": "Escalabilidade, Load Balancing e Stateful/Stateless",
+            "keyTopics": [
+              "Horizontal vs vertical",
+              "Load balancer",
+              "Autoscaling",
+              "Sessão",
+              "Sticky sessions",
+              "Backpressure"
+            ],
+            "questions": [
+              {
+                "id": "ch7_q01",
+                "type": [
+                  "scaling",
+                  "lb"
+                ],
+                "prompt": "O que é um load balancer e quais algoritmos comuns (round-robin, least-connections)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Distribui tráfego; algoritmos escolhem instância com base em regra."
+              },
+              {
+                "id": "ch7_q02",
+                "type": [
+                  "scaling",
+                  "healthcheck"
+                ],
+                "prompt": "Por que health checks são críticos? Diferencie liveness vs readiness.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Evita enviar tráfego a instâncias ruins; readiness indica pronto para tráfego, liveness indica vivo."
+              },
+              {
+                "id": "ch7_q03",
+                "type": [
+                  "scaling",
+                  "autoscaling"
+                ],
+                "prompt": "Explique autoscaling por CPU vs por métricas de fila/latência. Quando CPU engana?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "CPU não reflete IO/wait; latência e backlog representam melhor saturação."
+              },
+              {
+                "id": "ch7_q04",
+                "type": [
+                  "scaling",
+                  "stateless"
+                ],
+                "prompt": "Como remover estado de instâncias? Cite 3 tipos de estado comuns.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Sessão, cache local, uploads temporários; mover para Redis/DB/object storage."
+              },
+              {
+                "id": "ch7_q05",
+                "type": [
+                  "scaling",
+                  "sticky"
+                ],
+                "prompt": "O que são sticky sessions e por que elas atrapalham escala e resiliência?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "LB fixa usuário em instância; dificulta rebalancear e aumenta impacto de falha."
+              },
+              {
+                "id": "ch7_q06",
+                "type": [
+                  "scaling",
+                  "backpressure"
+                ],
+                "prompt": "O que é backpressure e por que ele evita colapso em cascata?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Controlar entrada quando downstream saturado; evita fila infinita e timeouts em massa."
+              },
+              {
+                "id": "ch7_q07",
+                "type": [
+                  "scaling",
+                  "connection_pool"
+                ],
+                "prompt": "Como pools de conexão podem virar gargalo? Quais métricas observar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Exaustão de conexões aumenta latência; observar pool saturation, wait time, errors."
+              },
+              {
+                "id": "ch7_q08",
+                "type": [
+                  "scaling",
+                  "timeouts"
+                ],
+                "prompt": "Por que timeouts curtos demais também são ruins? Explique o efeito 'retry storm'.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Timeouts geram retries em massa; aumenta carga e piora, criando tempestade de retries."
+              },
+              {
+                "id": "ch7_q09",
+                "type": [
+                  "scaling",
+                  "rate_limit"
+                ],
+                "prompt": "Que tipos de rate limiting existem (per user, per IP, global)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Limites por identidade, origem, token bucket global, por endpoint."
+              },
+              {
+                "id": "ch7_q10",
+                "type": [
+                  "scaling",
+                  "queue_buffer"
+                ],
+                "prompt": "Quando inserir uma fila entre serviços melhora o sistema? Cite 3 sinais.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Picos frequentes, tarefas demoradas, necessidade de retries; desacoplar produtores/consumidores."
+              },
+              {
+                "id": "ch7_q11",
+                "type": [
+                  "scaling",
+                  "batching"
+                ],
+                "prompt": "Como batching reduz overhead de rede/DB? Dê um exemplo.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Agrupar N operações em 1 chamada; reduz latência total e syscalls."
+              },
+              {
+                "id": "ch7_q12",
+                "type": [
+                  "scaling",
+                  "connection_draining"
+                ],
+                "prompt": "O que é connection draining e por que é necessário em deploys?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Parar de receber novas conexões e terminar as atuais; evita cortar requests no meio."
+              },
+              {
+                "id": "ch7_q13",
+                "type": [
+                  "scaling",
+                  "hotspot"
+                ],
+                "prompt": "Explique por que um único endpoint 'pesado' pode derrubar todo o serviço.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Compartilha recursos; saturação causa fila e aumenta latência global; mitigar com isolamento e limites."
+              },
+              {
+                "id": "ch7_q14",
+                "type": [
+                  "scaling",
+                  "multi_region"
+                ],
+                "prompt": "Quando multi-região vale a pena? Quais complexidades adiciona?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "HA e latência global; adiciona replicação, consistência, failover e custos."
+              },
+              {
+                "id": "ch7_q15",
+                "type": [
+                  "scaling",
+                  "stateful_services"
+                ],
+                "prompt": "Dê exemplos de serviços stateful e como escalá-los.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "DB, Kafka, Redis; escalar com sharding/replicação e particionamento."
+              },
+              {
+                "id": "ch7_q16",
+                "type": [
+                  "scaling",
+                  "applied"
+                ],
+                "prompt": "Desenhe uma arquitetura 'stateless web tier' com sessão e uploads.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "LB → stateless app → Redis para sessão; object storage para uploads; DB como source of truth."
+              },
+              {
+                "id": "ch7_q17",
+                "type": [
+                  "scaling",
+                  "traffic_shaping"
+                ],
+                "prompt": "O que é *traffic shaping* e por que ele ajuda em incidentes?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Controlar taxa por prioridade; mantém core funcionando e degrada features menos críticas."
+              },
+              {
+                "id": "ch7_q18",
+                "type": [
+                  "scaling",
+                  "graceful_degradation"
+                ],
+                "prompt": "Dê um exemplo de degradação graciosa em e-commerce.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Desativar recomendações/busca avançada e manter checkout; usar cache e páginas estáticas."
+              },
+              {
+                "id": "ch7_q19",
+                "type": [
+                  "scaling",
+                  "applied"
+                ],
+                "prompt": "Se seu DB suporta 5k writes/s e o pico é 20k/s, o que você faz?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Fila/buffering, batching, sharding, reduzir writes (eventual), separar workloads e otimizar schema/índices."
+              },
+              {
+                "id": "ch7_q20",
+                "type": [
+                  "scaling",
+                  "capacity"
+                ],
+                "prompt": "O que é capacity planning contínuo e quais sinais acionam replanejamento?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Monitorar crescimento/saturação; aciona por uso > X%, p95 subindo, backlog, custo anormal."
+              }
+            ]
+          },
+          {
+            "chapter": 8,
+            "id": "consistencia_e_replicacao",
+            "title": "Consistência, Replicação e CAP/PACELC",
+            "keyTopics": [
+              "CAP",
+              "PACELC",
+              "Quórum",
+              "Consistência eventual",
+              "Consistência forte",
+              "Read-after-write",
+              "Staleness"
+            ],
+            "questions": [
+              {
+                "id": "ch8_q01",
+                "type": [
+                  "distributed",
+                  "cap"
+                ],
+                "prompt": "Explique CAP: Consistency, Availability, Partition tolerance. Por que P é inevitável?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Partições acontecem; em presença de partição escolhe C ou A para operações."
+              },
+              {
+                "id": "ch8_q02",
+                "type": [
+                  "distributed",
+                  "pacelc"
+                ],
+                "prompt": "O que é PACELC e como ele complementa CAP?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Se P: escolhe A ou C; Else: trade-off entre Latência (L) e Consistência (C)."
+              },
+              {
+                "id": "ch8_q03",
+                "type": [
+                  "distributed",
+                  "replication"
+                ],
+                "prompt": "Compare replicação síncrona vs assíncrona.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Síncrona garante consistência mas aumenta latência; assíncrona é rápida mas pode perder reads-your-writes."
+              },
+              {
+                "id": "ch8_q04",
+                "type": [
+                  "distributed",
+                  "quorum"
+                ],
+                "prompt": "O que é quórum de leitura/escrita (R/W/N)? Dê um exemplo com N=3.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Se R+W>N, leitura vê último write; ex: N=3, W=2, R=2."
+              },
+              {
+                "id": "ch8_q05",
+                "type": [
+                  "distributed",
+                  "leader_follower"
+                ],
+                "prompt": "Explique líder-seguidor (primary-replica) e seus prós/cons.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Escritas no líder; replicas para leitura; simples mas líder pode ser gargalo e failover complexo."
+              },
+              {
+                "id": "ch8_q06",
+                "type": [
+                  "distributed",
+                  "multi_leader"
+                ],
+                "prompt": "Quando multi-leader faz sentido e quais conflitos aparecem?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Multi-região/offline; conflitos de escrita exigem resolução (last-write-wins, CRDT, app logic)."
+              },
+              {
+                "id": "ch8_q07",
+                "type": [
+                  "distributed",
+                  "read_after_write"
+                ],
+                "prompt": "Como garantir read-after-write em arquitetura com read replicas?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ler do líder após write, usar session stickiness, tokens/LSN, ou esperar réplica alcançar."
+              },
+              {
+                "id": "ch8_q08",
+                "type": [
+                  "distributed",
+                  "clock"
+                ],
+                "prompt": "Por que relógios (clock skew) atrapalham ordenação de eventos?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Timestamps não confiáveis; pode reordenar eventos; usar clocks lógicos/monotonic e offsets."
+              },
+              {
+                "id": "ch8_q09",
+                "type": [
+                  "distributed",
+                  "consistency_models"
+                ],
+                "prompt": "Defina: linearizability, sequential consistency, causal consistency.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Níveis de consistência; linearizável é mais forte, causal preserva causalidade sem total order."
+              },
+              {
+                "id": "ch8_q10",
+                "type": [
+                  "distributed",
+                  "staleness"
+                ],
+                "prompt": "O que é *staleness* e como medir/limitar (bounded staleness)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Quão desatualizado; limitar por tempo/versão; medir lag e expor métricas."
+              },
+              {
+                "id": "ch8_q11",
+                "type": [
+                  "distributed",
+                  "availability_math"
+                ],
+                "prompt": "Explique como redundância em série vs em paralelo afeta disponibilidade.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Em série piora; em paralelo melhora (failover) se independentes."
+              },
+              {
+                "id": "ch8_q12",
+                "type": [
+                  "distributed",
+                  "split_brain"
+                ],
+                "prompt": "O que é split-brain e como evitar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Dois líderes simultâneos; evitar com quorum/consenso (Raft/Paxos) e fencing tokens."
+              },
+              {
+                "id": "ch8_q13",
+                "type": [
+                  "distributed",
+                  "consensus"
+                ],
+                "prompt": "Por que consenso (Raft/Paxos) é caro? O que ele garante?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Exige coordenação e múltiplos round-trips; garante ordem e decisão única (líder/log)."
+              },
+              {
+                "id": "ch8_q14",
+                "type": [
+                  "distributed",
+                  "applied"
+                ],
+                "prompt": "Qual nível de consistência você escolheria para: saldo, feed, contador de likes? Justifique.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Saldo forte; feed eventual; likes pode ser eventual/approx."
+              },
+              {
+                "id": "ch8_q15",
+                "type": [
+                  "distributed",
+                  "failure_modes"
+                ],
+                "prompt": "Liste 6 falhas comuns em distribuídos (partição, overload, GC pause...) e uma mitigação.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Timeouts, retries com jitter, circuit breaker, autoscaling, backpressure, isolamento, observabilidade."
+              },
+              {
+                "id": "ch8_q16",
+                "type": [
+                  "distributed",
+                  "applied"
+                ],
+                "prompt": "Descreva como um sistema com consistência eventual converge (gossip/anti-entropy).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Réplicas trocam deltas e resolvem conflitos; convergem com trocas periódicas."
+              }
+            ]
+          },
+          {
+            "chapter": 9,
+            "id": "particionamento_e_sharding",
+            "title": "Particionamento, Sharding e Hotspots",
+            "keyTopics": [
+              "Sharding por range/hash",
+              "Rebalanceamento",
+              "Hot partitions",
+              "Routing",
+              "Consistent hashing",
+              "Resharding"
+            ],
+            "questions": [
+              {
+                "id": "ch9_q01",
+                "type": [
+                  "sharding",
+                  "basics"
+                ],
+                "prompt": "O que é sharding e por que ele é usado?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Dividir dados entre nós para escalar escrita/armazenamento e reduzir carga por nó."
+              },
+              {
+                "id": "ch9_q02",
+                "type": [
+                  "sharding",
+                  "hash_range"
+                ],
+                "prompt": "Compare sharding por hash vs por range: prós e contras.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Hash distribui bem mas dificulta range queries; range facilita ranges mas pode criar hotspots."
+              },
+              {
+                "id": "ch9_q03",
+                "type": [
+                  "sharding",
+                  "consistent_hash"
+                ],
+                "prompt": "O que é consistent hashing e por que ele ajuda em rebalanceamento?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Minimiza chaves movidas quando nós entram/saem; reduz custo de rehash total."
+              },
+              {
+                "id": "ch9_q04",
+                "type": [
+                  "sharding",
+                  "routing"
+                ],
+                "prompt": "Como o roteamento para o shard correto funciona? Cite 2 estratégias.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Shard map/metadata service; hashing determinístico; directory-based routing."
+              },
+              {
+                "id": "ch9_q05",
+                "type": [
+                  "sharding",
+                  "reshard"
+                ],
+                "prompt": "O que é resharding e por que é arriscado em produção?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Redistribuir dados; risco de inconsistência e downtime; requer migração incremental e dual-write."
+              },
+              {
+                "id": "ch9_q06",
+                "type": [
+                  "sharding",
+                  "hot_partition"
+                ],
+                "prompt": "O que é uma hot partition? Cite causas e mitigacões.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Concentração de acessos; mitigar com salting, hashing, caching e particionar por outra dimensão."
+              },
+              {
+                "id": "ch9_q07",
+                "type": [
+                  "sharding",
+                  "secondary_index"
+                ],
+                "prompt": "Por que índices secundários são difíceis em sharded DB?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Precisa buscar em múltiplos shards; usar global index, denormalização ou search engine."
+              },
+              {
+                "id": "ch9_q08",
+                "type": [
+                  "sharding",
+                  "multi_tenant"
+                ],
+                "prompt": "Como particionar dados em multi-tenant (por tenant id) e quais riscos existem?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Isolamento; risco de tenants grandes; usar sub-sharding e quotas."
+              },
+              {
+                "id": "ch9_q09",
+                "type": [
+                  "sharding",
+                  "transactions"
+                ],
+                "prompt": "Por que transações cross-shard são caras? Quais alternativas práticas?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Coordenação/2PC; alternativas: modelagem para evitar, sagas, outbox, agregação eventual."
+              },
+              {
+                "id": "ch9_q10",
+                "type": [
+                  "sharding",
+                  "rebalancing"
+                ],
+                "prompt": "Explique migração incremental de shards (chunking, dual-read, cutover).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Mover por chunks, ler de ambos durante migração, validar, e cortar para novo shard."
+              },
+              {
+                "id": "ch9_q11",
+                "type": [
+                  "sharding",
+                  "applied"
+                ],
+                "prompt": "Você tem chave `userId`. Quais riscos de particionar por userId em um feed com celebridades?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Hot users (celebridades) geram hotspots; feed exige fan-out; usar particionamento por postagem ou timeline service."
+              },
+              {
+                "id": "ch9_q12",
+                "type": [
+                  "sharding",
+                  "geo"
+                ],
+                "prompt": "Quando sharding geográfico faz sentido? Quais cuidados com compliance?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Latência e legislação; manter dados na região, replicação e roteamento por país/região."
+              },
+              {
+                "id": "ch9_q13",
+                "type": [
+                  "sharding",
+                  "storage"
+                ],
+                "prompt": "Como estimar 'tamanho do shard' e quando dividir um shard grande?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Limites de storage/IO; dividir ao atingir thresholds de latência/IOPS/size."
+              },
+              {
+                "id": "ch9_q14",
+                "type": [
+                  "sharding",
+                  "id_generation"
+                ],
+                "prompt": "Como gerar IDs ordenáveis em um ambiente sharded (Snowflake/ULID)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "IDs com timestamp+node+sequência; ordenáveis e únicos sem coordenação central."
+              },
+              {
+                "id": "ch9_q15",
+                "type": [
+                  "sharding",
+                  "applied"
+                ],
+                "prompt": "Desenhe uma estratégia para evitar hotspot em chave incremental (ex.: order_id).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Usar IDs distribuídos (ULID), prefix salting, ou range pre-splitting."
+              },
+              {
+                "id": "ch9_q16",
+                "type": [
+                  "sharding",
+                  "operacao"
+                ],
+                "prompt": "Que métricas você observa por shard para decidir rebalanceamento?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "QPS, latência, CPU, IOPS, tamanho, erro, hot keys e skew de distribuição."
+              }
+            ]
+          },
+          {
+            "chapter": 10,
+            "id": "mensageria_e_eventos",
+            "title": "Mensageria, Eventos e Processamento Assíncrono",
+            "keyTopics": [
+              "Queues",
+              "Pub/Sub",
+              "Streams",
+              "Ordering",
+              "At-least-once",
+              "Exactly-once (na prática)",
+              "DLQ",
+              "Idempotência"
+            ],
+            "questions": [
+              {
+                "id": "ch10_q01",
+                "type": [
+                  "messaging",
+                  "queue_pubsub"
+                ],
+                "prompt": "Qual a diferença entre queue e pub/sub?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Queue: cada mensagem para um consumidor; pub/sub: broadcast para vários subscribers."
+              },
+              {
+                "id": "ch10_q02",
+                "type": [
+                  "messaging",
+                  "delivery"
+                ],
+                "prompt": "Explique at-most-once, at-least-once e exactly-once (e por que o último é difícil).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Sem duplicatas mas pode perder; sem perdas mas pode duplicar; exactly-once exige coordenação/txn e é caro."
+              },
+              {
+                "id": "ch10_q03",
+                "type": [
+                  "messaging",
+                  "ordering"
+                ],
+                "prompt": "O que é ordering e como particionamento afeta ordenação em streams (ex.: Kafka)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ordenação garantida por partição; chaves definem partição e ordenação local."
+              },
+              {
+                "id": "ch10_q04",
+                "type": [
+                  "messaging",
+                  "dlq"
+                ],
+                "prompt": "O que é DLQ e quando usar?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Fila de mensagens que falharam repetidamente; permite inspeção e reprocessamento."
+              },
+              {
+                "id": "ch10_q05",
+                "type": [
+                  "messaging",
+                  "retries"
+                ],
+                "prompt": "Por que retries precisam de backoff e jitter em consumidores?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Evita sincronizar tentativas e sobrecarregar downstream; reduz tempestade de retries."
+              },
+              {
+                "id": "ch10_q06",
+                "type": [
+                  "messaging",
+                  "idempotency"
+                ],
+                "prompt": "Como garantir idempotência no consumidor? Cite 2 técnicas.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Deduplicação por message-id, upserts com chave natural, ou registrar processamento (inbox table)."
+              },
+              {
+                "id": "ch10_q07",
+                "type": [
+                  "messaging",
+                  "outbox"
+                ],
+                "prompt": "Explique o padrão Outbox para publicar eventos sem perder consistência.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Escrever evento em tabela outbox na mesma transação do estado; relay publica para broker."
+              },
+              {
+                "id": "ch10_q08",
+                "type": [
+                  "messaging",
+                  "sagas"
+                ],
+                "prompt": "Como sagas usam eventos para coordenar transações distribuídas?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Passos locais + eventos + compensações; orquestração ou coreografia."
+              },
+              {
+                "id": "ch10_q09",
+                "type": [
+                  "messaging",
+                  "backpressure"
+                ],
+                "prompt": "Como lidar com consumidores mais lentos que produtores?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Escalar consumidores, pausar produção, aplicar backpressure, aumentar partições e controlar QoS."
+              },
+              {
+                "id": "ch10_q10",
+                "type": [
+                  "messaging",
+                  "schema_registry"
+                ],
+                "prompt": "Por que versionar schemas de eventos é crítico em event-driven?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Evolução sem quebrar consumidores; compatibilidade backward/forward."
+              },
+              {
+                "id": "ch10_q11",
+                "type": [
+                  "messaging",
+                  "poison_pill"
+                ],
+                "prompt": "O que é uma 'poison pill message' e como tratá-la?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Mensagem sempre falha; mover para DLQ, quarantine e corrigir dados/bug."
+              },
+              {
+                "id": "ch10_q12",
+                "type": [
+                  "messaging",
+                  "exactly_once_practice"
+                ],
+                "prompt": "Na prática, como você obtém 'effectively-once'?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "At-least-once + idempotência + dedupe + transações locais; aceitar duplicatas controladas."
+              },
+              {
+                "id": "ch10_q13",
+                "type": [
+                  "messaging",
+                  "stream_vs_queue"
+                ],
+                "prompt": "Quando usar stream (Kafka) vs queue tradicional (Rabbit/SQS)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Stream para retenção/replay e múltiplos consumidores; queue para tarefas simples e TTL/visibilidade."
+              },
+              {
+                "id": "ch10_q14",
+                "type": [
+                  "messaging",
+                  "visibility_timeout"
+                ],
+                "prompt": "Explique 'visibility timeout' em filas e o risco se ele for mal configurado.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Mensagem reaparece se não ack; curto duplica, longo atrasa reprocesso; ajustar ao tempo de processamento."
+              },
+              {
+                "id": "ch10_q15",
+                "type": [
+                  "messaging",
+                  "applied"
+                ],
+                "prompt": "Desenhe pipeline de eventos para 'Notificações': eventos → regras → envio → tracking.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Producer publica; processor aplica preferências; sender por canal; tracking event e DLQ."
+              },
+              {
+                "id": "ch10_q16",
+                "type": [
+                  "messaging",
+                  "applied"
+                ],
+                "prompt": "Como reprocessar eventos antigos sem derrubar o sistema?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Replays em baixa prioridade, rate limit, ambientes dedicados, e validação incremental."
+              }
+            ]
+          },
+          {
+            "chapter": 11,
+            "id": "arquiteturas_de_servicos",
+            "title": "Arquiteturas de Serviços (Monólito, Modular, Microservices)",
+            "keyTopics": [
+              "Modular monolith",
+              "Microservices",
+              "Service discovery",
+              "API Gateway",
+              "BFF",
+              "Bounded contexts"
+            ],
+            "questions": [
+              {
+                "id": "ch11_q01",
+                "type": [
+                  "architecture",
+                  "monolith"
+                ],
+                "prompt": "O que é um monólito modular e por que ele pode ser uma boa escolha inicial?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Um deploy, módulos bem separados; reduz overhead de microservices mantendo boa organização."
+              },
+              {
+                "id": "ch11_q02",
+                "type": [
+                  "architecture",
+                  "microservices"
+                ],
+                "prompt": "Quais benefícios e custos de microservices? Liste 4 de cada.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Benefícios: escala por serviço, autonomia, deploy independente, isolamento. Custos: rede, observabilidade, coordenação, consistência."
+              },
+              {
+                "id": "ch11_q03",
+                "type": [
+                  "architecture",
+                  "bounded_context"
+                ],
+                "prompt": "O que é bounded context (DDD) e como ele ajuda na divisão de serviços?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Define fronteiras de domínio e linguagem; reduz acoplamento e ambiguidade entre times."
+              },
+              {
+                "id": "ch11_q04",
+                "type": [
+                  "architecture",
+                  "gateway_bff"
+                ],
+                "prompt": "Explique API Gateway vs BFF. Quando usar BFF?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Gateway é entrada comum; BFF é backend por frontend para otimizar payloads e reduzir chatty calls."
+              },
+              {
+                "id": "ch11_q05",
+                "type": [
+                  "architecture",
+                  "service_discovery"
+                ],
+                "prompt": "O que é service discovery (client-side vs server-side)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Descobrir endpoints dinamicamente; client-side usa registry; server-side via LB/mesh."
+              },
+              {
+                "id": "ch11_q06",
+                "type": [
+                  "architecture",
+                  "config"
+                ],
+                "prompt": "Como gerenciar configuração e segredos em muitos serviços?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Config service, env vars, vault/secrets manager, rotação, least privilege e auditoria."
+              },
+              {
+                "id": "ch11_q07",
+                "type": [
+                  "architecture",
+                  "sync_async"
+                ],
+                "prompt": "Quando preferir comunicação síncrona vs assíncrona entre serviços?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Síncrona para requisições imediatas; assíncrona para desacoplamento, picos e workflows longos."
+              },
+              {
+                "id": "ch11_q08",
+                "type": [
+                  "architecture",
+                  "sagas"
+                ],
+                "prompt": "Dê um exemplo de workflow multi-serviço e como implementá-lo com saga.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Pedido→pagamento→estoque→envio; eventos e compensações (cancelar pagamento, repor estoque)."
+              },
+              {
+                "id": "ch11_q09",
+                "type": [
+                  "architecture",
+                  "data_ownership"
+                ],
+                "prompt": "Por que 'um serviço deve ser dono do seu dado'?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Evita acoplamento por DB compartilhado; reduz conflitos e melhora autonomia/escala."
+              },
+              {
+                "id": "ch11_q10",
+                "type": [
+                  "architecture",
+                  "shared_db"
+                ],
+                "prompt": "Quando DB compartilhado pode ser aceitável (e como reduzir riscos)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Times pequenos/MVP; reduzir riscos com schemas separados, contratos, e migração futura planejada."
+              },
+              {
+                "id": "ch11_q11",
+                "type": [
+                  "architecture",
+                  "service_mesh"
+                ],
+                "prompt": "O que um service mesh oferece (mTLS, retries, tracing) e quais custos?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Infra para políticas de rede; custos de complexidade, latência e operação."
+              },
+              {
+                "id": "ch11_q12",
+                "type": [
+                  "architecture",
+                  "applied"
+                ],
+                "prompt": "Quais sinais indicam que você deve sair de monólito para microservices?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Deploys lentos, times bloqueando, domínios independentes, necessidades de escala diferentes."
+              },
+              {
+                "id": "ch11_q13",
+                "type": [
+                  "architecture",
+                  "observability"
+                ],
+                "prompt": "Por que observabilidade é mais difícil em microservices?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Chamadas distribuídas exigem tracing/correlation; mais pontos de falha e métricas."
+              },
+              {
+                "id": "ch11_q14",
+                "type": [
+                  "architecture",
+                  "contract_testing"
+                ],
+                "prompt": "O que é contract testing (consumer-driven) e quando ajuda?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Garante compatibilidade entre producer/consumer; reduz quebras em deploys independentes."
+              },
+              {
+                "id": "ch11_q15",
+                "type": [
+                  "architecture",
+                  "migration"
+                ],
+                "prompt": "Explique o padrão *Strangler Fig* para migrar um monólito.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Extrair funcionalidades gradualmente atrás de proxy/gateway; substituir por partes sem big-bang."
+              },
+              {
+                "id": "ch11_q16",
+                "type": [
+                  "architecture",
+                  "applied"
+                ],
+                "prompt": "Desenhe uma arquitetura para 'Catálogo + Carrinho + Checkout' com serviços e integrações.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Serviços separados; checkout orquestra; eventos para estoque/entrega; gateway/BFF para frontend."
+              }
+            ]
+          },
+          {
+            "chapter": 12,
+            "id": "resiliencia_e_confiabilidade",
+            "title": "Resiliência e Confiabilidade (SRE Patterns)",
+            "keyTopics": [
+              "Timeouts",
+              "Retries",
+              "Circuit breaker",
+              "Bulkhead",
+              "Rate limiting",
+              "Fallbacks",
+              "Chaos",
+              "Degradação graciosa"
+            ],
+            "questions": [
+              {
+                "id": "ch12_q01",
+                "type": [
+                  "reliability",
+                  "timeouts"
+                ],
+                "prompt": "Como escolher timeouts por chamada e por request end-to-end?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Budget total; timeouts menores a montante; considerar retries e cauda."
+              },
+              {
+                "id": "ch12_q02",
+                "type": [
+                  "reliability",
+                  "retries"
+                ],
+                "prompt": "Explique retry com backoff exponencial e jitter. Por que jitter é crucial?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Espaça tentativas; jitter evita sincronização de clientes e picos periódicos."
+              },
+              {
+                "id": "ch12_q03",
+                "type": [
+                  "reliability",
+                  "circuit_breaker"
+                ],
+                "prompt": "O que é circuit breaker e quais estados ele possui?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Protege de falhas downstream; estados: closed, open, half-open."
+              },
+              {
+                "id": "ch12_q04",
+                "type": [
+                  "reliability",
+                  "bulkhead"
+                ],
+                "prompt": "Explique bulkhead e dê um exemplo (pools separados por funcionalidade).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Isolar recursos; evitar que uma parte derrube tudo; ex: pool para pagamento separado de recomendação."
+              },
+              {
+                "id": "ch12_q05",
+                "type": [
+                  "reliability",
+                  "fallback"
+                ],
+                "prompt": "O que é fallback e qual o risco de fallback incorreto?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Resposta alternativa; risco de servir dados errados e mascarar incidentes."
+              },
+              {
+                "id": "ch12_q06",
+                "type": [
+                  "reliability",
+                  "load_shed"
+                ],
+                "prompt": "Explique load shedding e quando aplicar.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Rejeitar/degradar tráfego para manter core; aplicar quando saturado e error budget ameaçado."
+              },
+              {
+                "id": "ch12_q07",
+                "type": [
+                  "reliability",
+                  "rate_limit"
+                ],
+                "prompt": "Compare token bucket vs leaky bucket e um caso para cada.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Token bucket permite bursts; leaky suaviza; escolher conforme necessidade de burst."
+              },
+              {
+                "id": "ch12_q08",
+                "type": [
+                  "reliability",
+                  "idempotency"
+                ],
+                "prompt": "Por que idempotência é base para retries seguros?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Sem idempotência, retries duplicam efeitos (cobrança dupla, pedidos duplicados)."
+              },
+              {
+                "id": "ch12_q09",
+                "type": [
+                  "reliability",
+                  "failover"
+                ],
+                "prompt": "Explique failover ativo-passivo vs ativo-ativo.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ativo-passivo simples mas com RTO maior; ativo-ativo mais complexo e caro, melhor uso de recursos."
+              },
+              {
+                "id": "ch12_q10",
+                "type": [
+                  "reliability",
+                  "dr"
+                ],
+                "prompt": "Defina RPO e RTO e dê exemplos de metas típicas.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "RPO perda de dados aceitável; RTO tempo para recuperar; variam por criticidade."
+              },
+              {
+                "id": "ch12_q11",
+                "type": [
+                  "reliability",
+                  "chaos"
+                ],
+                "prompt": "O que é chaos engineering e quais experimentos básicos você faria?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Injetar falhas controladas: desligar instância, latência, perda de rede, falha de DB; validar resiliência."
+              },
+              {
+                "id": "ch12_q12",
+                "type": [
+                  "reliability",
+                  "graceful_shutdown"
+                ],
+                "prompt": "O que é graceful shutdown e por que é importante em deploys e autoscaling?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Encerrar sem interromper requests; permite drains e evita erros 5xx."
+              },
+              {
+                "id": "ch12_q13",
+                "type": [
+                  "reliability",
+                  "thundering_herd"
+                ],
+                "prompt": "Explique thundering herd e mitigação.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Muitos clientes acordam ao mesmo tempo; usar jitter, cache, rate limits e filas."
+              },
+              {
+                "id": "ch12_q14",
+                "type": [
+                  "reliability",
+                  "applied"
+                ],
+                "prompt": "Você tem p99 subindo e erros 5xx em cascata. Qual checklist de mitigação imediata?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ativar rate limit/load shedding, reduzir features pesadas, aumentar capacity, desabilitar retries agressivos, checar DB/queues."
+              },
+              {
+                "id": "ch12_q15",
+                "type": [
+                  "reliability",
+                  "slo"
+                ],
+                "prompt": "Como um SLO influencia decisões de arquitetura (ex.: multi-az, multi-region)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SLO mais alto exige redundância e automação; aumenta custo e complexidade."
+              },
+              {
+                "id": "ch12_q16",
+                "type": [
+                  "reliability",
+                  "postmortem"
+                ],
+                "prompt": "O que deve conter um postmortem sem culpa (blameless)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Timeline, impacto, causa raiz, ações corretivas/preventivas, lições e follow-up."
+              }
+            ]
+          },
+          {
+            "chapter": 13,
+            "id": "observabilidade",
+            "title": "Observabilidade e Operação",
+            "keyTopics": [
+              "Logs",
+              "Métricas",
+              "Tracing",
+              "Alertas",
+              "Dashboards",
+              "Runbooks",
+              "Postmortem"
+            ],
+            "questions": [
+              {
+                "id": "ch13_q01",
+                "type": [
+                  "observability",
+                  "logs"
+                ],
+                "prompt": "Quais campos são essenciais em logs estruturados (JSON)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "timestamp, level, service, request_id/trace_id, user/tenant, message, error_code, latency."
+              },
+              {
+                "id": "ch13_q02",
+                "type": [
+                  "observability",
+                  "metrics"
+                ],
+                "prompt": "Diferencie métricas de *golden signals*: latency, traffic, errors, saturation.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Quatro sinais para saúde: latência, tráfego, erros e saturação."
+              },
+              {
+                "id": "ch13_q03",
+                "type": [
+                  "observability",
+                  "tracing"
+                ],
+                "prompt": "O que é distributed tracing e como ele ajuda em fan-out?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Rastreia spans; identifica gargalos e call chains; mostra onde o tempo é gasto."
+              },
+              {
+                "id": "ch13_q04",
+                "type": [
+                  "observability",
+                  "cardinality"
+                ],
+                "prompt": "Por que alta cardinalidade em métricas é perigosa?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Explode séries temporais, custo e performance; usar labels com cuidado."
+              },
+              {
+                "id": "ch13_q05",
+                "type": [
+                  "observability",
+                  "alerts"
+                ],
+                "prompt": "Como desenhar alertas acionáveis (signal vs noise)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Baseado em SLO e sintomas; evitar alertas por métricas de causa; usar burn rate."
+              },
+              {
+                "id": "ch13_q06",
+                "type": [
+                  "observability",
+                  "slo_burn"
+                ],
+                "prompt": "Explique 'burn rate' de error budget com um exemplo simples.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Consumo acelerado do budget; se queima rápido, incidentes precisam ação imediata."
+              },
+              {
+                "id": "ch13_q07",
+                "type": [
+                  "observability",
+                  "dashboards"
+                ],
+                "prompt": "Quais dashboards básicos você cria para um serviço de API?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "RPS, latência p95/p99, erros 4xx/5xx, saturação (CPU/mem/pool), dependências e fila."
+              },
+              {
+                "id": "ch13_q08",
+                "type": [
+                  "observability",
+                  "runbooks"
+                ],
+                "prompt": "O que é runbook e por que ele reduz MTTR?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Guia de resposta; acelera diagnóstico e ações padronizadas."
+              },
+              {
+                "id": "ch13_q09",
+                "type": [
+                  "observability",
+                  "sampling"
+                ],
+                "prompt": "Quando usar amostragem de traces/logs e quais riscos isso traz?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Custo alto; risco de perder casos raros; usar tail-based sampling e triggers por erro."
+              },
+              {
+                "id": "ch13_q10",
+                "type": [
+                  "observability",
+                  "correlation"
+                ],
+                "prompt": "Como correlacionar logs, métricas e traces em um incidente?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Usar trace_id/reques_id, timestamps consistentes e dashboards com links entre sinais."
+              },
+              {
+                "id": "ch13_q11",
+                "type": [
+                  "observability",
+                  "applied"
+                ],
+                "prompt": "Defina SLI para 'tempo de entrega de notificação' e como medir end-to-end.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Medir evento produzido → enviado/ack; registrar timestamps e percentis; separar por canal."
+              },
+              {
+                "id": "ch13_q12",
+                "type": [
+                  "observability",
+                  "applied"
+                ],
+                "prompt": "Quais sinais indicam saturação de DB vs saturação de app?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "DB: filas, lock time, IOPS, slow queries; app: CPU, GC, thread pool, latência interna."
+              },
+              {
+                "id": "ch13_q13",
+                "type": [
+                  "observability",
+                  "error_budget"
+                ],
+                "prompt": "Como usar error budget para decidir entre feature e refatoração/infra?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Se budget baixo, estabilizar antes de lançar; governança de releases pelo burn rate."
+              },
+              {
+                "id": "ch13_q14",
+                "type": [
+                  "observability",
+                  "incident"
+                ],
+                "prompt": "Crie um checklist de incident response (detectar → mitigar → comunicar → aprender).",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Triage, mitigação, comunicação, status page, correção, postmortem e ações."
+              },
+              {
+                "id": "ch13_q15",
+                "type": [
+                  "observability",
+                  "audit"
+                ],
+                "prompt": "Por que logs de auditoria são diferentes de logs de aplicação?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Precisam ser imutáveis, completos e rastreáveis (quem fez o quê); foco em segurança/compliance."
+              },
+              {
+                "id": "ch13_q16",
+                "type": [
+                  "observability",
+                  "applied"
+                ],
+                "prompt": "Como medir 'degradação graciosa' (o sistema está funcional porém com features desativadas)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Métricas de fallback/feature flags, taxa de respostas degradadas, impacto em conversão e SLO específico."
+              }
+            ]
+          },
+          {
+            "chapter": 14,
+            "id": "seguranca_e_privacidade",
+            "title": "Segurança e Privacidade",
+            "keyTopics": [
+              "AuthN/AuthZ",
+              "OAuth2/OIDC",
+              "JWT",
+              "TLS",
+              "Criptografia em repouso",
+              "Secrets",
+              "Threat modeling"
+            ],
+            "questions": [
+              {
+                "id": "ch14_q01",
+                "type": [
+                  "security",
+                  "authn_authz"
+                ],
+                "prompt": "Diferencie autenticação (AuthN) e autorização (AuthZ).",
+                "difficulty": 1,
+                "tags": [],
+                "expected": "AuthN identifica quem é; AuthZ define o que pode fazer."
+              },
+              {
+                "id": "ch14_q02",
+                "type": [
+                  "security",
+                  "oauth"
+                ],
+                "prompt": "Explique OAuth2 e OIDC em alto nível. Onde entra o 'id_token'?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "OAuth2 delega acesso; OIDC adiciona identidade. id_token carrega identidade/claims do usuário."
+              },
+              {
+                "id": "ch14_q03",
+                "type": [
+                  "security",
+                  "jwt"
+                ],
+                "prompt": "Quais riscos de JWT? Cite 4 cuidados (expiração, rotação, revogação...).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Expiração curta, rotação de chaves, validação de issuer/audience, revogação via blacklist/short TTL."
+              },
+              {
+                "id": "ch14_q04",
+                "type": [
+                  "security",
+                  "tls"
+                ],
+                "prompt": "Por que TLS é obrigatório mesmo dentro do datacenter/cluster?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Zero trust; protege contra sniffing e MITM interno; requisitos de compliance."
+              },
+              {
+                "id": "ch14_q05",
+                "type": [
+                  "security",
+                  "encryption_at_rest"
+                ],
+                "prompt": "O que significa criptografia em repouso e como gerenciar chaves (KMS)?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Dados criptografados no storage; KMS gerencia e rotaciona chaves com políticas de acesso."
+              },
+              {
+                "id": "ch14_q06",
+                "type": [
+                  "security",
+                  "secrets"
+                ],
+                "prompt": "Por que não guardar secrets no código? Cite boas práticas.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Vaza em repo/log; usar vault/KMS, rotação, least privilege, audit e short-lived creds."
+              },
+              {
+                "id": "ch14_q07",
+                "type": [
+                  "security",
+                  "rbac_abac"
+                ],
+                "prompt": "Compare RBAC e ABAC. Dê um exemplo de ABAC.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "RBAC por papéis; ABAC por atributos; ex: acesso permitido se tenant_id == token.tenant_id e recurso=proprietário."
+              },
+              {
+                "id": "ch14_q08",
+                "type": [
+                  "security",
+                  "threat_modeling"
+                ],
+                "prompt": "O que é threat modeling (STRIDE) e quando aplicar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Mapear ameaças e mitigacões; aplicar em designs novos/alterações críticas."
+              },
+              {
+                "id": "ch14_q09",
+                "type": [
+                  "security",
+                  "rate_limit_ddos"
+                ],
+                "prompt": "Como rate limiting ajuda contra abuso/DDoS e quais limites podem falhar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Reduz abuso por identidade/IP; falha contra botnets distribuídas; precisa WAF/CDN e proteção em camadas."
+              },
+              {
+                "id": "ch14_q10",
+                "type": [
+                  "security",
+                  "input_validation"
+                ],
+                "prompt": "Explique validação e sanitização de entrada. Qual risco de confiar no client?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Client é controlável; validar server-side evita injection, XSS, SSRF e dados inválidos."
+              },
+              {
+                "id": "ch14_q11",
+                "type": [
+                  "security",
+                  "ssrf"
+                ],
+                "prompt": "O que é SSRF e como mitigar em serviços que fazem fetch de URLs?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Server faz request interno; mitigar com allowlist, bloqueio de IPs internos, DNS pinning e timeouts."
+              },
+              {
+                "id": "ch14_q12",
+                "type": [
+                  "security",
+                  "audit_logging"
+                ],
+                "prompt": "Que eventos precisam de audit log em sistemas empresariais?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Login, mudanças de permissão, alterações críticas, exportação de dados, ações administrativas."
+              },
+              {
+                "id": "ch14_q13",
+                "type": [
+                  "security",
+                  "privacy"
+                ],
+                "prompt": "Quais princípios de privacidade (minimização, finalidade, retenção) afetam o design?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Coletar só necessário, usar para finalidade, reter pelo mínimo; exige TTL/arquivamento e controles."
+              },
+              {
+                "id": "ch14_q14",
+                "type": [
+                  "security",
+                  "data_access"
+                ],
+                "prompt": "Como aplicar princípio do menor privilégio em banco e mensageria?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Contas por serviço com permissões mínimas; separar leitura/escrita; rotacionar credenciais."
+              },
+              {
+                "id": "ch14_q15",
+                "type": [
+                  "security",
+                  "applied"
+                ],
+                "prompt": "Desenhe um fluxo seguro de upload/download de arquivo privado (auth, pre-signed, scanning).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "API gera URL assinada; upload direto; scanning/AV; metadados; download com assinatura curta e logs."
+              },
+              {
+                "id": "ch14_q16",
+                "type": [
+                  "security",
+                  "applied"
+                ],
+                "prompt": "Explique como armazenar senhas corretamente (hash, salt, pepper).",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Hash forte (bcrypt/argon2) + salt único; pepper opcional em segredo separado; nunca armazenar plaintext."
+              },
+              {
+                "id": "ch14_q17",
+                "type": [
+                  "security",
+                  "tokens"
+                ],
+                "prompt": "Quando preferir tokens opacos vs JWT?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Opaques permitem revogação central e menor exposição; JWT bom para validação local mas revogação difícil."
+              },
+              {
+                "id": "ch14_q18",
+                "type": [
+                  "security",
+                  "multitenant"
+                ],
+                "prompt": "Quais garantias de isolamento você implementa em multi-tenant (row-level, partitioning)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Filtros por tenant em toda query, row-level security, chaves por tenant, quotas e testes de isolamento."
+              }
+            ]
+          },
+          {
+            "chapter": 15,
+            "id": "dados_distribuidos",
+            "title": "Consistência de Dados em Sistemas Distribuídos",
+            "keyTopics": [
+              "Transações distribuídas",
+              "2PC",
+              "Sagas",
+              "Outbox",
+              "Idempotência",
+              "Deduplicação",
+              "Compensação"
+            ],
+            "questions": [
+              {
+                "id": "ch15_q01",
+                "type": [
+                  "distributed_tx",
+                  "2pc"
+                ],
+                "prompt": "O que é Two-Phase Commit (2PC) e por que ele é evitado em microservices?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Coordenação bloqueante e frágil; impacta latência/avail; difícil operar e escalar."
+              },
+              {
+                "id": "ch15_q02",
+                "type": [
+                  "distributed_tx",
+                  "saga"
+                ],
+                "prompt": "Explique saga: passos, compensações e como lidar com falhas intermediárias.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Transações locais + eventos; se falha, executar compensações; precisa idempotência e rastreio."
+              },
+              {
+                "id": "ch15_q03",
+                "type": [
+                  "distributed_tx",
+                  "outbox"
+                ],
+                "prompt": "Explique Outbox + Relay e por que ele resolve 'dual write'.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Evita escrever DB e broker separadamente; evento é parte da transação e publicado depois."
+              },
+              {
+                "id": "ch15_q04",
+                "type": [
+                  "distributed_tx",
+                  "inbox"
+                ],
+                "prompt": "O que é Inbox (ou dedupe table) e quando ela é necessária?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Registra message-ids processados; evita efeitos duplicados em at-least-once."
+              },
+              {
+                "id": "ch15_q05",
+                "type": [
+                  "distributed_tx",
+                  "eventual_consistency"
+                ],
+                "prompt": "Como explicar eventual consistency para stakeholders e reduzir impactos no produto?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Definir expectativas; UX com status 'processando'; usar compensações e reconciliação."
+              },
+              {
+                "id": "ch15_q06",
+                "type": [
+                  "distributed_tx",
+                  "reconciliation"
+                ],
+                "prompt": "O que é reconciliação (reconciliation job) e por que é comum?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Processos que comparam estados e corrigem divergências; inevitável em distribuídos."
+              },
+              {
+                "id": "ch15_q07",
+                "type": [
+                  "distributed_tx",
+                  "idempotency"
+                ],
+                "prompt": "Cite 3 formas de implementar idempotência em comandos/eventos.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Idempotency keys, upsert por chave natural, armazenar processing state/inbox."
+              },
+              {
+                "id": "ch15_q08",
+                "type": [
+                  "distributed_tx",
+                  "ordering"
+                ],
+                "prompt": "Por que ordering é difícil e como projetar para tolerar reordenação?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Rede/retries reordenam; usar versionamento, timestamps lógicos, conflitos resolvíveis e design idempotente."
+              },
+              {
+                "id": "ch15_q09",
+                "type": [
+                  "distributed_tx",
+                  "exactly_once"
+                ],
+                "prompt": "Em Kafka, o que 'exactly-once semantics' realmente garante e quais limites existem?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Garante produção/consumo transacional no cluster; ainda precisa idempotência externa e cuidado com side effects."
+              },
+              {
+                "id": "ch15_q10",
+                "type": [
+                  "distributed_tx",
+                  "compensation"
+                ],
+                "prompt": "Dê exemplos de compensação que não é simplesmente 'desfazer' (ex.: estorno parcial).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Processos de negócio: estornar pagamento, emitir crédito, reabrir estoque; pode exigir intervenção."
+              },
+              {
+                "id": "ch15_q11",
+                "type": [
+                  "distributed_tx",
+                  "applied"
+                ],
+                "prompt": "Projete uma saga para 'criar pedido' com pagamento e estoque, incluindo eventos e falhas.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Eventos: OrderCreated→PaymentAuthorized→StockReserved; falhas disparam Compensation: PaymentVoid/StockRelease."
+              },
+              {
+                "id": "ch15_q12",
+                "type": [
+                  "distributed_tx",
+                  "applied"
+                ],
+                "prompt": "Como garantir que um 'email de confirmação' seja enviado no máximo 1 vez?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Outbox + dedupe, idempotent sender, unique constraint por (order_id, template) e retry seguro."
+              },
+              {
+                "id": "ch15_q13",
+                "type": [
+                  "distributed_tx",
+                  "consistency_levels"
+                ],
+                "prompt": "Quais invariantes você mantém com consistência forte e quais aceita eventual?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Invariantes críticas (saldo, permissões) fortes; views derivadas (feed, analytics) eventual."
+              },
+              {
+                "id": "ch15_q14",
+                "type": [
+                  "distributed_tx",
+                  "applied"
+                ],
+                "prompt": "Explique como usar *fencing tokens* para evitar split-brain em líderes.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Tokens monotônicos; só o maior token pode atuar; recursos rejeitam tokens antigos."
+              },
+              {
+                "id": "ch15_q15",
+                "type": [
+                  "distributed_tx",
+                  "applied"
+                ],
+                "prompt": "Descreva uma estratégia de *dedup* para eventos (windowing/TTL) e seus trade-offs.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Guardar ids por janela/TTL; custo de memória; risco de duplicatas fora da janela."
+              }
+            ]
+          },
+          {
+            "chapter": 16,
+            "id": "exercicios_praticos",
+            "title": "Exercícios Práticos de System Design",
+            "keyTopics": [
+              "URL shortener",
+              "Rate limiter",
+              "News feed",
+              "Chat",
+              "Notificações",
+              "Upload de arquivos",
+              "Search",
+              "Observabilidade do caso"
+            ],
+            "questions": [
+              {
+                "id": "ch16_q01",
+                "type": [
+                  "case",
+                  "url_shortener"
+                ],
+                "prompt": "Projete um encurtador de URL: requisitos, componentes e armazenamento.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "API, gerador de código, DB KV, cache, redirecionamento, analytics, rate limit."
+              },
+              {
+                "id": "ch16_q02",
+                "type": [
+                  "case",
+                  "url_shortener"
+                ],
+                "prompt": "Que esquema de geração de códigos você usaria (base62, hash, snowflake)? Trade-offs.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Base62 incremental/ID; hash pode colidir; snowflake ordenável; considerar previsibilidade e colisões."
+              },
+              {
+                "id": "ch16_q03",
+                "type": [
+                  "case",
+                  "rate_limiter"
+                ],
+                "prompt": "Projete um rate limiter distribuído para API: algoritmo e armazenamento.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Token bucket/leaky bucket; Redis com atomic ops; sharding por key; fallback local."
+              },
+              {
+                "id": "ch16_q04",
+                "type": [
+                  "case",
+                  "feed"
+                ],
+                "prompt": "Projete um news feed: fan-out on write vs fan-out on read.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Write: pré-computa timelines; Read: computa na leitura; trade-offs de custo e latência."
+              },
+              {
+                "id": "ch16_q05",
+                "type": [
+                  "case",
+                  "feed"
+                ],
+                "prompt": "Como lidar com celebridades no feed (hot users)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Mistura híbrida, caching, separar followers grandes, computação sob demanda, limites e precompute parcial."
+              },
+              {
+                "id": "ch16_q06",
+                "type": [
+                  "case",
+                  "chat"
+                ],
+                "prompt": "Projete chat em tempo real: protocolos, armazenamento e entrega.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "WebSocket, presença, mensagens persistidas, fan-out, ack/seen, ordering por conversa."
+              },
+              {
+                "id": "ch16_q07",
+                "type": [
+                  "case",
+                  "chat"
+                ],
+                "prompt": "Como garantir ordenação de mensagens por conversa em um sistema distribuído?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Sequência por conversa (per partition), IDs monotônicos, armazenamento com ordenação e reconciliação."
+              },
+              {
+                "id": "ch16_q08",
+                "type": [
+                  "case",
+                  "notifications"
+                ],
+                "prompt": "Projete um sistema de notificações multi-canal com preferências e dedupe.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Event bus, rules engine, templates, provider gateways, dedupe store, tracking e DLQ."
+              },
+              {
+                "id": "ch16_q09",
+                "type": [
+                  "case",
+                  "uploads"
+                ],
+                "prompt": "Projete upload de arquivos grandes (multipart), vírus scan e distribuição via CDN.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Upload direto ao object storage, multipart, scan async, metadados em DB, CDN signed URLs."
+              },
+              {
+                "id": "ch16_q10",
+                "type": [
+                  "case",
+                  "search"
+                ],
+                "prompt": "Projete busca full-text: indexação, refresh e relevância básica.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Index pipeline, elastic-like, analyzer, refresh interval, ranking, cache e fallback."
+              },
+              {
+                "id": "ch16_q11",
+                "type": [
+                  "case",
+                  "metrics"
+                ],
+                "prompt": "Para um sistema desses, quais métricas de produto e técnicas você mediria?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "DAU, retenção, conversão, latência, erro, entrega, custo por ação e satisfação."
+              },
+              {
+                "id": "ch16_q12",
+                "type": [
+                  "case",
+                  "failure"
+                ],
+                "prompt": "Liste falhas prováveis em um feed/chat e mitigação (fila, cache, fallback).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Broker down, DB lag, hot keys, websocket storms; mitigação com retries, circuit breaker, autoscaling e degradação."
+              },
+              {
+                "id": "ch16_q13",
+                "type": [
+                  "case",
+                  "migration"
+                ],
+                "prompt": "Se o MVP começa monolítico, como você desenha para migração futura sem dor?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Módulos claros, contratos internos, eventing opcional, strangler e observabilidade."
+              },
+              {
+                "id": "ch16_q14",
+                "type": [
+                  "case",
+                  "data_consistency"
+                ],
+                "prompt": "Em notificações, por que 'exatamente uma vez' é raro? Qual abordagem prática?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Duplicatas são comuns; usar at-least-once + dedupe/idempotência e aceitar raros duplicados com correção."
+              },
+              {
+                "id": "ch16_q15",
+                "type": [
+                  "case",
+                  "cost"
+                ],
+                "prompt": "Onde estão os principais custos em cada caso (CDN/egress, DB, broker) e como reduzir?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Egress e mídia; cache/CDN; compressão; particionamento; reduzir fan-out; batch."
+              },
+              {
+                "id": "ch16_q16",
+                "type": [
+                  "case",
+                  "interview"
+                ],
+                "prompt": "Em entrevista, quais perguntas você deve fazer *antes* de desenhar a solução para qualquer caso?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Escopo, usuários, volume, SLAs, consistência, segurança, retenção, multi-região, custos, prioridades."
+              },
+              {
+                "id": "ch16_q17",
+                "type": [
+                  "case",
+                  "diagramming"
+                ],
+                "prompt": "Desenhe em palavras um diagrama de sequência do caso 'criar pedido' com eventos e compensações.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Cliente→Order svc→Outbox event→Payment svc→Stock svc→Order update; falhas disparam compensações."
+              },
+              {
+                "id": "ch16_q18",
+                "type": [
+                  "case",
+                  "testing"
+                ],
+                "prompt": "Como testar e validar o design (load test, chaos, canary, shadow traffic)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Testes de carga, caos, canário, tráfego sombra, replay de eventos, testes de contrato."
+              },
+              {
+                "id": "ch16_q19",
+                "type": [
+                  "case",
+                  "security"
+                ],
+                "prompt": "Quais pontos de segurança aparecem em quase todos esses designs?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Auth, rate limit, validação, criptografia, secrets, auditoria, isolamento multi-tenant."
+              },
+              {
+                "id": "ch16_q20",
+                "type": [
+                  "case",
+                  "observability"
+                ],
+                "prompt": "Quais traces/spans você instrumentaria no caso do feed/chat para reduzir MTTR?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Spans por fan-out, broker, DB, cache, websocket send; correlacionar por request/message id."
+              },
+              {
+                "id": "ch16_q21",
+                "type": [
+                  "case",
+                  "tradeoffs"
+                ],
+                "prompt": "Escolha um caso (feed/chat/notificação) e explique 3 trade-offs difíceis que você defenderia.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ex.: fan-out write/read, consistência vs latência, custo vs SLO, armazenamento vs recomputação."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

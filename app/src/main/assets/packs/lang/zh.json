@@ -1,0 +1,4589 @@
+{
+  "schemaVersion": 1,
+  "packId": "zh_hanzi_core_v1",
+  "packVersion": 2,
+  "language": "ZH",
+  "name": "Chinese • Hanzi Core Pack (Offline)",
+  "description": "Pacote base offline de Hanzi com pinyin, categorias, níveis de dificuldade, mnemônicos e distractors sugeridos para desafios.",
+  "author": "Trililingo",
+  "license": "CC-BY-NC (content placeholders)",
+  "createdAt": "2026-01-05T00:00:00Z",
+  "updatedAt": "2026-01-05T00:00:00Z",
+  "locales": [
+    "pt-BR"
+  ],
+  "skillsIncluded": [
+    "HANZI"
+  ],
+  "assetsBasePaths": {
+    "audio": "packs/assets/zh/audio/",
+    "strokeOrder": "packs/assets/zh/strokes/",
+    "panels": "packs/assets/zh/panels/"
+  },
+  "pedagogy": {
+    "recommendedOrder": [
+      "numbers_basic",
+      "pronouns",
+      "particles",
+      "verbs_basic",
+      "greetings",
+      "time",
+      "weekdays",
+      "colors",
+      "directions",
+      "measure_words",
+      "places"
+    ],
+    "hintLadder": [
+      "meaning",
+      "mnemonicPt",
+      "pinyin",
+      "extraNotes"
+    ]
+  },
+  "stats": {
+    "totalItems": 132,
+    "bySkill": {
+      "HANZI": 132
+    },
+    "byCategory": {
+      "numbers_basic": 11,
+      "numbers_large": 3,
+      "pronouns": 7,
+      "particles": 3,
+      "adverbs": 3,
+      "question_words": 7,
+      "verbs_basic": 25,
+      "greetings": 6,
+      "nouns_people": 5,
+      "family": 5,
+      "nouns_places": 6,
+      "nouns_food": 5,
+      "objects": 6,
+      "time": 6,
+      "time_units": 4,
+      "weekdays": 7,
+      "colors": 6,
+      "directions": 8,
+      "measure_words": 4,
+      "places": 5
+    }
+  },
+  "items": [
+    {
+      "id": "ZH_NUM_000",
+      "skill": "HANZI",
+      "prompt": "零",
+      "answer": "líng",
+      "meaning": "zero",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "líng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ling"
+    },
+    {
+      "id": "ZH_NUM_001",
+      "skill": "HANZI",
+      "prompt": "一",
+      "answer": "yī",
+      "meaning": "um",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yī"
+      },
+      "mnemonicPt": "Parece um traço único: 1.",
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_007",
+        "ZH_NUM_010",
+        "ZH_NUM_002"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "i"
+    },
+    {
+      "id": "ZH_NUM_002",
+      "skill": "HANZI",
+      "prompt": "二",
+      "answer": "èr",
+      "meaning": "dois",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "èr"
+      },
+      "mnemonicPt": "Dois traços paralelos: 2.",
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_001",
+        "ZH_NUM_003",
+        "ZH_NUM_010"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "er"
+    },
+    {
+      "id": "ZH_NUM_003",
+      "skill": "HANZI",
+      "prompt": "三",
+      "answer": "sān",
+      "meaning": "três",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "sān"
+      },
+      "mnemonicPt": "Três traços: 3.",
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_002",
+        "ZH_NUM_010",
+        "ZH_NUM_008"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "san"
+    },
+    {
+      "id": "ZH_NUM_004",
+      "skill": "HANZI",
+      "prompt": "四",
+      "answer": "sì",
+      "meaning": "quatro",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "sì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_005",
+        "ZH_NUM_010",
+        "ZH_NUM_007"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "si"
+    },
+    {
+      "id": "ZH_NUM_005",
+      "skill": "HANZI",
+      "prompt": "五",
+      "answer": "wǔ",
+      "meaning": "cinco",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "wǔ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_004",
+        "ZH_NUM_002",
+        "ZH_NUM_006"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "u"
+    },
+    {
+      "id": "ZH_NUM_006",
+      "skill": "HANZI",
+      "prompt": "六",
+      "answer": "liù",
+      "meaning": "seis",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "liù"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_007",
+        "ZH_NUM_009",
+        "ZH_NUM_008"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "liou"
+    },
+    {
+      "id": "ZH_NUM_007",
+      "skill": "HANZI",
+      "prompt": "七",
+      "answer": "qī",
+      "meaning": "sete",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "qī"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_001",
+        "ZH_NUM_006",
+        "ZH_NUM_010"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "tchi"
+    },
+    {
+      "id": "ZH_NUM_008",
+      "skill": "HANZI",
+      "prompt": "八",
+      "answer": "bā",
+      "meaning": "oito",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "bā"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_009",
+        "ZH_NUM_003",
+        "ZH_NUM_006"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ba"
+    },
+    {
+      "id": "ZH_NUM_009",
+      "skill": "HANZI",
+      "prompt": "九",
+      "answer": "jiǔ",
+      "meaning": "nove",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "jiǔ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_006",
+        "ZH_NUM_008",
+        "ZH_NUM_010"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "djiou"
+    },
+    {
+      "id": "ZH_NUM_010",
+      "skill": "HANZI",
+      "prompt": "十",
+      "answer": "shí",
+      "meaning": "dez",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shí"
+      },
+      "mnemonicPt": "Um cruzamento simples: 10.",
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_001",
+        "ZH_NUM_002",
+        "ZH_NUM_004"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xi"
+    },
+    {
+      "id": "ZH_NUM_100",
+      "skill": "HANZI",
+      "prompt": "百",
+      "answer": "bǎi",
+      "meaning": "cem",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_large",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "bǎi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_1000",
+        "ZH_NUM_10000"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "bai"
+    },
+    {
+      "id": "ZH_NUM_1000",
+      "skill": "HANZI",
+      "prompt": "千",
+      "answer": "qiān",
+      "meaning": "mil",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_large",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "qiān"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_100",
+        "ZH_NUM_10000"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "tchian"
+    },
+    {
+      "id": "ZH_NUM_10000",
+      "skill": "HANZI",
+      "prompt": "万",
+      "answer": "wàn",
+      "meaning": "dez mil",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "numbers_large",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "wàn"
+      },
+      "mnemonicPt": "Pense em 'wan' = 'um monte' (10 mil).",
+      "tags": [
+        "numbers",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_100",
+        "ZH_NUM_1000"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "uan"
+    },
+    {
+      "id": "ZH_PRO_IME",
+      "skill": "HANZI",
+      "prompt": "我",
+      "answer": "wǒ",
+      "meaning": "eu / me",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "pronouns",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "wǒ"
+      },
+      "mnemonicPt": "“wǒ” é curto e direto: eu.",
+      "tags": [
+        "pronoun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PRO_YOU",
+        "ZH_PRO_HE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "uo"
+    },
+    {
+      "id": "ZH_PRO_YOU",
+      "skill": "HANZI",
+      "prompt": "你",
+      "answer": "nǐ",
+      "meaning": "você",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "pronouns",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "nǐ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "pronoun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PRO_IME",
+        "ZH_PRO_SHE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ni"
+    },
+    {
+      "id": "ZH_PRO_HE",
+      "skill": "HANZI",
+      "prompt": "他",
+      "answer": "tā",
+      "meaning": "ele",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "pronouns",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "tā"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "pronoun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PRO_SHE",
+        "ZH_PRO_THEY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ta"
+    },
+    {
+      "id": "ZH_PRO_SHE",
+      "skill": "HANZI",
+      "prompt": "她",
+      "answer": "tā",
+      "meaning": "ela",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "pronouns",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "tā"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "pronoun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PRO_HE",
+        "ZH_PRO_THEY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ta"
+    },
+    {
+      "id": "ZH_PRO_WE",
+      "skill": "HANZI",
+      "prompt": "我们",
+      "answer": "wǒmen",
+      "meaning": "nós",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "pronouns",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "wǒmen"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "pronoun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PRO_YOUPL",
+        "ZH_PRO_THEY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "uo-men"
+    },
+    {
+      "id": "ZH_PRO_YOUPL",
+      "skill": "HANZI",
+      "prompt": "你们",
+      "answer": "nǐmen",
+      "meaning": "vocês",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "pronouns",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "nǐmen"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "pronoun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PRO_WE",
+        "ZH_PRO_THEY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ni-men"
+    },
+    {
+      "id": "ZH_PRO_THEY",
+      "skill": "HANZI",
+      "prompt": "他们",
+      "answer": "tāmen",
+      "meaning": "eles",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "pronouns",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "tāmen"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "pronoun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PRO_WE",
+        "ZH_PRO_YOUPL"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ta-men"
+    },
+    {
+      "id": "ZH_PART_DE",
+      "skill": "HANZI",
+      "prompt": "的",
+      "answer": "de",
+      "meaning": "partícula de posse/atributo (de)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "particles",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "de"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "particle",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PART_LE",
+        "ZH_PART_MA"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "de"
+    },
+    {
+      "id": "ZH_PART_MA",
+      "skill": "HANZI",
+      "prompt": "吗",
+      "answer": "ma",
+      "meaning": "partícula de pergunta (sim/não)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "particles",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "ma"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "particle",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PART_DE",
+        "ZH_PART_LE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ma"
+    },
+    {
+      "id": "ZH_PART_LE",
+      "skill": "HANZI",
+      "prompt": "了",
+      "answer": "le",
+      "meaning": "partícula de mudança/ação concluída",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "particles",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "le"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "particle",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PART_DE",
+        "ZH_ADV_BU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "le"
+    },
+    {
+      "id": "ZH_ADV_BU",
+      "skill": "HANZI",
+      "prompt": "不",
+      "answer": "bù",
+      "meaning": "não",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "adverbs",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "bù"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "negation",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_ADV_HEN",
+        "ZH_VERB_SHI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "bu"
+    },
+    {
+      "id": "ZH_ADV_HEN",
+      "skill": "HANZI",
+      "prompt": "很",
+      "answer": "hěn",
+      "meaning": "muito (usado em adjetivos)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "adverbs",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "hěn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "adverb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_ADV_BU",
+        "ZH_ADV_DOU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "hen"
+    },
+    {
+      "id": "ZH_ADV_DOU",
+      "skill": "HANZI",
+      "prompt": "都",
+      "answer": "dōu",
+      "meaning": "todos / ambos",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "adverbs",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "dōu"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "adverb",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_ADV_HEN",
+        "ZH_ADV_BU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dou"
+    },
+    {
+      "id": "ZH_Q_WHAT",
+      "skill": "HANZI",
+      "prompt": "什么",
+      "answer": "shénme",
+      "meaning": "o quê",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "question_words",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shénme"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "question",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_Q_WHO",
+        "ZH_Q_WHERE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xen-me"
+    },
+    {
+      "id": "ZH_Q_WHO",
+      "skill": "HANZI",
+      "prompt": "谁",
+      "answer": "shéi",
+      "meaning": "quem",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "question_words",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shéi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "question",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_Q_WHAT",
+        "ZH_Q_WHERE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xei"
+    },
+    {
+      "id": "ZH_Q_WHERE",
+      "skill": "HANZI",
+      "prompt": "哪",
+      "answer": "nǎ",
+      "meaning": "qual / onde (qual?)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "question_words",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "nǎ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "question",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_Q_WHICH",
+        "ZH_Q_WHO"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "na"
+    },
+    {
+      "id": "ZH_Q_WHICH",
+      "skill": "HANZI",
+      "prompt": "哪儿",
+      "answer": "nǎr",
+      "meaning": "onde",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "question_words",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "nǎr"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "question",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_Q_WHERE",
+        "ZH_Q_WHY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "na-j"
+    },
+    {
+      "id": "ZH_Q_HOW",
+      "skill": "HANZI",
+      "prompt": "怎么",
+      "answer": "zěnme",
+      "meaning": "como",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "question_words",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zěnme"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "question",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_Q_WHY",
+        "ZH_Q_HOWMUCH"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dzen-me"
+    },
+    {
+      "id": "ZH_Q_WHY",
+      "skill": "HANZI",
+      "prompt": "为什么",
+      "answer": "wèishénme",
+      "meaning": "por quê",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "question_words",
+      "difficulty": 4,
+      "romanization": {
+        "system": "pinyin",
+        "value": "wèishénme"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "question",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_Q_HOW",
+        "ZH_Q_WHAT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "uei-xen-me"
+    },
+    {
+      "id": "ZH_Q_HOWMUCH",
+      "skill": "HANZI",
+      "prompt": "多少",
+      "answer": "duōshao",
+      "meaning": "quanto(s)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "question_words",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "duōshao"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "question",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NUM_001",
+        "ZH_NUM_010"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "duo-xau"
+    },
+    {
+      "id": "ZH_VERB_SHI",
+      "skill": "HANZI",
+      "prompt": "是",
+      "answer": "shì",
+      "meaning": "ser/estar (é)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_YOU",
+        "ZH_ADV_BU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xi"
+    },
+    {
+      "id": "ZH_VERB_YOU",
+      "skill": "HANZI",
+      "prompt": "有",
+      "answer": "yǒu",
+      "meaning": "ter / haver",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yǒu"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_SHI",
+        "ZH_VERB_QU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "iou"
+    },
+    {
+      "id": "ZH_VERB_QU",
+      "skill": "HANZI",
+      "prompt": "去",
+      "answer": "qù",
+      "meaning": "ir",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "qù"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_LAI",
+        "ZH_VERB_ZAI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "tchu"
+    },
+    {
+      "id": "ZH_VERB_LAI",
+      "skill": "HANZI",
+      "prompt": "来",
+      "answer": "lái",
+      "meaning": "vir",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "lái"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_QU",
+        "ZH_VERB_KAN"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "lai"
+    },
+    {
+      "id": "ZH_VERB_KAN",
+      "skill": "HANZI",
+      "prompt": "看",
+      "answer": "kàn",
+      "meaning": "ver / assistir / olhar",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "kàn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_TING",
+        "ZH_VERB_SHUO"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "kan"
+    },
+    {
+      "id": "ZH_VERB_TING",
+      "skill": "HANZI",
+      "prompt": "听",
+      "answer": "tīng",
+      "meaning": "ouvir",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "tīng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_KAN",
+        "ZH_VERB_SHUO"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ting"
+    },
+    {
+      "id": "ZH_VERB_SHUO",
+      "skill": "HANZI",
+      "prompt": "说",
+      "answer": "shuō",
+      "meaning": "falar/dizer",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shuō"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_TING",
+        "ZH_VERB_XUE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xuo"
+    },
+    {
+      "id": "ZH_VERB_XUE",
+      "skill": "HANZI",
+      "prompt": "学",
+      "answer": "xué",
+      "meaning": "estudar/aprender",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xué"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_SHUO",
+        "ZH_VERB_ZUO"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xue"
+    },
+    {
+      "id": "ZH_VERB_ZUO",
+      "skill": "HANZI",
+      "prompt": "做",
+      "answer": "zuò",
+      "meaning": "fazer",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zuò"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_XUE",
+        "ZH_VERB_GONGZUO"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dzuo"
+    },
+    {
+      "id": "ZH_VERB_CHI",
+      "skill": "HANZI",
+      "prompt": "吃",
+      "answer": "chī",
+      "meaning": "comer",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "chī"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_HE",
+        "ZH_NOUN_FOOD_RICE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "tchi"
+    },
+    {
+      "id": "ZH_VERB_HE",
+      "skill": "HANZI",
+      "prompt": "喝",
+      "answer": "hē",
+      "meaning": "beber",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "hē"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_CHI",
+        "ZH_NOUN_DRINK_WATER"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "he"
+    },
+    {
+      "id": "ZH_VERB_XIANG",
+      "skill": "HANZI",
+      "prompt": "想",
+      "answer": "xiǎng",
+      "meaning": "querer/pensar/sentir falta",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xiǎng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_XIHUAN",
+        "ZH_VERB_HUI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xiang"
+    },
+    {
+      "id": "ZH_VERB_XIHUAN",
+      "skill": "HANZI",
+      "prompt": "喜欢",
+      "answer": "xǐhuan",
+      "meaning": "gostar",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xǐhuan"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_XIANG",
+        "ZH_VERB_AI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xi-huan"
+    },
+    {
+      "id": "ZH_VERB_AI",
+      "skill": "HANZI",
+      "prompt": "爱",
+      "answer": "ài",
+      "meaning": "amar",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "ài"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_VERB_XIHUAN",
+        "ZH_VERB_YAO"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ai"
+    },
+    {
+      "id": "ZH_VERB_YAO",
+      "skill": "HANZI",
+      "prompt": "要",
+      "answer": "yào",
+      "meaning": "querer/precisar",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yào"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_XIANG",
+        "ZH_ADV_BU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "iau"
+    },
+    {
+      "id": "ZH_VERB_HUI",
+      "skill": "HANZI",
+      "prompt": "会",
+      "answer": "huì",
+      "meaning": "saber (habilidade) / ir (futuro)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "huì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_NENG",
+        "ZH_VERB_KAI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "huei"
+    },
+    {
+      "id": "ZH_VERB_NENG",
+      "skill": "HANZI",
+      "prompt": "能",
+      "answer": "néng",
+      "meaning": "poder/conseguir",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "néng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_HUI",
+        "ZH_VERB_YAO"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "neng"
+    },
+    {
+      "id": "ZH_VERB_ZAI",
+      "skill": "HANZI",
+      "prompt": "在",
+      "answer": "zài",
+      "meaning": "estar em / localizado em",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zài"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "preposition",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_QU",
+        "ZH_DIR_INSIDE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dzai"
+    },
+    {
+      "id": "ZH_VERB_ZHU",
+      "skill": "HANZI",
+      "prompt": "住",
+      "answer": "zhù",
+      "meaning": "morar / viver",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zhù"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_HOME",
+        "ZH_PLACE_HOTEL"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ju"
+    },
+    {
+      "id": "ZH_VERB_MAI",
+      "skill": "HANZI",
+      "prompt": "买",
+      "answer": "mǎi",
+      "meaning": "comprar",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "mǎi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_MAI2",
+        "ZH_VERB_GEI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "mai"
+    },
+    {
+      "id": "ZH_VERB_MAI2",
+      "skill": "HANZI",
+      "prompt": "卖",
+      "answer": "mài",
+      "meaning": "vender",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "mài"
+      },
+      "mnemonicPt": "mǎi (comprar) x mài (vender): cuidado com o tom.",
+      "tags": [
+        "verb",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_VERB_MAI",
+        "ZH_VERB_GEI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "mai"
+    },
+    {
+      "id": "ZH_VERB_GEI",
+      "skill": "HANZI",
+      "prompt": "给",
+      "answer": "gěi",
+      "meaning": "dar / para",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "gěi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_ZUO",
+        "ZH_VERB_KAI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "gei"
+    },
+    {
+      "id": "ZH_VERB_KAI",
+      "skill": "HANZI",
+      "prompt": "开",
+      "answer": "kāi",
+      "meaning": "abrir / dirigir",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "kāi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_VERB_GUAN",
+        "ZH_VERB_HUI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "kai"
+    },
+    {
+      "id": "ZH_VERB_GUAN",
+      "skill": "HANZI",
+      "prompt": "关",
+      "answer": "guān",
+      "meaning": "fechar / desligar",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "guān"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "verb",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_VERB_KAI",
+        "ZH_ADV_BU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "guan"
+    },
+    {
+      "id": "ZH_VERB_GONGZUO",
+      "skill": "HANZI",
+      "prompt": "工作",
+      "answer": "gōngzuò",
+      "meaning": "trabalhar / trabalho",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "verbs_basic",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "gōngzuò"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "hsk1",
+        "work"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_SCHOOL",
+        "ZH_NOUN_TEACHER"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "gong-dzuo"
+    },
+    {
+      "id": "ZH_GREET_HELLO",
+      "skill": "HANZI",
+      "prompt": "你好",
+      "answer": "nǐhǎo",
+      "meaning": "olá",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "greetings",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "nǐhǎo"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "greeting",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_GREET_BYE",
+        "ZH_GREET_THANKS"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ni-hau"
+    },
+    {
+      "id": "ZH_GREET_THANKS",
+      "skill": "HANZI",
+      "prompt": "谢谢",
+      "answer": "xièxie",
+      "meaning": "obrigado(a)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "greetings",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xièxie"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "greeting",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_GREET_SORRY",
+        "ZH_GREET_BYE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xie-xie"
+    },
+    {
+      "id": "ZH_GREET_YW",
+      "skill": "HANZI",
+      "prompt": "不客气",
+      "answer": "búkèqi",
+      "meaning": "de nada",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "greetings",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "búkèqi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "greeting",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_GREET_THANKS",
+        "ZH_ADV_BU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "bu-ke-tchi"
+    },
+    {
+      "id": "ZH_GREET_SORRY",
+      "skill": "HANZI",
+      "prompt": "对不起",
+      "answer": "duìbuqǐ",
+      "meaning": "desculpe",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "greetings",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "duìbuqǐ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "greeting",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_GREET_OK",
+        "ZH_GREET_THANKS"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "duei-bu-tchi"
+    },
+    {
+      "id": "ZH_GREET_OK",
+      "skill": "HANZI",
+      "prompt": "没关系",
+      "answer": "méi guānxi",
+      "meaning": "não tem problema",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "greetings",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "méi guānxi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "greeting",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_GREET_YW",
+        "ZH_GREET_SORRY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "mei guan-xi"
+    },
+    {
+      "id": "ZH_GREET_BYE",
+      "skill": "HANZI",
+      "prompt": "再见",
+      "answer": "zàijiàn",
+      "meaning": "tchau / até logo",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "greetings",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zàijiàn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "greeting",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_GREET_HELLO",
+        "ZH_GREET_THANKS"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dzai-djian"
+    },
+    {
+      "id": "ZH_NOUN_PERSON",
+      "skill": "HANZI",
+      "prompt": "人",
+      "answer": "rén",
+      "meaning": "pessoa",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_people",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "rén"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_FRIEND",
+        "ZH_NOUN_STUDENT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "jen"
+    },
+    {
+      "id": "ZH_NOUN_FRIEND",
+      "skill": "HANZI",
+      "prompt": "朋友",
+      "answer": "péngyou",
+      "meaning": "amigo(a)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_people",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "péngyou"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_PERSON",
+        "ZH_NOUN_TEACHER"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "peng-iou"
+    },
+    {
+      "id": "ZH_NOUN_TEACHER",
+      "skill": "HANZI",
+      "prompt": "老师",
+      "answer": "lǎoshī",
+      "meaning": "professor(a)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_people",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "lǎoshī"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_STUDENT",
+        "ZH_NOUN_SCHOOL"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "lau-xi"
+    },
+    {
+      "id": "ZH_NOUN_STUDENT",
+      "skill": "HANZI",
+      "prompt": "学生",
+      "answer": "xuésheng",
+      "meaning": "estudante",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_people",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xuésheng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_TEACHER",
+        "ZH_NOUN_SCHOOL"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xue-xeng"
+    },
+    {
+      "id": "ZH_NOUN_NAME",
+      "skill": "HANZI",
+      "prompt": "名字",
+      "answer": "míngzi",
+      "meaning": "nome",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_people",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "míngzi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_PERSON",
+        "ZH_NOUN_PHONE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ming-dzi"
+    },
+    {
+      "id": "ZH_FAM_FATHER",
+      "skill": "HANZI",
+      "prompt": "爸爸",
+      "answer": "bàba",
+      "meaning": "pai",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "family",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "bàba"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "family",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_FAM_MOTHER",
+        "ZH_FAM_BROTHER"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ba-ba"
+    },
+    {
+      "id": "ZH_FAM_MOTHER",
+      "skill": "HANZI",
+      "prompt": "妈妈",
+      "answer": "māma",
+      "meaning": "mãe",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "family",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "māma"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "family",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_FAM_FATHER",
+        "ZH_FAM_SISTER"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ma-ma"
+    },
+    {
+      "id": "ZH_FAM_BROTHER",
+      "skill": "HANZI",
+      "prompt": "兄弟",
+      "answer": "xiōngdì",
+      "meaning": "irmãos / irmão",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "family",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xiōngdì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "family",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_FAM_SISTER",
+        "ZH_FAM_FRIEND"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xiong-di"
+    },
+    {
+      "id": "ZH_FAM_SISTER",
+      "skill": "HANZI",
+      "prompt": "姐妹",
+      "answer": "jiěmèi",
+      "meaning": "irmãs / irmã",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "family",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "jiěmèi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "family",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_FAM_BROTHER",
+        "ZH_FAM_MOTHER"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "djie-mei"
+    },
+    {
+      "id": "ZH_FAM_FRIEND",
+      "skill": "HANZI",
+      "prompt": "家人",
+      "answer": "jiārén",
+      "meaning": "família (pessoas da casa)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "family",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "jiārén"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "family",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_HOME",
+        "ZH_NOUN_FRIEND"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "djia-jen"
+    },
+    {
+      "id": "ZH_NOUN_HOME",
+      "skill": "HANZI",
+      "prompt": "家",
+      "answer": "jiā",
+      "meaning": "casa / lar",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_places",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "jiā"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_SCHOOL",
+        "ZH_PLACE_HOTEL"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "djia"
+    },
+    {
+      "id": "ZH_NOUN_SCHOOL",
+      "skill": "HANZI",
+      "prompt": "学校",
+      "answer": "xuéxiào",
+      "meaning": "escola",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_places",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xuéxiào"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_HOME",
+        "ZH_PLACE_HOSPITAL"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xue-xiao"
+    },
+    {
+      "id": "ZH_PLACE_HOTEL",
+      "skill": "HANZI",
+      "prompt": "酒店",
+      "answer": "jiǔdiàn",
+      "meaning": "hotel",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "jiǔdiàn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_HOME",
+        "ZH_PLACE_RESTAURANT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "djiou-dian"
+    },
+    {
+      "id": "ZH_PLACE_RESTAURANT",
+      "skill": "HANZI",
+      "prompt": "饭店",
+      "answer": "fàndiàn",
+      "meaning": "restaurante",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "fàndiàn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PLACE_HOTEL",
+        "ZH_NOUN_FOOD_RICE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "fan-dian"
+    },
+    {
+      "id": "ZH_PLACE_HOSPITAL",
+      "skill": "HANZI",
+      "prompt": "医院",
+      "answer": "yīyuàn",
+      "meaning": "hospital",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yīyuàn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_SCHOOL",
+        "ZH_NOUN_PERSON"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "i-iuan"
+    },
+    {
+      "id": "ZH_PLACE_SHOP",
+      "skill": "HANZI",
+      "prompt": "商店",
+      "answer": "shāngdiàn",
+      "meaning": "loja",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shāngdiàn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PLACE_RESTAURANT",
+        "ZH_VERB_MAI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xang-dian"
+    },
+    {
+      "id": "ZH_NOUN_DRINK_WATER",
+      "skill": "HANZI",
+      "prompt": "水",
+      "answer": "shuǐ",
+      "meaning": "água",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_food",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shuǐ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_DRINK_TEA",
+        "ZH_VERB_HE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xuei"
+    },
+    {
+      "id": "ZH_NOUN_DRINK_TEA",
+      "skill": "HANZI",
+      "prompt": "茶",
+      "answer": "chá",
+      "meaning": "chá",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_food",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "chá"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_DRINK_WATER",
+        "ZH_NOUN_DRINK_COFFEE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "tcha"
+    },
+    {
+      "id": "ZH_NOUN_DRINK_COFFEE",
+      "skill": "HANZI",
+      "prompt": "咖啡",
+      "answer": "kāfēi",
+      "meaning": "café",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_food",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "kāfēi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_DRINK_TEA",
+        "ZH_NOUN_FOOD_RICE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ka-fei"
+    },
+    {
+      "id": "ZH_NOUN_FOOD_RICE",
+      "skill": "HANZI",
+      "prompt": "米饭",
+      "answer": "mǐfàn",
+      "meaning": "arroz (cozido)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_food",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "mǐfàn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_FOOD_NOODLES",
+        "ZH_VERB_CHI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "mi-fan"
+    },
+    {
+      "id": "ZH_NOUN_FOOD_NOODLES",
+      "skill": "HANZI",
+      "prompt": "面条",
+      "answer": "miàntiáo",
+      "meaning": "macarrão",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "nouns_food",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "miàntiáo"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_NOUN_FOOD_RICE",
+        "ZH_PLACE_RESTAURANT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "mian-tiao"
+    },
+    {
+      "id": "ZH_OBJ_BOOK",
+      "skill": "HANZI",
+      "prompt": "书",
+      "answer": "shū",
+      "meaning": "livro",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "objects",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shū"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_OBJ_PAPER",
+        "ZH_OBJ_MONEY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xu"
+    },
+    {
+      "id": "ZH_OBJ_PAPER",
+      "skill": "HANZI",
+      "prompt": "纸",
+      "answer": "zhǐ",
+      "meaning": "papel",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "objects",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zhǐ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_OBJ_BOOK",
+        "ZH_OBJ_PHONE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ji"
+    },
+    {
+      "id": "ZH_OBJ_PHONE",
+      "skill": "HANZI",
+      "prompt": "手机",
+      "answer": "shǒujī",
+      "meaning": "celular",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "objects",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shǒujī"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_OBJ_COMPUTER",
+        "ZH_NOUN_NAME"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xou-dji"
+    },
+    {
+      "id": "ZH_OBJ_COMPUTER",
+      "skill": "HANZI",
+      "prompt": "电脑",
+      "answer": "diànnǎo",
+      "meaning": "computador",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "objects",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "diànnǎo"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_OBJ_PHONE",
+        "ZH_OBJ_TV"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dian-nau"
+    },
+    {
+      "id": "ZH_OBJ_TV",
+      "skill": "HANZI",
+      "prompt": "电视",
+      "answer": "diànshì",
+      "meaning": "televisão",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "objects",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "diànshì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_OBJ_COMPUTER",
+        "ZH_VERB_KAN"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dian-xi"
+    },
+    {
+      "id": "ZH_OBJ_MONEY",
+      "skill": "HANZI",
+      "prompt": "钱",
+      "answer": "qián",
+      "meaning": "dinheiro",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "objects",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "qián"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "noun",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_OBJ_BOOK",
+        "ZH_VERB_MAI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "tchian"
+    },
+    {
+      "id": "ZH_TIME_NOW",
+      "skill": "HANZI",
+      "prompt": "现在",
+      "answer": "xiànzài",
+      "meaning": "agora",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xiànzài"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_TODAY",
+        "ZH_TIME_TOMORROW"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xian-dzai"
+    },
+    {
+      "id": "ZH_TIME_TODAY",
+      "skill": "HANZI",
+      "prompt": "今天",
+      "answer": "jīntiān",
+      "meaning": "hoje",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "jīntiān"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_TOMORROW",
+        "ZH_TIME_YESTERDAY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "djin-tian"
+    },
+    {
+      "id": "ZH_TIME_TOMORROW",
+      "skill": "HANZI",
+      "prompt": "明天",
+      "answer": "míngtiān",
+      "meaning": "amanhã",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "míngtiān"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_TODAY",
+        "ZH_TIME_YESTERDAY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ming-tian"
+    },
+    {
+      "id": "ZH_TIME_YESTERDAY",
+      "skill": "HANZI",
+      "prompt": "昨天",
+      "answer": "zuótiān",
+      "meaning": "ontem",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zuótiān"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_TODAY",
+        "ZH_TIME_TOMORROW"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dzuo-tian"
+    },
+    {
+      "id": "ZH_TIME_YEAR",
+      "skill": "HANZI",
+      "prompt": "年",
+      "answer": "nián",
+      "meaning": "ano",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time_units",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "nián"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_MONTH",
+        "ZH_TIME_DAY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "nian"
+    },
+    {
+      "id": "ZH_TIME_MONTH",
+      "skill": "HANZI",
+      "prompt": "月",
+      "answer": "yuè",
+      "meaning": "mês / lua",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time_units",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yuè"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_YEAR",
+        "ZH_TIME_DAY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "iue"
+    },
+    {
+      "id": "ZH_TIME_DAY",
+      "skill": "HANZI",
+      "prompt": "日",
+      "answer": "rì",
+      "meaning": "dia (formal)",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time_units",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "rì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_WEEK",
+        "ZH_TIME_MONTH"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ji"
+    },
+    {
+      "id": "ZH_TIME_WEEK",
+      "skill": "HANZI",
+      "prompt": "星期",
+      "answer": "xīngqī",
+      "meaning": "semana",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time_units",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_TIME_DAY",
+        "ZH_TIME_TODAY"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi"
+    },
+    {
+      "id": "ZH_WEEK_MON",
+      "skill": "HANZI",
+      "prompt": "星期一",
+      "answer": "xīngqī yī",
+      "meaning": "segunda-feira",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "weekdays",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī yī"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "weekday",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_WEEK_TUE",
+        "ZH_WEEK_SUN",
+        "ZH_WEEK_WED"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi i"
+    },
+    {
+      "id": "ZH_WEEK_TUE",
+      "skill": "HANZI",
+      "prompt": "星期二",
+      "answer": "xīngqī èr",
+      "meaning": "terça-feira",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "weekdays",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī èr"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "weekday",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_WEEK_MON",
+        "ZH_WEEK_WED",
+        "ZH_WEEK_THU"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi er"
+    },
+    {
+      "id": "ZH_WEEK_WED",
+      "skill": "HANZI",
+      "prompt": "星期三",
+      "answer": "xīngqī sān",
+      "meaning": "quarta-feira",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "weekdays",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī sān"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "weekday",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_WEEK_TUE",
+        "ZH_WEEK_THU",
+        "ZH_WEEK_FRI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi san"
+    },
+    {
+      "id": "ZH_WEEK_THU",
+      "skill": "HANZI",
+      "prompt": "星期四",
+      "answer": "xīngqī sì",
+      "meaning": "quinta-feira",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "weekdays",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī sì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "weekday",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_WEEK_WED",
+        "ZH_WEEK_FRI",
+        "ZH_WEEK_SAT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi si"
+    },
+    {
+      "id": "ZH_WEEK_FRI",
+      "skill": "HANZI",
+      "prompt": "星期五",
+      "answer": "xīngqī wǔ",
+      "meaning": "sexta-feira",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "weekdays",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī wǔ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "weekday",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_WEEK_THU",
+        "ZH_WEEK_SAT",
+        "ZH_WEEK_SUN"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi u"
+    },
+    {
+      "id": "ZH_WEEK_SAT",
+      "skill": "HANZI",
+      "prompt": "星期六",
+      "answer": "xīngqī liù",
+      "meaning": "sábado",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "weekdays",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī liù"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "weekday",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_WEEK_FRI",
+        "ZH_WEEK_SUN",
+        "ZH_WEEK_MON"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi liou"
+    },
+    {
+      "id": "ZH_WEEK_SUN",
+      "skill": "HANZI",
+      "prompt": "星期日",
+      "answer": "xīngqī rì",
+      "meaning": "domingo",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "weekdays",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xīngqī rì"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "weekday",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_WEEK_SAT",
+        "ZH_WEEK_MON",
+        "ZH_WEEK_TUE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xing-tchi ji"
+    },
+    {
+      "id": "ZH_COLOR_RED",
+      "skill": "HANZI",
+      "prompt": "红",
+      "answer": "hóng",
+      "meaning": "vermelho",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "colors",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "hóng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "color",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_COLOR_BLUE",
+        "ZH_COLOR_GREEN",
+        "ZH_COLOR_BLACK"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "hong"
+    },
+    {
+      "id": "ZH_COLOR_BLUE",
+      "skill": "HANZI",
+      "prompt": "蓝",
+      "answer": "lán",
+      "meaning": "azul",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "colors",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "lán"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "color",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_COLOR_RED",
+        "ZH_COLOR_GREEN",
+        "ZH_COLOR_WHITE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "lan"
+    },
+    {
+      "id": "ZH_COLOR_GREEN",
+      "skill": "HANZI",
+      "prompt": "绿",
+      "answer": "lǜ",
+      "meaning": "verde",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "colors",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "lǜ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "color",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_COLOR_BLUE",
+        "ZH_COLOR_YELLOW",
+        "ZH_COLOR_RED"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "liou"
+    },
+    {
+      "id": "ZH_COLOR_BLACK",
+      "skill": "HANZI",
+      "prompt": "黑",
+      "answer": "hēi",
+      "meaning": "preto",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "colors",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "hēi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "color",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_COLOR_WHITE",
+        "ZH_COLOR_RED",
+        "ZH_COLOR_BLUE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "hei"
+    },
+    {
+      "id": "ZH_COLOR_WHITE",
+      "skill": "HANZI",
+      "prompt": "白",
+      "answer": "bái",
+      "meaning": "branco",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "colors",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "bái"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "color",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_COLOR_BLACK",
+        "ZH_COLOR_YELLOW",
+        "ZH_COLOR_BLUE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "bai"
+    },
+    {
+      "id": "ZH_COLOR_YELLOW",
+      "skill": "HANZI",
+      "prompt": "黄",
+      "answer": "huáng",
+      "meaning": "amarelo",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "colors",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "huáng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "color",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_COLOR_RED",
+        "ZH_COLOR_GREEN",
+        "ZH_COLOR_WHITE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "huang"
+    },
+    {
+      "id": "ZH_DIR_UP",
+      "skill": "HANZI",
+      "prompt": "上",
+      "answer": "shàng",
+      "meaning": "em cima / acima / subir",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "shàng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_DOWN",
+        "ZH_DIR_FRONT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xang"
+    },
+    {
+      "id": "ZH_DIR_DOWN",
+      "skill": "HANZI",
+      "prompt": "下",
+      "answer": "xià",
+      "meaning": "embaixo / abaixo / descer",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 1,
+      "romanization": {
+        "system": "pinyin",
+        "value": "xià"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_UP",
+        "ZH_DIR_BACK"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xia"
+    },
+    {
+      "id": "ZH_DIR_LEFT",
+      "skill": "HANZI",
+      "prompt": "左",
+      "answer": "zuǒ",
+      "meaning": "esquerda",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zuǒ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_RIGHT",
+        "ZH_DIR_INSIDE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "dzuo"
+    },
+    {
+      "id": "ZH_DIR_RIGHT",
+      "skill": "HANZI",
+      "prompt": "右",
+      "answer": "yòu",
+      "meaning": "direita",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yòu"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_LEFT",
+        "ZH_DIR_OUTSIDE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "iou"
+    },
+    {
+      "id": "ZH_DIR_FRONT",
+      "skill": "HANZI",
+      "prompt": "前",
+      "answer": "qián",
+      "meaning": "frente / antes",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "qián"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_BACK",
+        "ZH_TIME_BEFORE"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "tchian"
+    },
+    {
+      "id": "ZH_DIR_BACK",
+      "skill": "HANZI",
+      "prompt": "后",
+      "answer": "hòu",
+      "meaning": "atrás / depois",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "hòu"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_FRONT",
+        "ZH_TIME_AFTER"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "hou"
+    },
+    {
+      "id": "ZH_DIR_INSIDE",
+      "skill": "HANZI",
+      "prompt": "里",
+      "answer": "lǐ",
+      "meaning": "dentro",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "lǐ"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_OUTSIDE",
+        "ZH_VERB_ZAI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "li"
+    },
+    {
+      "id": "ZH_DIR_OUTSIDE",
+      "skill": "HANZI",
+      "prompt": "外",
+      "answer": "wài",
+      "meaning": "fora",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "directions",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "wài"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "direction",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_DIR_INSIDE",
+        "ZH_DIR_LEFT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "uai"
+    },
+    {
+      "id": "ZH_TIME_BEFORE",
+      "skill": "HANZI",
+      "prompt": "以前",
+      "answer": "yǐqián",
+      "meaning": "antes / anteriormente",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time",
+      "difficulty": 4,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yǐqián"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_TIME_AFTER",
+        "ZH_DIR_FRONT"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "i-tchian"
+    },
+    {
+      "id": "ZH_TIME_AFTER",
+      "skill": "HANZI",
+      "prompt": "以后",
+      "answer": "yǐhòu",
+      "meaning": "depois / posteriormente",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "time",
+      "difficulty": 4,
+      "romanization": {
+        "system": "pinyin",
+        "value": "yǐhòu"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "time",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_TIME_BEFORE",
+        "ZH_DIR_BACK"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "i-hou"
+    },
+    {
+      "id": "ZH_MW_GE",
+      "skill": "HANZI",
+      "prompt": "个",
+      "answer": "gè",
+      "meaning": "classificador geral",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "measure_words",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "gè"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "mw",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_MW_BEN",
+        "ZH_MW_BEI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ge"
+    },
+    {
+      "id": "ZH_MW_BEN",
+      "skill": "HANZI",
+      "prompt": "本",
+      "answer": "běn",
+      "meaning": "classificador para livros",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "measure_words",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "běn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "mw",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_MW_GE",
+        "ZH_OBJ_BOOK"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ben"
+    },
+    {
+      "id": "ZH_MW_BEI",
+      "skill": "HANZI",
+      "prompt": "杯",
+      "answer": "bēi",
+      "meaning": "classificador para copos/xícaras",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "measure_words",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "bēi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "mw",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_MW_GE",
+        "ZH_NOUN_DRINK_TEA"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "bei"
+    },
+    {
+      "id": "ZH_MW_ZHI",
+      "skill": "HANZI",
+      "prompt": "只",
+      "answer": "zhī",
+      "meaning": "classificador para animais/unidades",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "measure_words",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "zhī"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "mw",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_MW_GE",
+        "ZH_MW_BEI"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ji"
+    },
+    {
+      "id": "ZH_PLACE_CHINA",
+      "skill": "HANZI",
+      "prompt": "中国",
+      "answer": "Zhōngguó",
+      "meaning": "China",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "places",
+      "difficulty": 2,
+      "romanization": {
+        "system": "pinyin",
+        "value": "Zhōngguó"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "place",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PLACE_USA",
+        "ZH_PLACE_JAPAN"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "jong-guo"
+    },
+    {
+      "id": "ZH_PLACE_BEIJING",
+      "skill": "HANZI",
+      "prompt": "北京",
+      "answer": "Běijīng",
+      "meaning": "Pequim",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "Běijīng"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "place",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PLACE_SHANGHAI",
+        "ZH_PLACE_CHINA"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "bei-djing"
+    },
+    {
+      "id": "ZH_PLACE_SHANGHAI",
+      "skill": "HANZI",
+      "prompt": "上海",
+      "answer": "Shànghǎi",
+      "meaning": "Xangai",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "Shànghǎi"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "place",
+        "hsk2"
+      ],
+      "distractorIds": [
+        "ZH_PLACE_BEIJING",
+        "ZH_PLACE_CHINA"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "xang-hai"
+    },
+    {
+      "id": "ZH_PLACE_USA",
+      "skill": "HANZI",
+      "prompt": "美国",
+      "answer": "Měiguó",
+      "meaning": "Estados Unidos",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "Měiguó"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "place",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PLACE_CHINA",
+        "ZH_PLACE_JAPAN"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "mei-guo"
+    },
+    {
+      "id": "ZH_PLACE_JAPAN",
+      "skill": "HANZI",
+      "prompt": "日本",
+      "answer": "Rìběn",
+      "meaning": "Japão",
+      "panelAsset": null,
+      "language": "ZH",
+      "category": "places",
+      "difficulty": 3,
+      "romanization": {
+        "system": "pinyin",
+        "value": "Rìběn"
+      },
+      "mnemonicPt": null,
+      "tags": [
+        "place",
+        "hsk1"
+      ],
+      "distractorIds": [
+        "ZH_PLACE_CHINA",
+        "ZH_PLACE_USA"
+      ],
+      "assets": {
+        "audio": null,
+        "strokeOrder": null,
+        "panel": null
+      },
+      "notes": {
+        "pt": null,
+        "en": null
+      },
+      "pronunciationPt": "ji-ben"
+    }
+  ]
+}

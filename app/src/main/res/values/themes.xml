@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Trililingo" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Fundo padrão enquanto o Compose ainda não desenhou a UI -->
+        <item name="android:windowBackground">@color/black</item>
+
+        <!-- System bars (Stranger Things dark + neon vibe) -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/black</item>
+
+        <!-- Ícones claros nas barras (false = ícones claros) -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Opcional: remove contraste automático em alguns devices -->
+        <item name="android:enforceNavigationBarContrast">false</item>
+
+        <!-- Opcional: se você quiser edge-to-edge sem “pintar” a status bar -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+    </style>
+
+    <!-- Splash (Android 12+) -->
+    <style name="Theme.Trililingo.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo_animated</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+
+        <!-- Depois do splash, cai no tema real -->
+        <item name="postSplashScreenTheme">@style/Theme.Trililingo</item>
+    </style>
+
+</resources>

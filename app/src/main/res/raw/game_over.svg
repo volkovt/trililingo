@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Game Over - Upside Down Wall (colored + wired + flicker)">
+    <defs>
+        <!-- Wallpaper-ish background -->
+        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a0008"/>
+            <stop offset="0.55" stop-color="#120005"/>
+            <stop offset="1" stop-color="#050003"/>
+        </linearGradient>
+
+        <!-- Subtle wallpaper pattern -->
+        <pattern id="pat" width="44" height="44" patternUnits="userSpaceOnUse">
+            <rect width="44" height="44" fill="transparent"/>
+            <path d="M22 8 C16 16, 16 28, 22 36 C28 28, 28 16, 22 8 Z" fill="#ffffff" opacity="0.035"/>
+            <circle cx="22" cy="22" r="2.4" fill="#ffffff" opacity="0.025"/>
+        </pattern>
+
+        <!-- Red fog -->
+        <radialGradient id="fog" cx="50%" cy="55%" r="70%">
+            <stop offset="0%" stop-color="#ff0033" stop-opacity="0.22"/>
+            <stop offset="55%" stop-color="#ff0033" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#ff0033" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Neon glow -->
+        <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+            <feGaussianBlur stdDeviation="4.2" result="b"/>
+            <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Strong glow for GAME OVER -->
+        <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="7.5" result="b"/>
+            <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Bulb glow -->
+        <filter id="bulbGlow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="3.2" result="b"/>
+            <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Soft letter glow -->
+        <filter id="letterGlow" x="-35%" y="-35%" width="170%" height="170%">
+            <feGaussianBlur stdDeviation="1.6" result="b"/>
+            <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Wire glow (very subtle) -->
+        <filter id="wireGlow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="1.2" result="b"/>
+            <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <style>
+            /* Light flicker variations (bulbs) */
+            .f1 { animation: flicker1 1.9s infinite; }
+            .f2 { animation: flicker2 2.4s infinite; }
+            .f3 { animation: flicker3 1.3s infinite; }
+            @keyframes flicker1 { 0%,100%{opacity:.9} 20%{opacity:.3} 25%{opacity:1} 60%{opacity:.55} }
+            @keyframes flicker2 { 0%,100%{opacity:.8} 35%{opacity:.2} 40%{opacity:.9} 80%{opacity:.45} }
+            @keyframes flicker3 { 0%,100%{opacity:1} 45%{opacity:.25} 55%{opacity:.95} 70%{opacity:.35} }
+
+            /* Vines sway */
+            .vineA { transform-origin: 110px 60px; animation: swayA 3.2s ease-in-out infinite; }
+            .vineB { transform-origin: 260px 48px; animation: swayB 3.8s ease-in-out infinite; }
+            .vineC { transform-origin: 410px 70px; animation: swayC 2.9s ease-in-out infinite; }
+            @keyframes swayA { 0%,100%{transform:rotate(-1.2deg)} 50%{transform:rotate(1.4deg)} }
+            @keyframes swayB { 0%,100%{transform:rotate(1.0deg)} 50%{transform:rotate(-1.5deg)} }
+            @keyframes swayC { 0%,100%{transform:rotate(-1.0deg)} 50%{transform:rotate(1.0deg)} }
+
+            /* Red pulse overlay */
+            .pulse { animation: redPulse 2.2s ease-in-out infinite; }
+            @keyframes redPulse { 0%,100%{opacity:.14} 50%{opacity:.28} }
+
+            /* Painted letters: outline + soft glow */
+            .letter {
+            stroke: #070003;
+            stroke-width: 3.2;
+            paint-order: stroke;
+            stroke-linejoin: round;
+            opacity: 0.96;
+            filter: url(#letterGlow);
+            }
+
+            /* Gentle letter flicker (subtle) */
+            .lf1 { animation: letterF1 2.8s ease-in-out infinite; }
+            .lf2 { animation: letterF2 3.3s ease-in-out infinite; }
+            .lf3 { animation: letterF3 3.9s ease-in-out infinite; }
+            .lf4 { animation: letterF4 4.4s ease-in-out infinite; }
+
+            @keyframes letterF1 { 0%,100%{opacity:.92} 45%{opacity:.78} 55%{opacity:.96} }
+            @keyframes letterF2 { 0%,100%{opacity:.94} 40%{opacity:.80} 60%{opacity:.98} }
+            @keyframes letterF3 { 0%,100%{opacity:.90} 42%{opacity:.76} 58%{opacity:.95} }
+            @keyframes letterF4 { 0%,100%{opacity:.93} 46%{opacity:.82} 54%{opacity:.97} }
+
+            /* Wires between letters */
+            .rowWire {
+            fill: none;
+            stroke: #120006;
+            stroke-width: 3.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.9;
+            }
+            .rowWireGlow {
+            fill: none;
+            stroke: #ff0033;
+            stroke-opacity: 0.10;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: url(#wireGlow);
+            }
+
+            /* Tiny wire shimmer */
+            .wireShimmer { animation: wireSh 3.6s ease-in-out infinite; }
+            @keyframes wireSh { 0%,100%{opacity:.10} 50%{opacity:.18} }
+        </style>
+    </defs>
+
+    <!-- Base -->
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <rect width="512" height="512" fill="url(#pat)" opacity="1"/>
+
+    <!-- Top wire (like christmas lights) -->
+    <path d="M22 95 C120 60, 220 120, 320 88 C400 64, 450 86, 494 76"
+        fill="none" stroke="#1a0a0c" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
+
+    <!-- Bulbs -->
+    <g filter="url(#bulbGlow)">
+        <g class="f1">
+            <circle cx="58" cy="85" r="7" fill="#ff0033"/>
+            <circle cx="58" cy="85" r="14" fill="#ff0033" opacity="0.18"/>
+        </g>
+        <g class="f2">
+            <circle cx="118" cy="72" r="7" fill="#ff3355"/>
+            <circle cx="118" cy="72" r="14" fill="#ff3355" opacity="0.16"/>
+        </g>
+        <g class="f3">
+            <circle cx="176" cy="86" r="7" fill="#ff001f"/>
+            <circle cx="176" cy="86" r="14" fill="#ff001f" opacity="0.18"/>
+        </g>
+        <g class="f2">
+            <circle cx="234" cy="110" r="7" fill="#ff002a"/>
+            <circle cx="234" cy="110" r="14" fill="#ff002a" opacity="0.15"/>
+        </g>
+        <g class="f1">
+            <circle cx="292" cy="96" r="7" fill="#ff2244"/>
+            <circle cx="292" cy="96" r="14" fill="#ff2244" opacity="0.16"/>
+        </g>
+        <g class="f3">
+            <circle cx="352" cy="84" r="7" fill="#ff0033"/>
+            <circle cx="352" cy="84" r="14" fill="#ff0033" opacity="0.18"/>
+        </g>
+        <g class="f2">
+            <circle cx="412" cy="74" r="7" fill="#ff0a3a"/>
+            <circle cx="412" cy="74" r="14" fill="#ff0a3a" opacity="0.14"/>
+        </g>
+        <g class="f1">
+            <circle cx="468" cy="78" r="7" fill="#ff0033"/>
+            <circle cx="468" cy="78" r="14" fill="#ff0033" opacity="0.18"/>
+        </g>
+    </g>
+
+    <!-- Vines / Vecna tendrils (animated sway) -->
+    <g opacity="0.95">
+        <g class="vineA">
+            <path d="M110 58 C98 120, 126 150, 104 208 C88 252, 120 298, 96 352"
+                stroke="#19000a" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M110 58 C98 120, 126 150, 104 208 C88 252, 120 298, 96 352"
+                stroke="#ff0033" stroke-opacity="0.18" stroke-width="3" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+        </g>
+        <g class="vineB">
+            <path d="M260 46 C244 120, 280 160, 254 220 C232 270, 272 304, 246 368"
+                stroke="#160008" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="M260 46 C244 120, 280 160, 254 220 C232 270, 272 304, 246 368"
+                stroke="#ff0033" stroke-opacity="0.16" stroke-width="3" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+        </g>
+        <g class="vineC">
+            <path d="M410 68 C396 132, 436 170, 404 232 C378 282, 432 312, 398 382"
+                stroke="#150007" stroke-width="11" stroke-linecap="round" fill="none"/>
+            <path d="M410 68 C396 132, 436 170, 404 232 C378 282, 432 312, 398 382"
+                stroke="#ff0033" stroke-opacity="0.14" stroke-width="3" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+        </g>
+    </g>
+
+    <!-- NEW: Wires connecting letters (one per row) -->
+    <g opacity="0.95">
+        <!-- Row 1 wire (A-H) -->
+        <path class="rowWire" d="M66 164 C98 156, 116 176, 140 166 C162 156, 184 176, 206 166
+                            C228 156, 250 176, 272 166 C294 156, 316 176, 338 166
+                            C360 156, 382 176, 404 166"/>
+        <path class="rowWireGlow wireShimmer" d="M66 164 C98 156, 116 176, 140 166 C162 156, 184 176, 206 166
+                            C228 156, 250 176, 272 166 C294 156, 316 176, 338 166
+                            C360 156, 382 176, 404 166"/>
+
+        <!-- Row 2 wire (I-Q) -->
+        <path class="rowWire" d="M46 236 C74 246, 90 228, 112 244 C134 260, 156 236, 176 252
+                            C196 268, 220 244, 240 258 C260 272, 284 246, 304 258
+                            C324 270, 350 246, 368 258 C388 270, 404 246, 420 252"/>
+        <path class="rowWireGlow wireShimmer" d="M46 236 C74 246, 90 228, 112 244 C134 260, 156 236, 176 252
+                            C196 268, 220 244, 240 258 C260 272, 284 246, 304 258
+                            C324 270, 350 246, 368 258 C388 270, 404 246, 420 252"/>
+
+        <!-- Row 3 wire (R-Z) -->
+        <path class="rowWire" d="M64 322 C90 332, 112 310, 130 332 C150 354, 170 324, 188 342
+                            C206 360, 228 334, 246 348 C266 362, 290 336, 308 350
+                            C326 364, 350 336, 368 350 C388 364, 414 338, 430 346"/>
+        <path class="rowWireGlow wireShimmer" d="M64 322 C90 332, 112 310, 130 332 C150 354, 170 324, 188 342
+                            C206 360, 228 334, 246 348 C266 362, 290 336, 308 350
+                            C326 364, 350 336, 368 350 C388 364, 414 338, 430 346"/>
+
+        <!-- Small drops / wire knots -->
+        <circle cx="140" cy="166" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="206" cy="166" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="272" cy="166" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="338" cy="166" r="2.4" fill="#080003" opacity="0.75"/>
+
+        <circle cx="112" cy="244" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="176" cy="252" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="240" cy="258" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="304" cy="258" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="368" cy="258" r="2.4" fill="#080003" opacity="0.75"/>
+
+        <circle cx="130" cy="332" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="188" cy="342" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="246" cy="348" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="308" cy="350" r="2.4" fill="#080003" opacity="0.75"/>
+        <circle cx="368" cy="350" r="2.4" fill="#080003" opacity="0.75"/>
+    </g>
+
+    <!-- Letters wall (colored + gentle flicker) -->
+    <g font-family="sans-serif" font-weight="900">
+        <!-- Row 1: A-H -->
+        <text class="letter lf1" x="76"  y="185" font-size="36" transform="rotate(-3 76 185)"  fill="#ff3b3b">A</text>
+        <text class="letter lf2" x="118" y="180" font-size="36" transform="rotate(2 118 180)"  fill="#ffb300">B</text>
+        <text class="letter lf3" x="162" y="188" font-size="36" transform="rotate(-1 162 188)" fill="#4cd964">C</text>
+        <text class="letter lf4" x="206" y="178" font-size="36" transform="rotate(2 206 178)"  fill="#32ade6">D</text>
+        <text class="letter lf1" x="250" y="188" font-size="36" transform="rotate(-2 250 188)" fill="#a855f7">E</text>
+        <text class="letter lf2" x="294" y="178" font-size="36" transform="rotate(2 294 178)"  fill="#ff4fd8">F</text>
+        <text class="letter lf3" x="338" y="188" font-size="36" transform="rotate(-2 338 188)" fill="#00e5ff">G</text>
+        <text class="letter lf4" x="382" y="178" font-size="36" transform="rotate(2 382 178)"  fill="#ffd1dc">H</text>
+
+        <!-- Row 2: I-Q -->
+        <text class="letter lf2" x="56"  y="255" font-size="36" transform="rotate(2 56 255)"   fill="#ff6a00">I</text>
+        <text class="letter lf3" x="98"  y="265" font-size="36" transform="rotate(-2 98 265)"  fill="#ffe600">J</text>
+        <text class="letter lf4" x="140" y="256" font-size="36" transform="rotate(1 140 256)"  fill="#7CFF6B">K</text>
+        <text class="letter lf1" x="182" y="268" font-size="36" transform="rotate(-1 182 268)" fill="#00c2ff">L</text>
+        <text class="letter lf2" x="224" y="256" font-size="36" transform="rotate(2 224 256)"  fill="#b35cff">M</text>
+        <text class="letter lf3" x="268" y="268" font-size="36" transform="rotate(-2 268 268)" fill="#ff2bd6">N</text>
+        <text class="letter lf4" x="312" y="256" font-size="36" transform="rotate(2 312 256)"  fill="#00ffd5">O</text>
+        <text class="letter lf1" x="356" y="268" font-size="36" transform="rotate(-2 356 268)" fill="#ff8fab">P</text>
+        <text class="letter lf2" x="400" y="256" font-size="36" transform="rotate(2 400 256)"  fill="#ff3b3b">Q</text>
+
+        <!-- Row 3: R-Z -->
+        <text class="letter lf3" x="76"  y="340" font-size="36" transform="rotate(-2 76 340)"  fill="#ffb300">R</text>
+        <text class="letter lf4" x="118" y="352" font-size="36" transform="rotate(2 118 352)"  fill="#4cd964">S</text>
+        <text class="letter lf1" x="162" y="340" font-size="36" transform="rotate(-1 162 340)" fill="#32ade6">T</text>
+        <text class="letter lf2" x="206" y="352" font-size="36" transform="rotate(2 206 352)"  fill="#a855f7">U</text>
+        <text class="letter lf3" x="250" y="340" font-size="36" transform="rotate(-2 250 340)" fill="#ff4fd8">V</text>
+        <text class="letter lf4" x="294" y="352" font-size="36" transform="rotate(2 294 352)"  fill="#00e5ff">W</text>
+        <text class="letter lf1" x="338" y="340" font-size="36" transform="rotate(-2 338 340)" fill="#ffd1dc">X</text>
+        <text class="letter lf2" x="382" y="352" font-size="36" transform="rotate(2 382 352)"  fill="#ff6a00">Y</text>
+        <text class="letter lf3" x="426" y="340" font-size="36" transform="rotate(-2 426 340)" fill="#ffe600">Z</text>
+    </g>
+
+    <!-- Red fog overlay -->
+    <rect width="512" height="512" fill="url(#fog)" class="pulse"/>
+
+    <!-- GAME OVER neon -->
+    <g filter="url(#glowStrong)">
+        <text x="256" y="444" text-anchor="middle"
+            font-family="sans-serif" font-weight="900" font-size="44"
+            fill="#ff0033" letter-spacing="6">
+            GAME OVER
+            <animate attributeName="opacity" dur="1.6s" values="0.60;1;0.78;1;0.62" repeatCount="indefinite"/>
+        </text>
+    </g>
+
+    <!-- Dark vignette -->
+    <radialGradient id="vig" cx="50%" cy="55%" r="70%">
+        <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </radialGradient>
+    <rect width="512" height="512" fill="url(#vig)"/>
+</svg>

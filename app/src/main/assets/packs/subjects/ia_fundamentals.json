@@ -1,0 +1,3033 @@
+{
+  "packVersion": 1,
+  "subjectId": "ai",
+  "subjectName": "Inteligência Artificial",
+  "tracks": [
+    {
+      "id": "ai_fundamentals",
+      "title": "Fundamentos de IA",
+      "subtitle": "Conceitos base para evoluir rápido",
+      "enabled": true,
+      "features": [
+        {
+          "id": "daily_challenge",
+          "type": "DAILY_CHALLENGE",
+          "title": "Desafio Diário",
+          "subtitle": "Perguntas do dia",
+          "emoji": "⚡",
+          "enabled": true
+        },
+        {
+          "id": "free_study",
+          "type": "STUDY",
+          "title": "Estudo Livre",
+          "subtitle": "Sessão aberta de estudo",
+          "emoji": "🧠",
+          "enabled": true
+        }
+      ],
+      "studyContent": {
+        "source": {
+          "book": "Python para Data Science e Machine Learning descomplicado",
+          "authors": [
+            "Amilcar Netto",
+            "Francisco Maciel"
+          ],
+          "mdOutline": "introduçaão a machine learning.md",
+          "language": "pt-BR"
+        },
+        "chapters": [
+          {
+            "chapter": 6,
+            "id": "introducao_ml",
+            "title": "Introdução ao Aprendizado de Máquina",
+            "keyTopics": [
+              "Principais definições",
+              "Inteligência Artificial",
+              "Machine Learning",
+              "Data Analysis",
+              "Data Science",
+              "Terminologia de estatística",
+              "Nível de confiança e margem de erro",
+              "Z-Score",
+              "Etapas de um projeto de análise de dados",
+              "Definição do problema",
+              "Preparação dos dados",
+              "Extração e carga dos dados",
+              "Exploração e visualização dos dados",
+              "Transformação dos dados",
+              "Escolha do algoritmo",
+              "Aprendizagem supervisionada",
+              "Regressão",
+              "Classificação",
+              "Aprendizagem não supervisionada",
+              "Verificação cruzada",
+              "Overfitting e Underfitting",
+              "Matriz de confusão",
+              "Métricas",
+              "Dilema viés-variância"
+            ],
+            "questions": [
+              {
+                "id": "ch6_q01",
+                "type": [
+                  "ia",
+                  "definições"
+                ],
+                "prompt": "Explique a diferença entre IA, Machine Learning e Deep Learning, dando um exemplo prático de aplicação para cada um.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "IA é o “guarda‑chuva” (sistemas que parecem inteligentes). ML é um subconjunto: aprende padrões a partir de dados. DL é um subconjunto de ML: usa redes neurais profundas.\nExemplos: IA (planejamento de rotas), ML (detectar spam com dados rotulados), DL (reconhecer objetos em imagens)."
+              },
+              {
+                "id": "ch6_q02",
+                "type": [
+                  "ia",
+                  "ml"
+                ],
+                "prompt": "Compare Data Analysis, Data Science e Machine Learning. Onde cada um começa e termina em um projeto real?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Data Analysis foca em descrever/explicar dados (métricas, dashboards, hipóteses). Data Science inclui análise + experimentos + modelagem + comunicação. ML é a parte de modelagem preditiva/automatização.\nNum projeto: DA explora e mede, DS define abordagem e valida, ML entrega modelo/serviço e monitoramento."
+              },
+              {
+                "id": "ch6_q03",
+                "type": [
+                  "ml",
+                  "definições"
+                ],
+                "prompt": "Defina 'amostra', 'feature', 'label/target' e 'variável de confusão'. Mostre como isso aparece em um dataset tabular.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Amostra = uma linha/observação. Features = colunas de entrada (X). Label/target = o que queremos prever (y). Variável de confusão = influencia X e y e pode criar correlação enganosa.\nEx.: previsão de churn: amostra=cliente; features=uso, plano; target=churn; confusão=campanha de retenção."
+              },
+              {
+                "id": "ch6_q04",
+                "type": [
+                  "data_analysis",
+                  "data_science"
+                ],
+                "prompt": "Explique os três grandes paradigmas de aprendizado (supervisionado, não supervisionado e por reforço) e quando escolher cada um.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Supervisionado: há rótulos; objetivo é prever (classificação/regressão). Não supervisionado: sem rótulos; objetivo é descobrir estrutura (clusters, redução de dimensão). Reforço: agente aprende por recompensa em sequência (políticas).\nEscolha pelo tipo de dado/feedback disponível e pela decisão que você quer automatizar."
+              },
+              {
+                "id": "ch6_q05",
+                "type": [
+                  "ml",
+                  "data_analysis"
+                ],
+                "prompt": "Por que separamos dados em treino/validação/teste? O que muda quando usamos cross-validation?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Treino ajusta parâmetros; validação escolhe hiperparâmetros/decisões (ex.: threshold); teste estima performance “final” em dados nunca vistos.\nCross-validation repete partições para reduzir variância da estimativa (melhor quando há pouco dado)."
+              },
+              {
+                "id": "ch6_q06",
+                "type": [
+                  "estatística"
+                ],
+                "prompt": "Explique 'data leakage' com 3 exemplos comuns e como evitá-los.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Leakage é usar informação do futuro/da resposta durante treino/validação.\nExemplos: (1) normalizar com média/DP do dataset inteiro; (2) selecionar features usando todos os dados antes do split; (3) usar variáveis calculadas após o evento (ex.: ‘status_final’).\nEvitar com Pipeline/ColumnTransformer, split temporal quando necessário e auditoria de features."
+              },
+              {
+                "id": "ch6_q07",
+                "type": [
+                  "estatística",
+                  "projeto"
+                ],
+                "prompt": "Descreva o trade-off viés–variância (bias–variance) e como ele se manifesta em underfitting e overfitting.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Viés alto: modelo simples demais, erra sistematicamente (underfitting). Variância alta: modelo sensível a ruído, performa bem no treino e mal no teste (overfitting).\nMitigação: mais dados, regularização, validação correta, escolha de complexidade e features melhores."
+              },
+              {
+                "id": "ch6_q08",
+                "type": [
+                  "estatística",
+                  "zscore"
+                ],
+                "prompt": "O que é baseline e por que ele é obrigatório antes de modelos “sofisticados”?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Baseline é uma referência simples (ex.: “sempre prever a classe majoritária”, regressão pela média, regra de negócio).\nEle mostra se o problema tem sinal; evita gastar tempo em modelos complexos sem ganho real e ajuda a justificar valor."
+              },
+              {
+                "id": "ch6_q09",
+                "type": [
+                  "zscore",
+                  "pré-processamento"
+                ],
+                "prompt": "Explique a diferença entre classificação e regressão. Dê um exemplo em que a mesma tarefa pode ser modelada das duas formas.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Classificação prevê categorias; regressão prevê valores contínuos.\nEx.: crédito: (a) classificar “inadimplente vs não”; (b) regressar probabilidade/score ou perda esperada (LGD/EL)."
+              },
+              {
+                "id": "ch6_q10",
+                "type": [
+                  "projeto",
+                  "pipeline"
+                ],
+                "prompt": "Monte uma matriz de confusão (TP, FP, TN, FN) e derive precisão, recall e F1. Interprete cada métrica.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Precisão = TP/(TP+FP): “quando digo positivo, acerto?”. Recall = TP/(TP+FN): “dos positivos reais, quantos capturei?”. F1 = harmônica, equilibra precisão/recall.\nUse quando classes desbalanceadas e custo de erro importa."
+              },
+              {
+                "id": "ch6_q11",
+                "type": [
+                  "projeto",
+                  "definição"
+                ],
+                "prompt": "Quando ROC-AUC pode enganar? Compare ROC-AUC vs PR-AUC em cenários desbalanceados.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "ROC-AUC pode parecer alto mesmo com muitos falsos positivos quando a classe negativa domina.\nPR-AUC foca na classe positiva e evidencia o trade-off precisão/recall; costuma ser mais informativa em fraudes/intrusão/churn raro."
+              },
+              {
+                "id": "ch6_q12",
+                "type": [
+                  "dados",
+                  "preparação"
+                ],
+                "prompt": "Explique 'feature engineering' e dê 5 exemplos úteis em dados tabulares.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Feature engineering cria representações melhores do problema.\nEx.: log-transform em variáveis muito assimétricas; normalização/standardização; one-hot de categóricas; agregações por usuário (média/contagem/janela temporal); interações (x1*x2) e datas (dia da semana)."
+              },
+              {
+                "id": "ch6_q13",
+                "type": [
+                  "etl",
+                  "dados"
+                ],
+                "prompt": "O que é padronização (StandardScaler) vs normalização (MinMax)? Quando cada uma é mais apropriada?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "StandardScaler: z=(x-μ)/σ, útil para modelos sensíveis a escala (SVM, KNN, regressões com regularização). MinMax: coloca em [0,1], útil quando limites importam (redes neurais, distância com faixa controlada).\nA regra: se o modelo usa distância/gradiente, cuide da escala."
+              },
+              {
+                "id": "ch6_q14",
+                "type": [
+                  "eda"
+                ],
+                "prompt": "Explique o conceito de 'pipeline' em ML e como ele ajuda a evitar bugs e leakage.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Pipeline encadeia pré-processamento + modelo numa única peça treinável (fit) e reprodutível (transform/predict).\nEle garante que estatísticas (média, encoder, seleção) sejam aprendidas só no treino e aplicadas igual no teste/produção."
+              },
+              {
+                "id": "ch6_q15",
+                "type": [
+                  "transformação"
+                ],
+                "prompt": "Quais são as principais etapas de um projeto de ML do ponto de vista experimental (não de código)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "(1) Definir objetivo e métrica alinhada ao negócio; (2) obter/limpar dados; (3) EDA + hipóteses; (4) baseline; (5) treinar e validar; (6) tuning; (7) avaliação final; (8) deploy; (9) monitorar drift/qualidade; (10) iterar."
+              },
+              {
+                "id": "ch6_q16",
+                "type": [
+                  "supervisionada"
+                ],
+                "prompt": "Explique a diferença entre validação aleatória e validação temporal. Quando usar split temporal?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Validação aleatória assume i.i.d. (amostras independentes). Em séries/produção, dados têm ordem e vazamento temporal é comum.\nUse split temporal quando a predição será feita no futuro (ex.: demanda, fraude ao longo do tempo) ou quando há drift."
+              },
+              {
+                "id": "ch6_q17",
+                "type": [
+                  "regressão",
+                  "classificação"
+                ],
+                "prompt": "O que são hiperparâmetros vs parâmetros? Dê exemplos e como geralmente escolhemos cada um.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Parâmetros são aprendidos no treino (pesos, coeficientes). Hiperparâmetros controlam o aprendizado/complexidade (k no KNN, C e gamma no SVM, profundidade em árvore).\nEscolha hiperparâmetros via validação (grid/random/bayes) e mantenha teste isolado."
+              },
+              {
+                "id": "ch6_q18",
+                "type": [
+                  "não_supervisionada"
+                ],
+                "prompt": "Explique 'regularização' (L1, L2) de forma intuitiva e cite um efeito colateral importante.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Regularização penaliza modelos muito “complexos” para reduzir overfitting. L2 encolhe coeficientes; L1 pode zerar coeficientes (seleção).\nEfeito: coeficientes ficam menores e interpretação muda; precisa padronizar features para comparar penalização corretamente."
+              },
+              {
+                "id": "ch6_q19",
+                "type": [
+                  "validação",
+                  "cross_validation"
+                ],
+                "prompt": "Como você lidaria com classes desbalanceadas? Dê pelo menos 4 estratégias e quando usar cada uma.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Estratégias: (1) métricas adequadas (PR/F1, recall@precision); (2) ajuste de threshold; (3) reamostragem (SMOTE/undersample); (4) pesos de classe; (5) coletar mais positivos; (6) detecção de anomalia quando rótulo é raro.\nEscolha pelo custo de FP/FN e pelo volume de dados."
+              },
+              {
+                "id": "ch6_q20",
+                "type": [
+                  "overfitting",
+                  "underfitting"
+                ],
+                "prompt": "O que é 'data drift' e 'concept drift'? Quais sinais de que o modelo precisa ser reavaliado?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Data drift: distribuição de X muda (ex.: usuários, sazonalidade). Concept drift: relação X→y muda (regra do mundo mudou).\nSinais: queda de métricas online, aumento de erros em segmentos, mudanças estatísticas (PSI/KS), alertas de monitoramento e feedback humano."
+              },
+              {
+                "id": "ch6_q21",
+                "type": [
+                  "matriz_confusão"
+                ],
+                "prompt": "Quais cuidados de reprodutibilidade você adotaria em um notebook de ML?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Fixar seeds (numpy/sklearn), registrar versões (pip freeze), salvar splits e parâmetros, usar pipelines, evitar estado oculto (executar do zero), logar métricas e artefatos (model.pkl, gráficos).\nReprodutibilidade é pré‑requisito para depurar e evoluir."
+              },
+              {
+                "id": "ch6_q22",
+                "type": [
+                  "métricas"
+                ],
+                "prompt": "Explique por que 'acurácia' pode mascarar erros em datasets desbalanceados. Dê um exemplo numérico.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Se 99% é classe 0, prever sempre 0 dá 99% de acurácia, mas recall da classe 1 é 0.\nEx.: 10.000 amostras, 100 positivas; modelo que prevê tudo negativo: accuracy=99%, recall=0%, precisão indefinida (0 TP)."
+              },
+              {
+                "id": "ch6_q23",
+                "type": [
+                  "bias_variance"
+                ],
+                "prompt": "Explique a diferença entre validação, teste e monitoramento em produção. Por que 'teste' não encerra o assunto?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Validação guia escolhas; teste mede generalização offline; produção muda (dados e comportamento).\nMonitoramento detecta drift, degradação, bugs de pipeline e mudanças de custo. Sem monitorar, o modelo “envelhece” silenciosamente."
+              },
+              {
+                "id": "ch6_q24",
+                "type": [
+                  "métricas",
+                  "desbalanceamento"
+                ],
+                "prompt": "O que significa 'calibração' em modelos de classificação probabilística? Como verificar e corrigir?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Probabilidade calibrada: quando o modelo diz 0,7, ~70% desses casos são positivos.\nVerifique com reliability diagram/Brier score. Corrija com Platt scaling, isotonic regression ou ajuste do modelo/regularização."
+              },
+              {
+                "id": "ch6_q25",
+                "type": [
+                  "ml",
+                  "conceitos"
+                ],
+                "prompt": "Explique o conceito de 'custo de erro' e como ele muda a escolha de métrica e threshold.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "FP e FN têm custos diferentes (fraude: FN caro; crédito: FP pode negar bons clientes).\nEscolha métrica alinhada (recall, precision@recall, lucro esperado) e ajuste threshold para otimizar custo total, não só F1/accuracy."
+              },
+              {
+                "id": "ch6_q26",
+                "type": [
+                  "dados",
+                  "split"
+                ],
+                "prompt": "Descreva como transformar um problema de negócio em um problema de ML (perguntas que você faria).",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Pergunte: qual decisão será tomada? qual alvo observável? qual horizonte? quais dados existem antes da decisão? qual métrica de sucesso? quais custos de erro? existe feedback/rotulagem? quais restrições (latência, explicabilidade)?\nIsso evita modelar a coisa “errada”."
+              },
+              {
+                "id": "ch6_q27",
+                "type": [
+                  "pipeline",
+                  "leakage"
+                ],
+                "prompt": "O que é 'feature leakage' e como detectá-lo sem olhar para o código?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Feature leakage é quando uma feature carrega indiretamente a resposta.\nSinais: métricas absurdamente altas; importância dominada por uma única coluna; feature “faz sentido” apenas após o evento; correlação quase perfeita com y; queda forte ao usar split temporal."
+              },
+              {
+                "id": "ch6_q28",
+                "type": [
+                  "métricas",
+                  "confusao"
+                ],
+                "prompt": "Discuta interpretabilidade: quando você precisa explicar o modelo? Cite técnicas para modelos lineares e não lineares.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Precisa explicar em áreas reguladas, decisões de alto impacto e quando há auditoria/depuração.\nLineares: coeficientes, odds ratio, intervalos. Não lineares: feature importance, PDP/ICE, SHAP, LIME, regras extraídas e validação por casos."
+              },
+              {
+                "id": "ch6_q29",
+                "type": [
+                  "métricas",
+                  "precision_recall"
+                ],
+                "prompt": "Como você validaria um modelo com dados de usuários repetidos (múltiplas linhas por usuário) para evitar vazamento?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Use split por grupo (GroupKFold / GroupShuffleSplit) para que o mesmo usuário não apareça em treino e teste.\nCaso contrário, o modelo memoriza padrões do usuário e a métrica fica inflada."
+              },
+              {
+                "id": "ch6_q30",
+                "type": [
+                  "métricas",
+                  "precision_recall"
+                ],
+                "prompt": "Explique a diferença entre 'correlação' e 'causalidade' no contexto de ML e um risco prático dessa confusão.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "ML aprende correlações; isso não prova causa. Ex.: “usuários com desconto churnam menos” pode ser porque desconto foi dado aos que já iam churnar (confounding).\nRisco: ações de negócio baseadas no modelo podem falhar; para causalidade, precisa de experimento/quase‑experimento."
+              },
+              {
+                "id": "ch6_q31",
+                "type": [
+                  "métricas",
+                  "f1"
+                ],
+                "prompt": "Descreva um mini-plano de experimento (em 6 passos) para comparar 2 modelos e escolher o melhor com rigor.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "(1) Definir métrica e critério de decisão; (2) fixar protocolo de split/CV; (3) padronizar pipeline de pré-processamento; (4) treinar ambos com tuning comparável; (5) avaliar no teste e analisar erros por segmento; (6) registrar resultados e validar com stakeholders."
+              },
+              {
+                "id": "ch6_q32",
+                "type": [
+                  "estatística",
+                  "zscore"
+                ],
+                "prompt": "Explique o que é 'erro sistemático' vs 'erro aleatório' em previsões e como diagnosticar cada um.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Sistemático: padrão consistente de erro (ex.: subestimar valores altos), indica viés/feature faltante. Aleatório: ruído residual inevitável.\nDiagnóstico: gráficos de resíduos vs predito, análise por faixa/segmento, inspeção de casos e checagem de distribuição de features."
+              },
+              {
+                "id": "ch6_q33",
+                "type": [
+                  "bias_variance"
+                ],
+                "prompt": "Quais são os riscos éticos mais comuns em ML e como mitigá-los em um projeto real?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Riscos: viés/discriminação, privacidade, uso fora do propósito, falta de explicação, automação de decisões sensíveis.\nMitigação: revisão de dados (representatividade), métricas por grupo, minimização de dados, governança, explicabilidade, testes de fairness e auditoria contínua."
+              },
+              {
+                "id": "ch6_q34",
+                "type": [
+                  "validação",
+                  "baseline"
+                ],
+                "prompt": "Explique como você transformaria um modelo offline em um produto: requisitos de latência, observabilidade e fallback.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Defina SLA (latência), contrato de entrada/saída, versionamento de modelo, logs de features/predições, métricas online, alertas e fallback (regra/baseline) se o modelo falhar.\nProduto de ML é sistema: dados + modelo + operação."
+              }
+            ]
+          },
+          {
+            "chapter": 7,
+            "id": "bibliotecas_data_science",
+            "title": "Bibliotecas para Data Science",
+            "keyTopics": [
+              "Pandas: carregar arquivo, Series, head/tail, shape/len, dtypes, iloc/loc, missing values, pivot",
+              "nulos, drop, lambda, sum, count non-null",
+              "gráficos estatísticos com pandas (linhas, scatter, barras, linhas múltiplas, barras empilhadas, histograma)",
+              "salvar dataframe",
+              "Pandas Profiling (interações, correlação, missing stats, amostras)",
+              "NumPy (arrays, reshape, operações aritméticas)",
+              "Scikit-Learn"
+            ],
+            "questions": [
+              {
+                "id": "ch7_q01",
+                "type": [
+                  "pandas"
+                ],
+                "prompt": "Explique por que NumPy é a base do ecossistema de Data Science em Python. Compare array NumPy vs lista Python em desempenho e memória.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "NumPy fornece arrays homogêneos e operações vetorizadas em C, reduzindo overhead de loops Python.\nListas guardam ponteiros para objetos; arrays guardam blocos contíguos tipados. Por isso, somas/multiplicações em NumPy são muito mais rápidas e previsíveis em memória."
+              },
+              {
+                "id": "ch7_q02",
+                "type": [
+                  "pandas",
+                  "io"
+                ],
+                "prompt": "O que é 'broadcasting' no NumPy? Dê um exemplo e explique um erro comum causado por shapes incompatíveis.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Broadcasting permite operar arrays de shapes diferentes seguindo regras (dimensão 1 “expande”).\nEx.: (100,3) + (3,) soma vetor a cada linha. Erro comum: tentar somar (100,3) com (100,) achando que soma por linha; na verdade o shape não alinha e gera ValueError."
+              },
+              {
+                "id": "ch7_q03",
+                "type": [
+                  "pandas",
+                  "series"
+                ],
+                "prompt": "Explique o papel de Pandas. Quando você escolheria Pandas vs NumPy puro?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Pandas adiciona rótulos (índices/colunas), tipos heterogêneos, join/groupby e IO (CSV/Excel/SQL). É ideal para dados tabulares e limpeza.\nNumPy puro é melhor para cálculo numérico intenso, matrizes grandes e operações vetorizadas sem necessidade de rótulos."
+              },
+              {
+                "id": "ch7_q04",
+                "type": [
+                  "pandas",
+                  "eda"
+                ],
+                "prompt": "Leia um CSV grande: quais opções do pandas.read_csv ajudam desempenho e consistência de tipos?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use: dtype=… para evitar inferência cara, parse_dates para datas, usecols para reduzir colunas, chunksize para streaming, na_values para missing.\nTambém é comum usar low_memory=False (com cuidado) e encoding/sep corretos para evitar parsing inconsistente."
+              },
+              {
+                "id": "ch7_q05",
+                "type": [
+                  "pandas"
+                ],
+                "prompt": "Diferença entre .loc e .iloc no Pandas. Dê exemplos com slicing e filtros booleanos.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": ".loc usa rótulos (índice/nomes de colunas) e é inclusivo em labels; .iloc usa posições inteiras e slicing padrão (fim exclusivo).\nEx.: df.loc[df['idade']>30, ['nome','salario']] vs df.iloc[0:10, 0:3]."
+              },
+              {
+                "id": "ch7_q06",
+                "type": [
+                  "pandas",
+                  "tipos"
+                ],
+                "prompt": "Explique o que é um 'index' no Pandas e quando faz sentido defini-lo explicitamente.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Index identifica linhas; pode ser RangeIndex (0..n) ou uma chave (id, data). Index bem escolhido melhora joins, alinhamentos e consultas por label.\nDefina quando há chave natural estável (user_id, timestamp) e você quer operações por label, resample ou merge mais claro."
+              },
+              {
+                "id": "ch7_q07",
+                "type": [
+                  "pandas",
+                  "indexação"
+                ],
+                "prompt": "Quais são as formas mais comuns de valores ausentes (NaN, None, strings vazias)? Como padronizar e tratar missing de forma correta?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Missing pode vir como NaN, None, '', 'NA', 'null'. Padronize via na_values no read_csv ou replace.\nTratamento: remover (quando pouco), imputar (média/mediana/moda), criar indicador de missing e entender causa (MCAR/MAR/MNAR) para não enviesar."
+              },
+              {
+                "id": "ch7_q08",
+                "type": [
+                  "pandas",
+                  "missing"
+                ],
+                "prompt": "Explique groupby no Pandas e dê um exemplo de agregações múltiplas (mean, count, std) por grupo.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "groupby divide dados por chave e aplica agregações.\nEx.: df.groupby('cidade')['preco'].agg(['mean','count','std']). Isso é base para features por usuário (média, frequência, variância)."
+              },
+              {
+                "id": "ch7_q09",
+                "type": [
+                  "pandas",
+                  "missing"
+                ],
+                "prompt": "Compare merge/join/concat no Pandas. Quais armadilhas você checaria após um merge?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "concat empilha (linhas/colunas) sem “chave”; merge/join combina por chave (inner/left/right/outer).\nArmadilhas: duplicidade de chaves (explode linhas), chaves com tipos diferentes, missing em chaves e colunas com mesmo nome (suffixes). Valide counts antes/depois."
+              },
+              {
+                "id": "ch7_q10",
+                "type": [
+                  "pandas",
+                  "limpeza"
+                ],
+                "prompt": "Explique diferença entre apply/map/transform no Pandas e quando evitar apply por performance.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "apply executa função Python linha a linha (lento). map aplica em Series. transform retorna mesma forma do grupo.\nEvite apply em grandes volumes; prefira operações vetorizadas, .str, .dt, numpy ufuncs, ou use numba/cython quando necessário."
+              },
+              {
+                "id": "ch7_q11",
+                "type": [
+                  "pandas",
+                  "pivot"
+                ],
+                "prompt": "O que é EDA (Exploratory Data Analysis) e quais 8 checagens mínimas você faria antes de modelar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Checagens: tamanho e dtypes; % missing por coluna; estatísticas (describe); distribuição/assimetria; outliers; cardinalidade de categóricas; correlação entre numéricas; vazamento/colunas pós-evento; duplicatas; balanceamento do target."
+              },
+              {
+                "id": "ch7_q12",
+                "type": [
+                  "pandas",
+                  "lambda"
+                ],
+                "prompt": "Como calcular e interpretar correlação? Diferencie Pearson e Spearman e quando preferir cada um.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Pearson mede relação linear (sensível a outliers). Spearman usa ranks, captura monotonicidade e é mais robusto a não linearidades.\nUse Spearman quando há relação monotônica não linear ou dados com outliers/ordinais; sempre interprete correlação como associação, não causalidade."
+              },
+              {
+                "id": "ch7_q13",
+                "type": [
+                  "pandas",
+                  "agregação"
+                ],
+                "prompt": "Por que correlação alta entre features é um problema para alguns modelos? Dê um exemplo prático (multicolinearidade).",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Em regressões lineares, multicolinearidade torna coeficientes instáveis e difícil interpretar impacto individual.\nEx.: “idade” e “tempo de carteira” altamente correlacionados; o modelo pode alternar sinais/magnitudes. Soluções: remover, combinar, PCA ou regularizar (Ridge/Lasso)."
+              },
+              {
+                "id": "ch7_q14",
+                "type": [
+                  "pandas",
+                  "gráficos"
+                ],
+                "prompt": "Explique SciPy em uma frase e cite 4 tipos de tarefas em que ele é especialmente útil.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SciPy complementa NumPy com algoritmos científicos: estatística (testes, distribuições), otimização, álgebra linear avançada, sinais e interpolação.\nÚtil para testes de hipótese, ajuste de curvas, resolução de sistemas e análise de sinais/tempo."
+              },
+              {
+                "id": "ch7_q15",
+                "type": [
+                  "visualização"
+                ],
+                "prompt": "O que é scikit-learn e qual é o padrão 'Estimator API'? Explique fit, transform, predict e score.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "scikit-learn é a biblioteca padrão de ML clássica. Estimators seguem API consistente.\nfit aprende parâmetros; transform gera features; predict prevê; score calcula métrica default. Esse padrão facilita trocar modelos e montar pipelines."
+              },
+              {
+                "id": "ch7_q16",
+                "type": [
+                  "visualização",
+                  "scatter"
+                ],
+                "prompt": "Mostre por que usar Pipeline do scikit-learn é melhor do que fazer pré-processamento manual fora do treino.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Pipeline encapsula etapas e evita leakage: scaler/encoder aprende só no treino e aplica igual no teste.\nAlém disso, facilita grid search com validação correta, serialização e deploy. Pré-processar “fora” tende a misturar dados e inflar métricas."
+              },
+              {
+                "id": "ch7_q17",
+                "type": [
+                  "visualização",
+                  "barras"
+                ],
+                "prompt": "Explique ColumnTransformer e descreva um pipeline típico para dados com colunas numéricas e categóricas.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "ColumnTransformer aplica transformações por subconjunto de colunas.\nTípico: numéricas → StandardScaler; categóricas → OneHotEncoder(handle_unknown='ignore'); depois modelo (LogReg/SVM/Árvore). Tudo dentro de Pipeline para CV segura."
+              },
+              {
+                "id": "ch7_q18",
+                "type": [
+                  "visualização",
+                  "histograma"
+                ],
+                "prompt": "Como versionar e salvar artefatos de ML (modelos, encoders, colunas)? O que pode dar errado se você salvar só o modelo?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Salve pipeline inteiro (joblib) + lista de colunas + versão de libs + metadados do treino.\nSe salvar só o modelo, você perde scaler/encoder e ordem de colunas; em produção, o input muda e as previsões ficam incorretas sem erro óbvio."
+              },
+              {
+                "id": "ch7_q19",
+                "type": [
+                  "pandas",
+                  "io"
+                ],
+                "prompt": "Explique por que notebooks são ótimos para exploração, mas perigosos para produção. Cite boas práticas para reduzir riscos.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Notebooks têm estado oculto e execução fora de ordem. Para reduzir riscos: reiniciar e rodar “all”; modularizar em funções; usar seeds; registrar versões; exportar pipeline para módulo; testes mínimos e revisão de dados/artefatos."
+              },
+              {
+                "id": "ch7_q20",
+                "type": [
+                  "eda"
+                ],
+                "prompt": "Quais são as vantagens e desvantagens de trabalhar com dados em memória (Pandas) vs em banco/engine (SQL/Spark)?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Em memória: rápido para explorar, simples, mas limitado por RAM e pode ser lento em joins grandes.\nSQL/Spark: escala e otimiza, mas exige infraestrutura e pode reduzir interatividade. Estratégia: filtrar/aggregar no banco e trazer amostra/feature set para Pandas."
+              },
+              {
+                "id": "ch7_q21",
+                "type": [
+                  "profiling"
+                ],
+                "prompt": "Explique o conceito de 'lazy evaluation' (em engines como Spark) e por que isso muda como você depura um pipeline.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Lazy evaluation adia execução até uma ação. Isso melhora otimização, mas erros só aparecem na hora de executar.\nDepuração exige validar schemas, usar ações pequenas (limit/count), cachear pontos críticos e entender plano de execução."
+              },
+              {
+                "id": "ch7_q22",
+                "type": [
+                  "profiling"
+                ],
+                "prompt": "Como lidar com datasets muito grandes no Pandas sem travar a máquina? Liste estratégias práticas.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use: leitura em chunks; tipos menores (int32, category); filtrar colunas; amostragem estratificada; agregações prévias; parquet/feather; evitar cópias; usar Dask/Polars/Spark quando necessário."
+              },
+              {
+                "id": "ch7_q23",
+                "type": [
+                  "correlação"
+                ],
+                "prompt": "Explique 'categorical dtype' no Pandas. Quando usar e que ganho esperar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Categorical armazena dicionário de categorias + códigos, economizando memória e acelerando operações como groupby em colunas repetitivas.\nUse para colunas com baixa cardinalidade relativa (estado, sexo, tipo_produto) e muitas repetições."
+              },
+              {
+                "id": "ch7_q24",
+                "type": [
+                  "numpy"
+                ],
+                "prompt": "Como detectar e remover duplicatas corretamente? Por que remover duplicatas sem critério pode ser perigoso?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use duplicated/subset para checar chaves; decida regra (manter primeiro/último) e preserve informação quando necessário (agregar).\nPerigo: duplicatas podem representar eventos reais (compras repetidas). Remover sem entender pode distorcer métricas e labels."
+              },
+              {
+                "id": "ch7_q25",
+                "type": [
+                  "numpy",
+                  "reshape"
+                ],
+                "prompt": "Explique 'data types' e conversões no Pandas (astype). Dê um exemplo de bug silencioso por dtype errado.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "dtype define como valores são interpretados. Ex.: '00123' lido como int vira 123 e perde zeros; datas lidas como string quebram ordenação temporal.\nSempre valide com df.dtypes, parse_dates e conversões explícitas."
+              },
+              {
+                "id": "ch7_q26",
+                "type": [
+                  "numpy",
+                  "performance"
+                ],
+                "prompt": "O que é 'feature leakage' em dados tabulares e como a própria EDA pode revelar esse problema?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Leakage aparece quando uma coluna “antecipa” o target (status_final, valor_pago).\nNa EDA, sinais: correlação/performance absurdas, coluna com valores que só existem após o evento, e importância dominada. Inspecione dicionário de dados e gere split temporal/grupo para confirmar."
+              },
+              {
+                "id": "ch7_q27",
+                "type": [
+                  "sklearn"
+                ],
+                "prompt": "Explique diferenças entre StandardScaler, OneHotEncoder e OrdinalEncoder. Quando OrdinalEncoder pode prejudicar o modelo?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "StandardScaler ajusta escala numérica. OneHot cria colunas binárias sem ordem. OrdinalEncoder mapeia categorias para números com ordem artificial.\nPode prejudicar quando não existe ordenação real (cores, cidades), pois cria distância “falsa”; prefira OneHot ou embeddings."
+              },
+              {
+                "id": "ch7_q28",
+                "type": [
+                  "ecossistema"
+                ],
+                "prompt": "Como escolher uma métrica de avaliação adequada? Dê um exemplo em classificação desbalanceada e um em regressão.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Escolha pela decisão/custo. Desbalanceada: priorize PR-AUC, F1, recall@precision e threshold; evite só accuracy. Regressão: MAE (robusto), RMSE (penaliza grandes erros), R² (explicação relativa).\nDefina antes de treinar para evitar “p-hacking”."
+              },
+              {
+                "id": "ch7_q29",
+                "type": [
+                  "pipeline",
+                  "missing"
+                ],
+                "prompt": "O que é uma 'função de perda' e como ela se relaciona com a métrica que você reporta?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Perda é o que o algoritmo otimiza (ex.: log-loss, MSE). Métrica é o que você comunica/decide (F1, AUC, MAE).\nElas podem ser diferentes; por isso você ajusta threshold/tuning para otimizar a métrica de negócio, mesmo se o treino otimiza outra."
+              },
+              {
+                "id": "ch7_q30",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "Explique em que situações você usaria statsmodels em vez de scikit-learn.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "statsmodels é forte em inferência estatística: testes, intervalos, p‑values, diagnósticos e interpretação formal de regressões.\nUse quando o objetivo é explicar relação entre variáveis, hipóteses e significância; scikit-learn é mais focado em predição e pipelines."
+              },
+              {
+                "id": "ch7_q31",
+                "type": [
+                  "numpy",
+                  "arrays"
+                ],
+                "prompt": "Qual a diferença entre 'train_test_split' e 'StratifiedKFold'? Quando estratificar é essencial?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "train_test_split cria uma única partição; StratifiedKFold cria várias dobras mantendo proporção de classes.\nEstratificar é essencial em classes desbalanceadas para evitar dobras sem positivos/negativos, que tornam métricas instáveis e tuning enganoso."
+              },
+              {
+                "id": "ch7_q32",
+                "type": [
+                  "numpy",
+                  "broadcast"
+                ],
+                "prompt": "Explique o que é 'random_state' em scikit-learn e por que você deve registrar esse valor em experimentos.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "random_state fixa aleatoriedade (split, inicialização, amostragem). Sem isso, resultados variam e você não sabe se a melhoria foi real ou sorte.\nRegistrar permite reproduzir o experimento e comparar modelos com justiça."
+              },
+              {
+                "id": "ch7_q33",
+                "type": [
+                  "numpy",
+                  "performance"
+                ],
+                "prompt": "O que é um 'dicionário de dados' e por que ele evita erros caros em ML?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "É documentação de colunas: significado, unidade, faixa válida, momento de captura e regras de negócio.\nEle ajuda a detectar leakage, entender missing, escolher encoding correto e evitar usar campos ilegais (PII, pós-evento) — economiza tempo e evita conclusões erradas."
+              },
+              {
+                "id": "ch7_q34",
+                "type": [
+                  "pandas",
+                  "groupby"
+                ],
+                "prompt": "Explique a diferença entre 'batch' e 'stream' na ingestão de dados. Como isso afeta o design de features?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Batch processa em lotes (diário, semanal). Stream chega em tempo real. Em stream, features precisam ser computáveis online (janelas, contagens incrementais) e consistentes com o treino.\nA divergência treino vs produção é um bug clássico (training-serving skew)."
+              },
+              {
+                "id": "ch7_q35",
+                "type": [
+                  "pandas",
+                  "merge"
+                ],
+                "prompt": "Descreva uma checklist de qualidade de dados (Data Quality) que você aplicaria antes de treinar.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Checar: esquema e dtypes; ranges e valores inválidos; duplicatas; missing por coluna/segmento; consistência de chaves; outliers; drift básico; balanceamento do target; integridade referencial em joins.\nAutomatize essas checagens para evitar retrabalho."
+              },
+              {
+                "id": "ch7_q36",
+                "type": [
+                  "pandas",
+                  "categorical"
+                ],
+                "prompt": "Explique como identificar outliers e por que 'remover outliers' sem critério pode piorar o modelo.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Outliers podem ser erros de medição ou casos raros importantes. Identifique via boxplot, z‑score, IQR, isolação por densidade e inspeção de domínio.\nRemover sem critério pode apagar a classe rara que você quer detectar; prefira robustez (MAE, transformações, modelos robustos) ou regras de domínio."
+              },
+              {
+                "id": "ch7_q37",
+                "type": [
+                  "sklearn",
+                  "pipeline"
+                ],
+                "prompt": "Compare seaborn e matplotlib em uma frase e diga quando você usaria cada um (mesmo que o curso foque em matplotlib).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Matplotlib é a base flexível e low-level; Seaborn oferece padrões estatísticos e estética pronta para EDA.\nUse Seaborn para EDA rápida (distribuições, pairplot) e Matplotlib para customização fina, gráficos de produção e controle total."
+              },
+              {
+                "id": "ch7_q38",
+                "type": [
+                  "sklearn",
+                  "preprocess"
+                ],
+                "prompt": "Explique o que é 'serialização' (pickle/joblib) e cite um risco de segurança/compatibilidade ao carregar modelos serializados.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Serializar salva objetos Python em bytes. joblib é comum para modelos sklearn.\nRiscos: incompatibilidade de versões (objeto muda) e segurança (pickle pode executar código ao carregar). Só carregue artefatos confiáveis e versionados."
+              },
+              {
+                "id": "ch7_q39",
+                "type": [
+                  "ambiente",
+                  "jupyter"
+                ],
+                "prompt": "Descreva como você estruturaria pastas de um projeto de ML para manter notebooks, dados, código e artefatos organizados.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Estruture: /data (raw, processed), /notebooks, /src (features, models, utils), /reports (figuras), /models (pipelines), /configs, /tests.\nIsso facilita reuso, revisão e deploy, e impede misturar dados brutos com resultados e modelos."
+              },
+              {
+                "id": "ch7_q40",
+                "type": [
+                  "reprodutibilidade",
+                  "pip"
+                ],
+                "prompt": "Explique por que testes automatizados (mesmo simples) são úteis em pipelines de dados. Dê 3 exemplos de testes.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Pipelines quebram silenciosamente. Testes: (1) esquema: colunas/dtypes esperados; (2) ranges: idade>=0, taxa<=1; (3) integridade: %missing < limite; (4) split sem vazamento (grupos).\nEles evitam modelos treinados em dados “corrompidos”."
+              }
+            ]
+          },
+          {
+            "chapter": 8,
+            "id": "matplotlib",
+            "title": "A Biblioteca Gráfica Matplotlib",
+            "keyTopics": [
+              "PyPlot",
+              "linhas",
+              "dispersão",
+              "opções do Matplotlib (títulos, rótulos, grid, legend, estilos)"
+            ],
+            "questions": [
+              {
+                "id": "ch8_q01",
+                "type": [
+                  "matplotlib"
+                ],
+                "prompt": "Explique a diferença entre a API 'pyplot' e a abordagem orientada a objetos (Figure/Axes) no Matplotlib. Por que a OO costuma ser melhor para projetos maiores?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "pyplot é um estado global (rápido para scripts). OO cria Figure e Axes explicitamente, facilitando múltiplos gráficos, reuso e controle fino.\nEm projetos maiores, OO evita efeitos colaterais, melhora legibilidade e permite compor layouts complexos com previsibilidade."
+              },
+              {
+                "id": "ch8_q02",
+                "type": [
+                  "matplotlib",
+                  "pyplot"
+                ],
+                "prompt": "O que são Figure e Axes? Descreva como isso se relaciona com subplots.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Figure é o “canvas” geral; Axes é onde os dados são desenhados (eixos, ticks, labels).\nSubplots cria vários Axes dentro de uma Figure, permitindo comparar gráficos lado a lado mantendo estilos e escalas consistentes."
+              },
+              {
+                "id": "ch8_q03",
+                "type": [
+                  "matplotlib",
+                  "linhas"
+                ],
+                "prompt": "Crie um gráfico de linha conceitualmente: quais elementos você ajusta para torná-lo legível (título, eixos, limites, grade, legenda)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ajuste: título que responda a uma pergunta; rótulos e unidades nos eixos; limites (xlim/ylim) evitando zoom enganoso; grid leve para leitura; legenda clara; tamanho de fonte e espaçamento para não cortar textos."
+              },
+              {
+                "id": "ch8_q04",
+                "type": [
+                  "visualização"
+                ],
+                "prompt": "Explique quando usar scatter vs line plot. O que um scatter pode revelar que uma linha pode esconder?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Line plot sugere continuidade/ordem; scatter revela densidade, clusters, outliers e não linearidades.\nScatter mostra relação entre duas variáveis sem impor conexão; pode evidenciar heteroscedasticidade e padrões por grupos."
+              },
+              {
+                "id": "ch8_q05",
+                "type": [
+                  "visualização",
+                  "scatter"
+                ],
+                "prompt": "Explique como visualizar distribuição de uma variável: histograma, KDE e boxplot. O que cada um destaca?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Histograma mostra contagens por bins; KDE suaviza a densidade; boxplot resume mediana, quartis e outliers.\nUse hist/KDE para formato (assimetria, multimodal) e boxplot para comparar grupos rapidamente."
+              },
+              {
+                "id": "ch8_q06",
+                "type": [
+                  "matplotlib",
+                  "customização"
+                ],
+                "prompt": "O que é um gráfico de barras? Cite 2 erros comuns ao usar barras e como evitar.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Barras comparam categorias. Erros: (1) eixo y não começar em zero, distorcendo comparação; (2) categorias em ordem aleatória, dificultando leitura.\nEvite com baseline em zero (quando apropriado), ordene por valor e rotule bem."
+              },
+              {
+                "id": "ch8_q07",
+                "type": [
+                  "comunicação"
+                ],
+                "prompt": "Explique como salvar figuras com qualidade (dpi, bbox_inches, formatos). Quando preferir PNG vs SVG/PDF?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Use savefig com dpi adequado (ex.: 150–300), bbox_inches='tight' para não cortar rótulos.\nPNG é bom para raster e web; SVG/PDF para vetorial (publicação, impressão) e escalabilidade sem perda."
+              },
+              {
+                "id": "ch8_q08",
+                "type": [
+                  "matplotlib"
+                ],
+                "prompt": "Como lidar com muitos pontos (overplotting) em scatter? Liste 4 estratégias.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Estratégias: reduzir alpha (transparência), amostrar dados, usar hexbin/2D hist, agregar (binning), usar jitter para categorias, e destacar outliers/centroides.\nIsso melhora interpretação sem mentir sobre densidade."
+              },
+              {
+                "id": "ch8_q09",
+                "type": [
+                  "visualização",
+                  "ética"
+                ],
+                "prompt": "Explique o que é 'limite de eixo' e por que escolher limites manualmente pode ser perigoso.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Limites controlam o “zoom”. Ajustar manualmente pode esconder outliers ou exagerar diferenças.\nBoa prática: justificar limites (domínio, unidades), mostrar outliers separadamente e evitar cortar dados sem avisar."
+              },
+              {
+                "id": "ch8_q10",
+                "type": [
+                  "comunicação"
+                ],
+                "prompt": "O que é anotação (annotate) e quando ela melhora um gráfico? Dê um exemplo de uso em ML/EDA.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Anotações destacam eventos/pontos importantes (pico, anomalia, mudança de regime).\nEm ML: marcar erro máximo, ponto de inflexão, fronteira de decisão, ou período de drift em série temporal."
+              },
+              {
+                "id": "ch8_q11",
+                "type": [
+                  "matplotlib",
+                  "figure_axes"
+                ],
+                "prompt": "Explique como comparar várias séries no mesmo gráfico sem virar 'salada visual'.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Limite número de séries, use legenda clara, diferencie com estilos (linha/marker), normalize quando necessário, e prefira facetar (subplots) quando há muitas curvas.\nDestaque a série principal e reduza ruído com grid leve e rótulos diretos."
+              },
+              {
+                "id": "ch8_q12",
+                "type": [
+                  "matplotlib",
+                  "subplots"
+                ],
+                "prompt": "Como construir subplots (layout) e garantir que rótulos não se sobreponham?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Use subplots(nrows,ncols) e ajuste layout com tight_layout() ou constrained_layout=True.\nControle size da Figure, rotacione ticks quando necessário e padronize escalas para comparações justas."
+              },
+              {
+                "id": "ch8_q13",
+                "type": [
+                  "matplotlib",
+                  "hist"
+                ],
+                "prompt": "Explique a diferença entre escala linear e logarítmica. Quando usar escala log em EDA?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Escala log comprime valores grandes e expande pequenos, útil para dados com cauda longa (renda, acessos, bytes).\nUse log para visualizar multiplicações/ordens de grandeza e para relações aproximadamente exponenciais."
+              },
+              {
+                "id": "ch8_q14",
+                "type": [
+                  "matplotlib",
+                  "bar"
+                ],
+                "prompt": "Como plotar séries temporais corretamente (datas no eixo x)? Cite 3 cuidados.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Cuidados: converter para datetime, ordenar por tempo, usar formatação de datas (AutoDateLocator/Formatter), e evitar muitos ticks.\nTambém: sinalizar lacunas, usar médias móveis para tendência e separar sazonalidade quando necessário."
+              },
+              {
+                "id": "ch8_q15",
+                "type": [
+                  "matplotlib",
+                  "savefig"
+                ],
+                "prompt": "Explique 'colormap' em gráficos de calor (heatmap). Qual armadilha comum em heatmaps de correlação?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Colormap mapeia valores para cores. Em correlação, armadilha: interpretar correlação como causalidade e ignorar tamanho de amostra.\nTambém é comum não ordenar variáveis, perdendo blocos de correlação; reordene ou use clustering para revelar estrutura."
+              },
+              {
+                "id": "ch8_q16",
+                "type": [
+                  "matplotlib",
+                  "annotations"
+                ],
+                "prompt": "Como você desenharia um gráfico para comunicar resultado de um modelo (ex.: comparação de métricas)? O que não pode faltar?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Inclua: métrica, baseline, intervalo/variância (CV), tamanho do dataset e protocolo de validação.\nMostre comparação justa (mesmas dobras) e destaque trade-offs (ex.: precisão vs recall). Sem contexto, gráfico vira “marketing”."
+              },
+              {
+                "id": "ch8_q17",
+                "type": [
+                  "matplotlib",
+                  "style"
+                ],
+                "prompt": "Explique o que é 'aspect ratio' e por que ele pode distorcer percepções em gráficos de dispersão.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Aspect ratio é a proporção entre escalas x e y. Se distorcido, pode “achatar” ou “alongar” tendências, mudando interpretação da inclinação/correlação.\nPara relações geométricas (distâncias), use aspect='equal' quando fizer sentido."
+              },
+              {
+                "id": "ch8_q18",
+                "type": [
+                  "matplotlib",
+                  "scatter"
+                ],
+                "prompt": "Quando você preferiria uma tabela em vez de um gráfico? Dê critérios.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Tabela é melhor para valores exatos, poucas linhas/colunas e comparação precisa.\nGráfico é melhor para padrões, tendências e distribuições. Se o leitor precisa “ler números”, tabela vence; se precisa “ver padrões”, gráfico vence."
+              },
+              {
+                "id": "ch8_q19",
+                "type": [
+                  "matplotlib",
+                  "grid_legend"
+                ],
+                "prompt": "Explique boas práticas para títulos e legendas: como transformar o título em uma frase que responde a uma pergunta.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Evite títulos genéricos (“Gráfico 1”). Use título que responda: “Vendas caem após julho?”.\nLegenda deve explicar séries sem jargão, e unidades devem estar nos eixos. Isso torna o gráfico autoexplicativo fora do contexto do notebook."
+              },
+              {
+                "id": "ch8_q20",
+                "type": [
+                  "matplotlib",
+                  "ticks"
+                ],
+                "prompt": "Descreva um checklist rápido para revisar um gráfico antes de publicar.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Checklist: (1) pergunta clara; (2) eixos com rótulos/unidades; (3) escala apropriada (zero/log); (4) legenda e cores distinguíveis; (5) sem overplotting; (6) fonte legível; (7) não cortar textos; (8) salvar em formato adequado; (9) fonte dos dados/protocolo indicado."
+              }
+            ]
+          },
+          {
+            "chapter": 9,
+            "id": "regressao_linear_simples",
+            "title": "Regressão Linear Simples",
+            "keyTopics": [
+              "carga bibliotecas/dados",
+              "variáveis dependente/independente",
+              "split + cross-validation",
+              "treino",
+              "predição",
+              "visualização resultados"
+            ],
+            "questions": [
+              {
+                "id": "ch9_q01",
+                "type": [
+                  "regressão_linear"
+                ],
+                "prompt": "Explique a hipótese de linearidade na Regressão Linear Simples. Como você verificaria se ela é razoável em um dataset real?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "A hipótese é que y varia aproximadamente de forma linear com x. Verifique com scatter plot, ajuste visual, e resíduos vs x.\nSe houver curva, tente transformações (log, raiz), termos polinomiais ou outro modelo (árvore, SVR) e compare por validação cruzada."
+              },
+              {
+                "id": "ch9_q02",
+                "type": [
+                  "regressão"
+                ],
+                "prompt": "Interprete o coeficiente angular (β1) e o intercepto (β0) em linguagem de negócio e com unidades.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "β1 é a variação média esperada em y para +1 unidade em x. β0 é o valor previsto quando x=0 (pode não ter sentido fora do domínio).\nSempre cite unidades: 'a cada 1 real em marketing, vendas sobem ~β1 reais', por exemplo."
+              },
+              {
+                "id": "ch9_q03",
+                "type": [
+                  "validação"
+                ],
+                "prompt": "Por que separar treino e teste é necessário em regressão? O que significa 'generalizar' neste contexto?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Sem teste você mede ajuste ao passado, não a capacidade de prever novos dados. Generalizar é manter erro baixo em dados não vistos, semelhantes aos futuros.\nIsso evita conclusões otimistas e expõe overfitting e problemas de leakage."
+              },
+              {
+                "id": "ch9_q04",
+                "type": [
+                  "cross_validation"
+                ],
+                "prompt": "Compare MAE, MSE e RMSE. Em quais cenários RMSE é preferível e em quais MAE é mais robusto?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "MAE penaliza linearmente e é mais robusto a outliers. MSE/RMSE penalizam erros grandes mais forte (quadrático).\nUse RMSE quando erros grandes são muito caros; use MAE quando há ruído e valores extremos que você não quer deixar dominar a métrica."
+              },
+              {
+                "id": "ch9_q05",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "O que é R²? Por que um R² alto não garante um bom modelo preditivo?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "R² é a fração da variância de y explicada pelo modelo em relação ao baseline (média). Pode ficar alto por vazamento, por domínio restrito ou por correlações espúrias.\nNão garante bom erro absoluto nem bom comportamento em novos dados; sempre valide e analise resíduos."
+              },
+              {
+                "id": "ch9_q06",
+                "type": [
+                  "predição",
+                  "avaliação"
+                ],
+                "prompt": "Explique análise de resíduos. Quais padrões indicam que o modelo linear está errado ou incompleto?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Resíduos devem parecer ruído sem padrão. Padrões comuns: curva (não linearidade), funil (heteroscedasticidade), autocorrelação temporal, clusters por grupos (feature faltante) e outliers influentes.\nUse resíduos vs predito, resíduos vs x e, quando fizer sentido, QQ-plot."
+              },
+              {
+                "id": "ch9_q07",
+                "type": [
+                  "visualização"
+                ],
+                "prompt": "O que é heteroscedasticidade e por que ela importa? Cite formas práticas de lidar com isso.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Heteroscedasticidade é quando a variância dos erros muda com x ou com o valor previsto. Isso causa erros maiores em certas faixas.\nLide com transformações (ex.: log y), modelos robustos, ponderação (WLS) ou segmentação; valide por faixa e por CV."
+              },
+              {
+                "id": "ch9_q08",
+                "type": [
+                  "diagnóstico"
+                ],
+                "prompt": "Diferencie outlier de ponto influente. Como detectar e como decidir se remove ou mantém?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Outlier é um valor extremo; ponto influente altera muito a reta ajustada. Detecte com resíduos padronizados, leverage e Cook's distance.\nRemova apenas se for erro de dado; se for um caso real, trate com robustez (transformação, modelos robustos) e explique o impacto."
+              },
+              {
+                "id": "ch9_q09",
+                "type": [
+                  "estatística"
+                ],
+                "prompt": "Padronizar (StandardScaler) muda as previsões da Regressão Linear Simples? O que muda de fato?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Em OLS simples, padronizar x não muda a qualidade das previsões (só reescala coeficientes e intercepto), mas melhora estabilidade numérica e facilita comparar efeitos.\nEm modelos com regularização (Ridge/Lasso), padronização é essencial porque a penalização depende da escala."
+              },
+              {
+                "id": "ch9_q10",
+                "type": [
+                  "outliers"
+                ],
+                "prompt": "Descreva um pipeline mínimo (em palavras) para regressão em scikit-learn, incluindo validação cruzada e teste final.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Defina métrica (MAE/RMSE), faça split (ou CV), encaixe pré-processamento se necessário, treine LinearRegression, avalie em CV (média e desvio) e só no fim rode no teste.\nRegistre parâmetros, seed e gráficos de diagnóstico (real vs predito, resíduos)."
+              },
+              {
+                "id": "ch9_q11",
+                "type": [
+                  "reprodutibilidade"
+                ],
+                "prompt": "Por que correlação entre x e y não implica causalidade, mesmo quando a regressão 'funciona'?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Regressão mede associação. Variáveis omitidas e confusão podem explicar a relação (ex.: desconto e churn).\nPara causalidade, precisa desenho experimental (A/B), controle de confounders e/ou métodos causais; caso contrário, ações baseadas no modelo podem falhar."
+              },
+              {
+                "id": "ch9_q12",
+                "type": [
+                  "eda",
+                  "avaliação"
+                ],
+                "prompt": "Como escolher uma única variável independente para regressão simples (ou decidir que regressão simples é inadequada)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Escolha uma feature disponível no momento da previsão, com significado de domínio e relação plausível com o target. Verifique missing, outliers e estabilidade temporal.\nSe o erro ficar alto ou resíduos mostrarem padrões por grupos, provavelmente o problema exige múltiplas features ou outro modelo."
+              },
+              {
+                "id": "ch9_q13",
+                "type": [
+                  "regressao_linear",
+                  "equacao"
+                ],
+                "prompt": "Como checar se o modelo erra mais em certos segmentos (faixas, regiões, perfis)?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Calcule MAE/RMSE por bins (ex.: quintis) e por categorias (ex.: região). Visualize resíduos por segmento.\nSe houver disparidades, crie features adicionais, interações ou modelos segmentados e valide se melhora sem leakage."
+              },
+              {
+                "id": "ch9_q14",
+                "type": [
+                  "regressao_linear",
+                  "coeficientes"
+                ],
+                "prompt": "O que é extrapolação em regressão linear? Dê um exemplo de risco e como mitigar.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Extrapolar é prever para x fora do intervalo visto no treino. A reta pode produzir valores absurdos.\nMitigue limitando o domínio, coletando dados na faixa desejada, usando modelos com saturação/regularização e alertando o usuário quando estiver fora do suporte."
+              },
+              {
+                "id": "ch9_q15",
+                "type": [
+                  "regressao_linear",
+                  "residuos"
+                ],
+                "prompt": "Explique sinais de overfitting em regressão simples e como identificar sensibilidade a poucos pontos.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Sinais: erro muito baixo no treino e alto no teste, e grande mudança nos coeficientes ao remover 1 ou 2 observações.\nUse validação cruzada, análise de influência (Cook) e teste de estabilidade (bootstrap) para confirmar."
+              },
+              {
+                "id": "ch9_q16",
+                "type": [
+                  "métricas",
+                  "mse_mae"
+                ],
+                "prompt": "Como representar incerteza na previsão (intervalos) e por que isso pode ser mais útil que um único número?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Intervalos comunicam risco: duas previsões iguais podem ter confiabilidade diferente. Use inferência (statsmodels) ou bootstrap para construir intervalos.\nEm decisões (estoque, crédito), a faixa pode ser mais útil que o ponto central para planejar buffers e limites."
+              },
+              {
+                "id": "ch9_q17",
+                "type": [
+                  "regressao_linear",
+                  "assumptions"
+                ],
+                "prompt": "O que significa 'normalidade dos resíduos' e quando isso realmente importa (previsão vs inferência)?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Normalidade importa mais para inferência clássica (p-values, intervalos) do que para predição pura.\nMesmo assim, resíduos muito assimétricos podem indicar transformações necessárias, outliers ou distribuição alvo inadequada."
+              },
+              {
+                "id": "ch9_q18",
+                "type": [
+                  "regressao_linear",
+                  "outliers"
+                ],
+                "prompt": "Estudo de caso: x=investimento em marketing, y=vendas. Quais perguntas você faria antes de concluir que marketing causa aumento em vendas?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Pergunte sobre sazonalidade, promoções simultâneas, defasagem (lag), capacidade (teto), segmentação e canais. Cheque se investimento reage a vendas (causalidade reversa).\nIdeal: experimento A/B ou quasi-experimentos; no mínimo, modelagem temporal com controles."
+              },
+              {
+                "id": "ch9_q19",
+                "type": [
+                  "regressao_linear",
+                  "r2"
+                ],
+                "prompt": "Quais resultados mínimos você reportaria ao apresentar uma regressão linear simples a alguém de negócio?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Reporte: MAE/RMSE e R² em teste/CV, comparação com baseline (média), gráfico real vs predito e resíduos vs predito.\nDescreva o protocolo de validação e os principais erros por segmento; sem isso, o resultado não é confiável."
+              },
+              {
+                "id": "ch9_q20",
+                "type": [
+                  "regressao_linear",
+                  "correlation"
+                ],
+                "prompt": "Explique como você detectaria 'leakage' em um problema de regressão simples quando a métrica ficou alta demais.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Procure colunas pós-evento e features que 'resumem' o target. Compare performance com split temporal e por grupo.\nCheque se o pré-processamento foi ajustado com dados do teste. Importância dominada por uma única feature também é sinal clássico."
+              }
+            ]
+          },
+          {
+            "chapter": 10,
+            "id": "regressao_linear_multipla",
+            "title": "Regressão Linear Múltipla",
+            "keyTopics": [
+              "carga bibliotecas/dados",
+              "variáveis dependente/independente",
+              "split + cross-validation",
+              "treino",
+              "predição",
+              "visualização resultados",
+              "múltiplas variáveis explicativas"
+            ],
+            "questions": [
+              {
+                "id": "ch10_q01",
+                "type": [
+                  "regressão_linear"
+                ],
+                "prompt": "Explique a ideia de Regressão Linear Múltipla e como interpretar coeficientes 'mantendo as outras variáveis constantes'.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Na regressão múltipla, y é explicada por várias features: y = β0 + β1x1 + ... + βkxk. O coeficiente βi é o efeito marginal de xi quando as outras variáveis ficam fixas.\nIsso exige cuidado: se features são correlacionadas, 'manter constantes' pode ser irreal e os coeficientes ficam instáveis."
+              },
+              {
+                "id": "ch10_q02",
+                "type": [
+                  "dados"
+                ],
+                "prompt": "O que é multicolinearidade? Quais sintomas ela causa e como detectar (ex.: VIF)?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Multicolinearidade ocorre quando features são altamente correlacionadas. Sintomas: coeficientes com sinais estranhos, grandes variações entre amostras e alta incerteza.\nDetecte por matriz de correlação, VIF alto e instabilidade por bootstrap. Soluções: remover/combinar features, PCA ou regularização (Ridge/Lasso)."
+              },
+              {
+                "id": "ch10_q03",
+                "type": [
+                  "correlação",
+                  "regressão"
+                ],
+                "prompt": "Como lidar com variáveis categóricas em regressão múltipla? Explique one-hot e a armadilha da 'dummy variable trap'.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Use OneHotEncoder para categorias sem ordem. A dummy trap é incluir todas as dummies + intercepto, criando colinearidade perfeita.\nEm geral, o encoder remove uma categoria (drop='first') ou o modelo lida via regularização; em sklearn, Pipeline/OneHot evita erros e mantém consistência."
+              },
+              {
+                "id": "ch10_q04",
+                "type": [
+                  "cross_validation"
+                ],
+                "prompt": "Explique o papel do pré-processamento com ColumnTransformer em um dataset com numéricas, categóricas e datas.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Numéricas: imputação + StandardScaler; categóricas: imputação + OneHotEncoder(handle_unknown='ignore'); datas: extração de componentes (mês, dia da semana) ou features de janela.\nColumnTransformer aplica cada transformação no conjunto certo e permite CV sem leakage."
+              },
+              {
+                "id": "ch10_q05",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "Compare Ridge e Lasso. Quando Lasso pode ser útil e qual é um risco ao interpretá-lo?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Ridge (L2) encolhe coeficientes, lida bem com colinearidade e mantém todas as features. Lasso (L1) pode zerar coeficientes, funcionando como seleção.\nRisco: em features correlacionadas, Lasso escolhe uma 'arbitrariamente'; interpretação deve considerar estabilidade e validação."
+              },
+              {
+                "id": "ch10_q06",
+                "type": [
+                  "visualização"
+                ],
+                "prompt": "Explique Elastic Net e por que ele pode ser uma boa escolha em regressão múltipla com muitas features correlacionadas.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Elastic Net combina L1 e L2, equilibrando seleção (L1) e estabilidade (L2). Em alta correlação, tende a selecionar grupos de features e reduzir instabilidade.\nÉ comum em problemas com muitas variáveis (textos, one-hot grande) e ajuda generalização."
+              },
+              {
+                "id": "ch10_q07",
+                "type": [
+                  "avaliação"
+                ],
+                "prompt": "Quais métricas você usaria para avaliar regressão múltipla e por quê? Inclua pelo menos uma métrica 'em unidades do problema'.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Use MAE (em unidades reais, fácil de explicar), RMSE (penaliza erros grandes), e R²/Adjusted R² (comparação relativa).\nSempre reporte erro em unidades do negócio (ex.: reais, dias) e compare com baseline (média/mediana)."
+              },
+              {
+                "id": "ch10_q08",
+                "type": [
+                  "exemplos"
+                ],
+                "prompt": "Explique 'Adjusted R²' e por que ele é relevante em regressão múltipla.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "R² sempre aumenta (ou não diminui) ao adicionar features, mesmo inúteis. Adjusted R² penaliza complexidade (número de features) e pode diminuir quando a feature não agrega.\nÉ útil para comparar modelos com diferentes quantidades de variáveis, mas não substitui validação em teste."
+              },
+              {
+                "id": "ch10_q09",
+                "type": [
+                  "pré-processamento"
+                ],
+                "prompt": "Como você faria seleção de features de forma correta (sem leakage) em um pipeline de regressão múltipla?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Faça seleção dentro do Pipeline e dentro do loop de CV (ex.: SelectKBest, RFE, Lasso) para que a escolha use apenas treino em cada dobra.\nNunca selecione usando o dataset inteiro antes do split. Avalie estabilidade das features selecionadas e impacto no erro."
+              },
+              {
+                "id": "ch10_q10",
+                "type": [
+                  "projeto"
+                ],
+                "prompt": "Explique interações entre variáveis (x1*x2). Quando faz sentido adicionar interações em regressão linear?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Interação significa que o efeito de x1 depende de x2 (ex.: desconto funciona diferente por segmento). Adicionar termo x1*x2 permite capturar isso.\nFaz sentido quando há justificativa de domínio e evidência nos dados; use regularização/CV para evitar explosão de features."
+              },
+              {
+                "id": "ch10_q11",
+                "type": [
+                  "missing"
+                ],
+                "prompt": "Como diagnosticar se a regressão múltipla está 'faltando variáveis importantes'?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Sinais: resíduos com padrão por segmentos, autocorrelação, e erro alto em faixas específicas. Verifique se há variáveis de confusão e se features disponíveis no momento da previsão são suficientes.\nCrie features derivadas (agregações, lags) e compare melhoria via CV."
+              },
+              {
+                "id": "ch10_q12",
+                "type": [
+                  "leakage",
+                  "pipeline"
+                ],
+                "prompt": "Explique o problema de 'data leakage' em regressão múltipla com exemplos típicos em features agregadas.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Leakage comum: agregações calculadas usando dados futuros (ex.: média de compras do mês inteiro para prever no meio do mês), ou features calculadas após o evento.\nEvite com janelas temporais corretas (rolling) e geração de features alinhada ao timestamp da previsão."
+              },
+              {
+                "id": "ch10_q13",
+                "type": [
+                  "regressao_linear",
+                  "multivariada"
+                ],
+                "prompt": "Por que padronização é crítica quando você usa regularização (Ridge/Lasso/Elastic Net)?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "A penalização atua sobre o tamanho dos coeficientes. Se uma feature tem escala enorme, ela domina e é penalizada de forma diferente.\nPadronizar coloca todas em escala comparável, tornando a regularização justa e o tuning (alpha/C) mais estável."
+              },
+              {
+                "id": "ch10_q14",
+                "type": [
+                  "regressao_linear",
+                  "multicolinearidade"
+                ],
+                "prompt": "Explique como lidar com outliers em regressão múltipla sem simplesmente removê-los.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use transformações (log), métricas robustas (MAE), winsorization por regra de domínio, modelos robustos (HuberRegressor, RANSAC) ou segmentação.\nSempre valide impacto em CV e verifique se outliers são casos reais relevantes."
+              },
+              {
+                "id": "ch10_q15",
+                "type": [
+                  "regressao_linear",
+                  "dummy"
+                ],
+                "prompt": "Descreva como você interpretaria coeficientes quando há one-hot encoding. O que muda na interpretação do intercepto?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Com one-hot, coeficientes representam diferença em relação à categoria de referência (baseline). O intercepto é o valor previsto para a categoria base com numéricas em zero (ou média se padronizadas).\nPara interpretação, frequentemente é melhor reverter a padronização e usar exemplos concretos (cenários)."
+              },
+              {
+                "id": "ch10_q16",
+                "type": [
+                  "regressao_linear",
+                  "interactions"
+                ],
+                "prompt": "Explique por que 'muitos atributos' podem piorar a regressão (mesmo linear). O que fazer quando p >> n?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Com muitas features e poucos dados, o modelo pode ajustar ruído e ficar instável. Colinearidade e variância aumentam.\nUse regularização, seleção de features, redução de dimensionalidade, e principalmente mais dados. Validação cruzada é indispensável."
+              },
+              {
+                "id": "ch10_q17",
+                "type": [
+                  "regressao_linear",
+                  "regularizacao"
+                ],
+                "prompt": "Como comparar dois modelos de regressão múltipla de forma justa? Cite um protocolo.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use o mesmo split/CV, mesma engenharia de features, e tuning com orçamento similar. Compare média e desvio das métricas e faça análise de erro por segmento.\nDepois, avalie no teste final e registre tudo para reprodutibilidade."
+              },
+              {
+                "id": "ch10_q18",
+                "type": [
+                  "regressao_linear",
+                  "adj_r2"
+                ],
+                "prompt": "Explique 'feature scaling' vs 'target scaling'. Quando faria scaling do target em regressão?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Scaling de features é comum para modelos sensíveis a escala. Scaling do target é útil quando y tem ordens de grandeza diferentes e o modelo se beneficia (ex.: SVR, redes neurais).\nAo escalar y, lembre de inverter a escala na predição e avaliar métricas na unidade original."
+              },
+              {
+                "id": "ch10_q19",
+                "type": [
+                  "pipeline",
+                  "scaling"
+                ],
+                "prompt": "Descreva um caso onde regressão linear múltipla é uma má escolha e justifique outro modelo.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Se há forte não linearidade, interações complexas e limites, linear pode falhar (alto erro e resíduos estruturados). Exemplos: precificação com efeitos de saturação.\nConsidere árvores/Random Forest/Gradient Boosting ou SVR com kernel, e compare via CV e interpretabilidade."
+              },
+              {
+                "id": "ch10_q20",
+                "type": [
+                  "diagnostico",
+                  "residuos"
+                ],
+                "prompt": "Quais gráficos e diagnósticos você apresentaria para convencer que o modelo é 'bom o suficiente' e onde ele falha?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Mostre: real vs predito, resíduos vs predito, erro por segmento, distribuição de resíduos e importância/coeficientes (com estabilidade). Inclua baseline.\nTambém mostre casos de maior erro e explique limites (ex.: faixa sem dados, drift)."
+              }
+            ]
+          },
+          {
+            "chapter": 11,
+            "id": "regressao_polinomial",
+            "title": "Regressão Polinomial",
+            "keyTopics": [
+              "regressão polinomial",
+              "carga dados",
+              "X/y",
+              "split + CV",
+              "treino",
+              "visualização teste",
+              "predição"
+            ],
+            "questions": [
+              {
+                "id": "ch11_q01",
+                "type": [
+                  "regressão_polinomial"
+                ],
+                "prompt": "Explique a motivação da Regressão Polinomial. Por que ela ainda é uma regressão linear 'por dentro'?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ela permite capturar curvatura adicionando termos x², x³, etc. Apesar de não ser linear em x, é linear nos parâmetros (coeficientes) desses termos, então pode ser treinada com regressão linear sobre features expandidas."
+              },
+              {
+                "id": "ch11_q02",
+                "type": [
+                  "overfitting",
+                  "model_selection"
+                ],
+                "prompt": "O que faz o PolynomialFeatures no scikit-learn? O que significa include_bias e interaction_only?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "PolynomialFeatures gera colunas elevadas a potências e (opcionalmente) interações entre features. include_bias adiciona a coluna de 1 (intercepto). interaction_only gera só interações, sem potências individuais acima de 1.\nEle pode explodir dimensionalidade; use com cuidado."
+              },
+              {
+                "id": "ch11_q03",
+                "type": [
+                  "validação"
+                ],
+                "prompt": "Por que o grau do polinômio é um hiperparâmetro crítico? Como escolher grau de forma rigorosa?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Grau controla complexidade: baixo grau pode underfit; alto grau overfit e extrapola mal. Escolha via validação cruzada e compare métricas + gráficos de resíduos.\nEvite escolher olhando o teste; use CV, e finalize em um conjunto de teste separado."
+              },
+              {
+                "id": "ch11_q04",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "Explique por que regressão polinomial tende a extrapolar mal. Dê um exemplo intuitivo.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Polinômios de grau alto podem crescer rapidamente fora do intervalo observado, gerando previsões absurdas. Mesmo grau baixo pode seguir tendência errada além do suporte.\nEx.: ajuste em 0..10 e prever em 20 pode 'explodir'. Mitigue com domínio restrito ou modelos com saturação."
+              },
+              {
+                "id": "ch11_q05",
+                "type": [
+                  "visualização"
+                ],
+                "prompt": "Mostre (conceitualmente) como montar um Pipeline: StandardScaler -> PolynomialFeatures -> LinearRegression. Por que a ordem importa?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "A ordem garante que a expansão polinomial seja feita a partir de features em escala controlada (quando necessário) e que o modelo seja treinado com as mesmas transformações.\nEm geral: (1) imputar, (2) escalar, (3) expandir polinômio, (4) regressão/regularização."
+              },
+              {
+                "id": "ch11_q06",
+                "type": [
+                  "overfitting"
+                ],
+                "prompt": "Padronização é necessária em regressão polinomial? Explique o motivo e o que pode acontecer sem ela.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "É recomendada porque termos x², x³ amplificam escala e podem causar instabilidade numérica e coeficientes enormes. Com regularização, é praticamente obrigatória.\nSem padronização, o modelo pode ser difícil de ajustar e extremamente sensível a pequenas variações."
+              },
+              {
+                "id": "ch11_q07",
+                "type": [
+                  "predição"
+                ],
+                "prompt": "Explique como interpretar coeficientes em um modelo polinomial. Por que interpretação direta é difícil?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Coeficientes não têm interpretação simples como 'cada 1 unidade em x muda y em β' porque o efeito depende de x (derivada). Além disso, termos são correlacionados.\nPara interpretar, use gráficos de curva, derivadas locais, e 'efeito marginal' em pontos específicos."
+              },
+              {
+                "id": "ch11_q08",
+                "type": [
+                  "tradeoff"
+                ],
+                "prompt": "O que é overfitting em regressão polinomial e como ele aparece em gráficos?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Overfitting aparece como curva 'ondulada' que passa perto dos pontos de treino, mas erra em regiões novas. Em gráficos: muita oscilação, grandes variações locais e resíduos pequenos no treino, grandes no teste.\nUse CV, regularização e escolha de grau apropriada."
+              },
+              {
+                "id": "ch11_q09",
+                "type": [
+                  "feature_engineering"
+                ],
+                "prompt": "Compare regressão polinomial com splines e com árvores de decisão. Em quais cenários cada um é melhor?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Polinomial é simples, mas extrapola mal e pode oscilar. Splines (piecewise) modelam curvatura de forma estável e local. Árvores capturam não linearidade e interações sem engenharia explícita, mas podem ser menos suaves.\nEscolha pelo tipo de relação e pela necessidade de suavidade/interpretação."
+              },
+              {
+                "id": "ch11_q10",
+                "type": [
+                  "dimensionalidade"
+                ],
+                "prompt": "Explique como usar regularização (Ridge/Lasso) em regressão polinomial e por que isso ajuda.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Com muitos termos, a variância aumenta. Ridge encolhe coeficientes e reduz oscilações; Lasso pode zerar termos e simplificar.\nCombine com padronização e CV para escolher alpha; isso reduz overfitting e melhora generalização."
+              },
+              {
+                "id": "ch11_q11",
+                "type": [
+                  "avaliação"
+                ],
+                "prompt": "Como avaliar um modelo polinomial além das métricas? Cite 3 diagnósticos importantes.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Diagnósticos: (1) real vs predito para ver tendência; (2) resíduos vs x/predito para detectar padrões; (3) sensibilidade a outliers e estabilidade por bootstrap.\nTambém é útil comparar contra baseline e modelos alternativos (linear, árvore)."
+              },
+              {
+                "id": "ch11_q12",
+                "type": [
+                  "boas_praticas"
+                ],
+                "prompt": "Explique o impacto de outliers em regressão polinomial e estratégias para reduzir o dano.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Outliers podem puxar a curva e aumentar oscilações. Estratégias: tratar outliers por regra de domínio, usar perdas robustas (Huber/RANSAC), transformações (log) e limitar grau.\nSempre valide impacto em CV e inspecione casos extremos."
+              },
+              {
+                "id": "ch11_q13",
+                "type": [
+                  "polinomial",
+                  "features"
+                ],
+                "prompt": "Como você faria seleção automática do melhor grau (1..N) usando GridSearchCV e Pipeline sem vazamento?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Monte Pipeline com PolynomialFeatures + modelo (ex.: Ridge). Use GridSearchCV no parâmetro degree e alpha, com CV. O GridSearch ajusta tudo dentro de cada dobra, evitando leakage.\nDepois, avalie o melhor pipeline no teste final e registre parâmetros."
+              },
+              {
+                "id": "ch11_q14",
+                "type": [
+                  "polinomial",
+                  "grau"
+                ],
+                "prompt": "Explique 'interaction terms' em regressão polinomial com múltiplas features. Por que isso explode dimensionalidade?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Com várias features, PolynomialFeatures cria combinações (x1*x2, x1²*x2, etc.). O número de termos cresce combinatoriamente com o grau e a quantidade de features.\nIsso aumenta custo e overfitting; use grau baixo, seleção/regularização e, se preciso, limitar interações."
+              },
+              {
+                "id": "ch11_q15",
+                "type": [
+                  "polinomial",
+                  "seleção_grau"
+                ],
+                "prompt": "Quando a regressão polinomial é uma escolha ruim? Dê dois sinais fortes.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Sinais: (1) relação muda por segmentos e requer regras diferentes (não uma curva global); (2) muitos atributos e interações complexas; (3) previsão fora do intervalo (extrapolação) é importante.\nNesses casos, prefira modelos baseados em árvores ou métodos locais (KNN/splines)."
+              },
+              {
+                "id": "ch11_q16",
+                "type": [
+                  "polinomial",
+                  "scaling"
+                ],
+                "prompt": "Explique a diferença entre ajustar polinômio em uma variável vs ajustar em várias. O que muda na visualização?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Em 1D, você visualiza facilmente a curva. Em várias variáveis, a superfície é difícil de plotar e interpretar; você precisa de cortes (fixar variáveis) e análises de sensibilidade.\nTambém aumenta muito o risco de overfitting por interações."
+              },
+              {
+                "id": "ch11_q17",
+                "type": [
+                  "polinomial",
+                  "regularizacao"
+                ],
+                "prompt": "Como você escolheria o limite máximo de grau (N) antes de fazer grid search?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Baseie em: tamanho de dataset (mais dados permitem mais complexidade), ruído, domínio (curvas suaves tendem a precisar de graus baixos) e custo computacional.\nPrática: começar com 1..5, validar; só aumentar se houver evidência clara de underfitting."
+              },
+              {
+                "id": "ch11_q18",
+                "type": [
+                  "polinomial",
+                  "under_over"
+                ],
+                "prompt": "Explique como detectar underfitting em regressão polinomial e como corrigir.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Underfitting: erro alto em treino e teste, resíduos com padrão (curva) e previsões sistematicamente acima/abaixo em regiões.\nCorrija aumentando grau com CV, adicionando features, transformando variáveis ou escolhendo modelo mais flexível."
+              },
+              {
+                "id": "ch11_q19",
+                "type": [
+                  "polinomial",
+                  "pipeline"
+                ],
+                "prompt": "Dê um exemplo de problema real onde um modelo polinomial faz sentido e outro onde ele é perigoso.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Faz sentido: relação física suave em faixa limitada (ex.: consumo vs velocidade em intervalo). Perigoso: preços/risco com mudanças abruptas e regimes (mercado) ou quando você precisa extrapolar para valores nunca vistos.\nSempre conecte escolha do modelo ao domínio e ao protocolo de validação."
+              },
+              {
+                "id": "ch11_q20",
+                "type": [
+                  "polinomial",
+                  "interpretação"
+                ],
+                "prompt": "Explique como documentar um experimento com regressão polinomial para que outra pessoa consiga reproduzir e auditar.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Documente: dataset/versão, split/CV, grau testado, parâmetros (alpha, scaler), métricas e gráficos de diagnóstico. Salve o pipeline (joblib) e liste colunas.\nSem isso, resultados não são verificáveis e o modelo não é confiável para decisão."
+              }
+            ]
+          },
+          {
+            "chapter": 12,
+            "id": "arvores_de_decisao",
+            "title": "Árvores de Decisão",
+            "keyTopics": [
+              "árvore de decisão para classificação",
+              "carga bibliotecas e dados",
+              "divisões por regras",
+              "interpretabilidade"
+            ],
+            "questions": [
+              {
+                "id": "ch12_q01",
+                "type": [
+                  "arvore_decisao"
+                ],
+                "prompt": "Explique a intuição de uma Árvore de Decisão para classificação. Como ela transforma dados em regras?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Uma árvore divide o espaço de features em regiões por perguntas do tipo 'x_j <= limiar?'. Cada nó escolhe a divisão que melhor separa classes segundo um critério (Gini/Entropia).\nO resultado é um conjunto de regras interpretáveis que mapeiam regiões para uma classe."
+              },
+              {
+                "id": "ch12_q02",
+                "type": [
+                  "arvore_decisao"
+                ],
+                "prompt": "Compare Gini e Entropia. Eles costumam levar a árvores muito diferentes?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Ambos medem impureza: Gini é mais simples e costuma ser um pouco mais rápido; entropia vem de teoria da informação. Na prática, frequentemente produzem árvores parecidas, mas podem escolher divisões diferentes em empates.\nO mais importante é controlar complexidade (profundidade, min_samples)."
+              },
+              {
+                "id": "ch12_q03",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "O que é overfitting em árvores? Cite hiperparâmetros que controlam complexidade.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Árvores podem memorizar ruído criando muitos nós. Controle com max_depth, min_samples_split, min_samples_leaf, max_features e ccp_alpha (poda).\nUse validação cruzada para ajustar esses parâmetros e evitar árvore gigante com métricas infladas no treino."
+              },
+              {
+                "id": "ch12_q04",
+                "type": [
+                  "arvore_decisao"
+                ],
+                "prompt": "Explique poda (pruning) e o papel de ccp_alpha. Por que podar pode melhorar generalização?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Poda remove ramos com pouco ganho real, reduzindo variância. ccp_alpha (cost-complexity pruning) penaliza árvores complexas.\nPodar simplifica regras, melhora generalização e interpretabilidade, especialmente quando há ruído e poucos dados."
+              },
+              {
+                "id": "ch12_q05",
+                "type": [
+                  "tradeoff"
+                ],
+                "prompt": "Como interpretar 'feature importance' em árvores? Quais são duas armadilhas comuns?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Importance mede redução média de impureza por feature. Armadilhas: (1) viés para variáveis com muitos níveis/valores; (2) correlação entre features divide a importância e pode esconder efeito.\nValide com permutação (permutation importance) e análise de erros por segmento."
+              },
+              {
+                "id": "ch12_q06",
+                "type": [
+                  "overfitting"
+                ],
+                "prompt": "Como árvores lidam com escalas de features? Você precisa padronizar como em SVM/KNN?",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Árvores são invariantes à escala: decisões por limiar não dependem de unidades como distância. Em geral, não precisam de padronização.\nAinda assim, pré-processamento pode ser necessário para missing, categorias e vazamento, mas não por escala."
+              },
+              {
+                "id": "ch12_q07",
+                "type": [
+                  "avaliação"
+                ],
+                "prompt": "Explique como tratar variáveis categóricas com DecisionTreeClassifier no ecossistema scikit-learn.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "O sklearn tradicional requer números; categorias precisam ser codificadas (OneHot/Ordinal). OneHot é seguro para categorias nominais.\nCuidado com alta cardinalidade (muitas colunas) e com leakage em categorias raras; valide e, se preciso, agrupe categorias."
+              },
+              {
+                "id": "ch12_q08",
+                "type": [
+                  "desbalanceamento"
+                ],
+                "prompt": "Explique por que árvores são atraentes em interpretabilidade, mas ainda podem ser difíceis de explicar quando crescem.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Árvores pequenas viram regras fáceis. Árvores grandes têm dezenas/centenas de nós e ficam tão complexas quanto modelos 'caixa-preta'.\nPor isso, controle profundidade, use poda e prefira explicar com caminhos principais, exemplos e métricas por segmento."
+              },
+              {
+                "id": "ch12_q09",
+                "type": [
+                  "arvores",
+                  "split"
+                ],
+                "prompt": "Como visualizar uma árvore e extrair regras úteis para comunicação?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Use plot_tree/export_text para visualizar e ler splits. Foque nos primeiros níveis (maior ganho) e em caminhos que cobrem boa parte dos dados.\nTraduza regras em linguagem de negócio e valide com exemplos reais, mostrando casos corretos e erros."
+              },
+              {
+                "id": "ch12_q10",
+                "type": [
+                  "arvores",
+                  "gini_entropy"
+                ],
+                "prompt": "Explique como avaliar uma árvore em dados desbalanceados. Quais métricas e ajustes você consideraria?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use matriz de confusão, precision/recall/F1, PR-AUC e ajuste de threshold (se usar probabilidades). Também considere class_weight para penalizar classe rara.\nEm desbalanceamento forte, uma árvore pode prever majoritária; portanto, estratifique splits e faça análise por segmento."
+              },
+              {
+                "id": "ch12_q11",
+                "type": [
+                  "arvores",
+                  "profundidade"
+                ],
+                "prompt": "O que são probabilidades em árvores (predict_proba)? Elas são bem calibradas?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "As probabilidades são proporções de classes nas folhas. Em árvores profundas, podem ficar extremas (0 ou 1) e não calibradas.\nSe você precisa de probabilidades confiáveis, use calibração (CalibratedClassifierCV) ou modelos ensemble (Random Forest/GBM)."
+              },
+              {
+                "id": "ch12_q12",
+                "type": [
+                  "arvores",
+                  "pruning"
+                ],
+                "prompt": "Explique o que muda quando você passa de Árvore de Decisão para Random Forest ou Gradient Boosting.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Árvore única é interpretável, mas instável. Random Forest reduz variância ao agregar muitas árvores com amostragem; Boosting reduz viés ao combinar árvores fracas sequencialmente.\nEm geral, ensembles performam melhor, mas explicação fica mais indireta (feature importance, SHAP)."
+              },
+              {
+                "id": "ch12_q13",
+                "type": [
+                  "arvores",
+                  "feature_importance"
+                ],
+                "prompt": "Como detectar instabilidade de uma árvore? Dê um método prático.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Árvores mudam muito com pequenas variações nos dados. Teste com bootstrap: reamostre o dataset e treine várias árvores; compare splits/feature importance e métricas.\nSe variar muito, use poda/regularização ou ensembles."
+              },
+              {
+                "id": "ch12_q14",
+                "type": [
+                  "arvores",
+                  "missing"
+                ],
+                "prompt": "Explique a diferença entre min_samples_leaf e max_depth no controle de overfitting. Quando preferir ajustar um ou outro?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "max_depth limita altura; min_samples_leaf garante tamanho mínimo de folha. min_samples_leaf é ótimo para evitar folhas com poucos exemplos (ruído) e tende a produzir regras mais gerais.\nComece com min_samples_leaf para robustez e ajuste depth para interpretabilidade/performance."
+              },
+              {
+                "id": "ch12_q15",
+                "type": [
+                  "arvores",
+                  "categoricas"
+                ],
+                "prompt": "Como lidar com dados com muitos missing antes de uma árvore no sklearn? O que não fazer?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Impute missing (mediana/moda) dentro de Pipeline para evitar leakage. Também pode criar indicador de missing.\nNão impute usando todo o dataset antes do split. E não remova colunas cegamente sem entender se missing é informativo."
+              },
+              {
+                "id": "ch12_q16",
+                "type": [
+                  "arvores",
+                  "ensemble"
+                ],
+                "prompt": "Descreva um mini-caso: você quer explicar a decisão de um modelo para auditoria. Como você usaria uma árvore pequena como 'modelo substituto'?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Treine um modelo melhor (ex.: ensemble) e depois treine uma árvore pequena para aproximar suas decisões em um conjunto de dados (surrogate model).\nUse a árvore para explicar regras gerais e valide fidelidade (quão bem imita o modelo) + exemplos de decisões. Não confunda surrogate com verdade causal."
+              }
+            ]
+          },
+          {
+            "chapter": 13,
+            "id": "regressao_logistica",
+            "title": "Regressão Logística",
+            "keyTopics": [
+              "visão geral",
+              "razão das chances (odds)",
+              "sigmoide",
+              "implementação python",
+              "dataset",
+              "carregar libs/dados",
+              "EDA",
+              "estatísticas descritivas",
+              "análise por gráficos",
+              "features: Gravidezes, Glicose, PD, DobraTríceps, Insulina, IMC, DPF, Idade",
+              "correlações",
+              "conclusões"
+            ],
+            "questions": [
+              {
+                "id": "ch13_q01",
+                "type": [
+                  "logistica"
+                ],
+                "prompt": "Explique a motivação da Regressão Logística. Por que ela é um classificador e não uma regressão 'de verdade'?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ela modela a probabilidade de uma classe (y=1) como função das features via sigmoide. Embora use 'regressão' no nome, o alvo é categórico e o modelo otimiza log-loss para classificação.\nO output pode ser probabilidade; a classe vem de um threshold."
+              },
+              {
+                "id": "ch13_q02",
+                "type": [
+                  "odds"
+                ],
+                "prompt": "Defina odds e log-odds (logit). Como isso aparece na fórmula da Regressão Logística?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Odds = p/(1-p). Log-odds = log(p/(1-p)). A Regressão Logística assume que log-odds é linear nas features: logit(p)=β0+β·x.\nIsso dá interpretabilidade: mudanças em x afetam odds multiplicativamente."
+              },
+              {
+                "id": "ch13_q03",
+                "type": [
+                  "sigmoide"
+                ],
+                "prompt": "Explique a função sigmoide e o que acontece com p quando β·x cresce muito positivo ou muito negativo.",
+                "difficulty": 2,
+                "tags": [],
+                "expected": "Sigmoide mapeia qualquer número real para (0,1). Se β·x é muito positivo, p tende a 1; se muito negativo, p tende a 0.\nIsso cria decisão suave e permite treinar por gradiente/otimização convexa (no caso padrão)."
+              },
+              {
+                "id": "ch13_q04",
+                "type": [
+                  "classificação"
+                ],
+                "prompt": "Como interpretar um coeficiente βi em termos de odds ratio? Dê um exemplo com números.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Para 1 unidade em xi, o log-odds muda em βi; as odds multiplicam por exp(βi). Ex.: βi=0,7 => exp(0,7)≈2,01: odds dobram.\nCuidado com unidade/escala; padronize para comparar magnitudes entre features."
+              },
+              {
+                "id": "ch13_q05",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "Compare log-loss com accuracy. Por que log-loss é mais informativa durante o treino?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Accuracy só olha acerto/erro após threshold; ignora confiança. Log-loss penaliza probabilidades erradas com força, incentivando probabilidades calibradas.\nPor isso, log-loss detecta melhorias mesmo quando accuracy muda pouco, e é melhor para otimizar modelos probabilísticos."
+              },
+              {
+                "id": "ch13_q06",
+                "type": [
+                  "dados"
+                ],
+                "prompt": "Explique decisão por threshold. Como você escolheria um threshold alinhado ao custo de FP/FN?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Escolha threshold para minimizar custo esperado: custo_FP*FP + custo_FN*FN. Use curva PR/ROC e avalie precision/recall em thresholds.\nEm fraude, priorize recall; em crédito, priorize precisão para evitar negar bons clientes; documente o critério."
+              },
+              {
+                "id": "ch13_q07",
+                "type": [
+                  "eda"
+                ],
+                "prompt": "O que muda entre classificação binária, multinomial (softmax) e one-vs-rest em Regressão Logística?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Binária usa sigmoide. Multinomial usa softmax e aprende uma matriz de coeficientes para classes; tende a ser melhor quando classes competem.\nOne-vs-rest treina um classificador por classe; pode ser mais simples, mas pode gerar probabilidades inconsistentes entre classes."
+              },
+              {
+                "id": "ch13_q08",
+                "type": [
+                  "eda",
+                  "visualização"
+                ],
+                "prompt": "Explique por que padronização costuma ser importante em Regressão Logística (especialmente com regularização).",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "O otimizador converge melhor quando features estão em escala similar. Com regularização, a penalização depende da escala: uma feature grande pode ser penalizada de forma diferente.\nPadronizar melhora estabilidade, tuning e interpretabilidade (coeficientes comparáveis)."
+              },
+              {
+                "id": "ch13_q09",
+                "type": [
+                  "features"
+                ],
+                "prompt": "O que é regularização em Regressão Logística? Explique o parâmetro C no scikit-learn.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Regularização controla complexidade e evita overfitting. Em sklearn, C é o inverso da força de regularização: C alto = pouca regularização; C baixo = forte regularização.\nEscolha C via validação cruzada; com L1, pode haver seleção de features."
+              },
+              {
+                "id": "ch13_q10",
+                "type": [
+                  "features",
+                  "eda"
+                ],
+                "prompt": "Compare L1 e L2 em Regressão Logística. Quando L1 é útil? Qual risco em features correlacionadas?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "L2 encolhe coeficientes e é estável. L1 pode zerar coeficientes, útil para seleção e modelos esparsos.\nEm features correlacionadas, L1 escolhe uma arbitrariamente; valide estabilidade e considere Elastic Net."
+              },
+              {
+                "id": "ch13_q11",
+                "type": [
+                  "missing",
+                  "features"
+                ],
+                "prompt": "Explique como lidar com classes desbalanceadas em Regressão Logística (pesos, métricas e amostragem).",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use class_weight='balanced' ou pesos customizados, avalie com PR-AUC/F1/recall@precision, e ajuste threshold. Se necessário, reamostragem (under/over/SMOTE) dentro do CV.\nNão use apenas accuracy; valide por segmento e monitore em produção."
+              },
+              {
+                "id": "ch13_q12",
+                "type": [
+                  "features",
+                  "escala"
+                ],
+                "prompt": "O que é calibração de probabilidades? Como verificar e corrigir em Regressão Logística?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Calibração significa que probabilidades refletem frequências reais. Verifique com reliability diagram e Brier score.\nCorrija com Platt scaling/isotonic (CalibratedClassifierCV) ou com regularização/feature engineering; não confunda boa separação com boa calibração."
+              },
+              {
+                "id": "ch13_q13",
+                "type": [
+                  "features",
+                  "correlação"
+                ],
+                "prompt": "Explique a relação entre Regressão Logística e fronteira de decisão linear.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Como logit(p)=β0+β·x, a fronteira onde p=0,5 é β0+β·x=0, um hiperplano. Logo, no espaço original, a decisão é linear.\nPara fronteiras não lineares, use features não lineares (polinômios) ou kernels/modelos de árvore."
+              },
+              {
+                "id": "ch13_q14",
+                "type": [
+                  "features"
+                ],
+                "prompt": "Como você detectaria overfitting em Regressão Logística e como mitigá-lo?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Sinais: log-loss/erro muito melhor no treino que no teste, coeficientes grandes e instáveis. Mitigação: mais regularização (C menor), remover ruído, selecionar features, reduzir dimensionalidade e usar CV.\nTambém avalie drift e leakage, que podem inflar resultados."
+              },
+              {
+                "id": "ch13_q15",
+                "type": [
+                  "correlação"
+                ],
+                "prompt": "Explique o papel de 'solver' no scikit-learn (lbfgs, liblinear, saga). Quando isso importa?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Solvers são algoritmos de otimização. liblinear é bom para datasets menores e L1/L2 binário; lbfgs é padrão para multinomial; saga escala melhor em grandes dados e suporta elastic net.\nImporta para desempenho, suporte a penalidades e convergência."
+              },
+              {
+                "id": "ch13_q16",
+                "type": [
+                  "correlação",
+                  "modelagem"
+                ],
+                "prompt": "Como tratar variáveis categóricas antes da Regressão Logística e por que OneHotEncoder costuma ser preferível?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Regr. logística assume relação linear em entradas numéricas. Para categorias, OneHot evita impor ordem artificial.\nOrdinal encoding pode criar distância falsa. Use OneHot com handle_unknown e, se alta cardinalidade, considere hashing/target encoding com cuidado e CV para evitar leakage."
+              },
+              {
+                "id": "ch13_q17",
+                "type": [
+                  "correlação"
+                ],
+                "prompt": "Explique o risco de target encoding e como fazê-lo sem vazamento.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Target encoding usa estatística do target por categoria; se calculado no dataset inteiro, vaza rótulo. Faça dentro de CV (encoding por dobra) e com smoothing.\nValide em teste; sem isso, métricas ficam infladas e quebram em produção."
+              },
+              {
+                "id": "ch13_q18",
+                "type": [
+                  "métricas"
+                ],
+                "prompt": "O que é matriz de confusão para logística e como você explicaria FP vs FN para stakeholders?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Matriz de confusão separa acertos/erros por tipo. FP: alerta falso; FN: caso real perdido.\nTraduza em custo: FP pode gerar trabalho ou negar clientes; FN pode causar perda (fraude não detectada). Decisão de threshold depende disso."
+              },
+              {
+                "id": "ch13_q19",
+                "type": [
+                  "threshold"
+                ],
+                "prompt": "Explique curva ROC e PR. Em qual cenário você preferiria PR e por quê?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "ROC mostra trade-off TPR vs FPR; PR mostra precisão vs recall. Em desbalanceamento, ROC pode parecer bom mesmo com muitos FP.\nPR foca na classe positiva e é mais alinhada a problemas raros (fraude, intrusão)."
+              },
+              {
+                "id": "ch13_q20",
+                "type": [
+                  "métricas",
+                  "matriz_confusão"
+                ],
+                "prompt": "Como você faria análise de erros (error analysis) em um classificador logístico para aprender com os erros?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Colete FP e FN, agrupe por segmento (idade, região, categoria), veja padrões e features ausentes. Inspecione casos extremos de probabilidade.\nIsso gera hipóteses de novas features, limpeza de rótulos e ajuste de threshold/ponderação."
+              },
+              {
+                "id": "ch13_q21",
+                "type": [
+                  "eda",
+                  "pré-processamento"
+                ],
+                "prompt": "Explique como lidar com dados com outliers e features assimétricas em Regressão Logística.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Outliers e assimetria podem distorcer coeficientes. Use transformações (log, winsor), padronização robusta e regularização. Verifique influência por análise de coeficientes e performance por faixa.\nPara dados com forte não linearidade, considere modelos alternativos."
+              },
+              {
+                "id": "ch13_q22",
+                "type": [
+                  "conclusões"
+                ],
+                "prompt": "O que é separação perfeita (perfect separation) e por que isso pode ser um problema em Regressão Logística?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Separação perfeita ocorre quando uma combinação de features separa classes sem erro; coeficientes tendem a infinito e o ajuste fica instável.\nMitigue com regularização, remover feature leakage, ou usar métodos bayesianos/penalizados."
+              },
+              {
+                "id": "ch13_q23",
+                "type": [
+                  "eda"
+                ],
+                "prompt": "Explique como usar Regressão Logística como baseline forte e quando ela costuma ganhar de modelos mais complexos.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ela é rápida, robusta e interpretável. Com boas features e dados tabulares, pode competir com modelos complexos, especialmente quando relação é quase linear e o dataset não é enorme.\nGanha quando simplicidade, explicabilidade e estabilidade são prioridades."
+              },
+              {
+                "id": "ch13_q24",
+                "type": [
+                  "interpretação"
+                ],
+                "prompt": "Como você reportaria e interpretaria coeficientes quando as features foram padronizadas?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Coeficientes correspondem a variação em log-odds por 1 desvio padrão de aumento na feature. Isso facilita comparar importância relativa entre features.\nPara comunicação, converta para odds ratio e use exemplos de cenário (antes/depois) com valores reais."
+              },
+              {
+                "id": "ch13_q25",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "Explique a diferença entre interpretar coeficiente e concluir causalidade. Dê um exemplo de confusão comum.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Coeficiente mostra associação condicionada às features incluídas, não causa. Ex.: coeficiente negativo para 'desconto' não significa que desconto causa churn; pode ser que desconto foi dado a clientes com alto risco.\nEvite decisões causais sem experimento ou métodos apropriados."
+              },
+              {
+                "id": "ch13_q26",
+                "type": [
+                  "logistica",
+                  "sigmoid"
+                ],
+                "prompt": "Explique como a escolha de features influencia mais do que a escolha do algoritmo em muitos casos de Regressão Logística.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "A logística aprende relação linear; sem features que capturem o sinal (interações, lags, agregações), ela não tem como 'inventar' não linearidade. Boas features podem transformar um problema difícil em quase linear.\nPor isso EDA e engenharia de features frequentemente dão mais ganho que trocar o modelo."
+              },
+              {
+                "id": "ch13_q27",
+                "type": [
+                  "logistica",
+                  "odds"
+                ],
+                "prompt": "Como avaliar estabilidade do modelo (coeficientes) ao longo do tempo e por que isso importa em produção?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Treine em janelas temporais e compare coeficientes e métricas; monitore drift. Mudanças grandes indicam concept drift ou mudança de dados.\nEstabilidade importa para confiabilidade e governança: regras de decisão podem mudar sem você perceber."
+              },
+              {
+                "id": "ch13_q28",
+                "type": [
+                  "logistica",
+                  "threshold"
+                ],
+                "prompt": "Explique 'decision_function' vs 'predict_proba' no sklearn. Quando cada um é usado?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "decision_function retorna o score (logit) antes da sigmoide; é útil para ROC e margens. predict_proba retorna probabilidades.\nPara ranking e thresholds customizados, ambos servem; para comunicação e custo, probabilidade costuma ser mais intuitiva."
+              },
+              {
+                "id": "ch13_q29",
+                "type": [
+                  "logistica",
+                  "regularizacao"
+                ],
+                "prompt": "Como escolher features quando há muitas dummies (one-hot) e risco de alta dimensionalidade?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Use regularização (L1/Elastic Net), limitar cardinalidade (agrupamento de categorias raras), hashing, e seleção baseada em importância/estabilidade.\nSempre valide com CV e monitore features que aparecem/desaparecem ao longo do tempo (schema drift)."
+              },
+              {
+                "id": "ch13_q30",
+                "type": [
+                  "logistica",
+                  "multiclass"
+                ],
+                "prompt": "Explique como fazer validação cruzada estratificada em logística e por que isso melhora confiabilidade das métricas.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Estratificação mantém proporção de classes em cada dobra, evitando dobras sem positivos. Isso estabiliza métricas como F1 e PR-AUC.\nCom desbalanceamento, CV estratificada é essencial para tuning e comparação justa."
+              },
+              {
+                "id": "ch13_q31",
+                "type": [
+                  "logistica",
+                  "interpretacao"
+                ],
+                "prompt": "O que é 'threshold moving' e como ele pode melhorar resultados sem mudar o modelo?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "É ajustar o limiar de decisão (ex.: 0,5 -> 0,2) para priorizar recall ou precisão. Isso muda FP/FN e pode otimizar custo de negócio.\nFaça usando conjunto de validação e curve PR; documente e monitore em produção."
+              },
+              {
+                "id": "ch13_q32",
+                "type": [
+                  "logistica",
+                  "scaling"
+                ],
+                "prompt": "Explique como você detectaria e corrigiria 'training-serving skew' em um modelo logístico.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Skew é diferença entre features no treino e em produção (ex.: normalização diferente, categorias novas). Detecte comparando distribuições e logs de features.\nCorrija com pipelines compartilhados, versionamento de schema, testes de contrato e validações de data quality na entrada."
+              },
+              {
+                "id": "ch13_q33",
+                "type": [
+                  "desbalanceamento",
+                  "class_weight"
+                ],
+                "prompt": "Descreva um plano de deploy seguro para um classificador logístico: versionamento, rollback e monitoramento.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Empacote o Pipeline (pré-processamento+modelo) com versão e metadados. Faça deploy canário/A-B, monitore métricas online, drift e taxas de erro/alertas.\nTenha rollback para versão anterior e fallback (regra/baseline) se a entrada sair do esperado."
+              },
+              {
+                "id": "ch13_q34",
+                "type": [
+                  "avaliacao",
+                  "roc_pr"
+                ],
+                "prompt": "Explique como interpretar e comunicar 'importância' em logística: magnitude do coeficiente é sempre igual a importância?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Magnitude ajuda, mas depende da escala e da correlação entre features. Com padronização, comparações ficam melhores, mas ainda há colinearidade.\nUse também ablação (remover feature), permutação e análise por segmento para uma visão mais confiável."
+              },
+              {
+                "id": "ch13_q35",
+                "type": [
+                  "logistica",
+                  "pipeline"
+                ],
+                "prompt": "Explique como escolher a janela de rotulagem (label window) e o horizonte de previsão para churn/fraude, e o risco de leakage nisso.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Você define 'y=1 se ocorrer evento em H dias'. Features devem ser calculadas apenas até o instante de previsão. Se você usa dados após esse instante, vaza futuro.\nAlinhe timestamps, use janelas rolling e valide com split temporal para garantir que o modelo simula produção."
+              }
+            ]
+          },
+          {
+            "chapter": 14,
+            "id": "svm",
+            "title": "Support Vector Machines (SVM)",
+            "keyTopics": [
+              "visão geral SVM",
+              "executar algoritmo",
+              "mapa de decisão"
+            ],
+            "questions": [
+              {
+                "id": "ch14_q01",
+                "type": [
+                  "svm"
+                ],
+                "prompt": "Explique a intuição do SVM: margem máxima e vetores de suporte. Por que maximizar margem ajuda a generalizar?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SVM busca um hiperplano que separa classes com a maior margem possível. Vetores de suporte são pontos mais próximos da fronteira e determinam a solução.\nMargem maior tende a reduzir variância e melhorar robustez a ruído, aumentando generalização."
+              },
+              {
+                "id": "ch14_q02",
+                "type": [
+                  "svm"
+                ],
+                "prompt": "Compare SVM linear e SVM com kernel. Quando o linear é suficiente?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SVM linear separa com hiperplano no espaço original; kernels permitem separar não linearmente ao mapear para espaço de maior dimensão.\nLinear é suficiente quando as classes já são quase separáveis linearmente ou quando há muitas features (texto, one-hot) e você precisa de escalabilidade."
+              },
+              {
+                "id": "ch14_q03",
+                "type": [
+                  "svm"
+                ],
+                "prompt": "Explique o 'kernel trick' sem matemática pesada. O que ele evita computar explicitamente?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "O kernel permite calcular similaridade como se você tivesse mapeado dados para um espaço de alta dimensão, sem construir essas features explicitamente.\nIsso evita custo e memória de criar o mapeamento e ainda permite fronteiras não lineares."
+              },
+              {
+                "id": "ch14_q04",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "O que faz o hiperparâmetro C no SVM? Explique trade-off entre margem e erros de classificação.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "C controla penalização por erros. C alto tenta classificar perfeitamente o treino (margem menor, mais risco de overfitting). C baixo aceita alguns erros para aumentar margem (mais regularização).\nEscolha C via validação cruzada."
+              },
+              {
+                "id": "ch14_q05",
+                "type": [
+                  "pré-processamento"
+                ],
+                "prompt": "No kernel RBF, o que significa gamma? Como gamma interage com C?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "gamma controla o alcance da influência de um ponto: gamma alto cria fronteiras muito 'locais' e complexas; gamma baixo cria fronteira mais suave.\nC e gamma juntos controlam complexidade: ambos altos -> overfitting; ambos baixos -> underfitting. Ajuste via grid/random search com CV."
+              },
+              {
+                "id": "ch14_q06",
+                "type": [
+                  "visualização"
+                ],
+                "prompt": "Por que padronização de features é praticamente obrigatória em SVM? Dê um exemplo do que dá errado sem isso.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SVM depende de distâncias e produtos internos. Se uma feature está em escala maior, ela domina a fronteira.\nEx.: renda (0..1e6) e idade (0..100); sem escala, renda domina. Padronize com StandardScaler dentro de Pipeline para evitar leakage."
+              },
+              {
+                "id": "ch14_q07",
+                "type": [
+                  "diagnóstico"
+                ],
+                "prompt": "Explique o conceito de 'margem suave' (soft margin). Quando ela é necessária?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Quando dados têm ruído ou não são perfeitamente separáveis, margem suave permite violações controladas com penalidade (C). Isso evita fronteira extremamente complexa só para separar poucos pontos.\nÉ a configuração padrão em problemas reais."
+              },
+              {
+                "id": "ch14_q08",
+                "type": [
+                  "tradeoff"
+                ],
+                "prompt": "Como o SVM lida com outliers? O que você faria se poucos outliers estiverem dominando a fronteira?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Outliers podem virar vetores de suporte e distorcer a margem. Reduza C (mais regularização), trate outliers (winsor/remoção por regra), use features robustas e verifique qualidade de rótulos.\nSempre valide impacto em CV e analise erros."
+              },
+              {
+                "id": "ch14_q09",
+                "type": [
+                  "métricas"
+                ],
+                "prompt": "Explique como obter probabilidades em SVM (predict_proba). Elas são confiáveis?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "SVM não produz probabilidades nativas; predict_proba usa calibração (Platt scaling) por trás. Pode funcionar, mas depende de dados e CV.\nSe probabilidades são críticas, use calibração explícita (CalibratedClassifierCV) e valide com Brier/reliability."
+              },
+              {
+                "id": "ch14_q10",
+                "type": [
+                  "debug"
+                ],
+                "prompt": "Como tratar classes desbalanceadas em SVM?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use class_weight para penalizar mais a classe rara, avalie com PR-AUC/F1 e ajuste threshold (se usar probabilidades/calibração). Também pode usar reamostragem dentro do CV.\nSem isso, o SVM pode favorecer a classe majoritária."
+              },
+              {
+                "id": "ch14_q11",
+                "type": [
+                  "svm",
+                  "margem"
+                ],
+                "prompt": "Explique a complexidade computacional do SVM com kernel e por que ele pode ficar lento em datasets grandes.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "SVM com kernel envolve matriz de similaridade entre amostras; custo cresce mais que linear (pode chegar a O(n^2) memória/tempo). Em grandes n, fica lento.\nAlternativas: LinearSVC, SGDClassifier, aproximações de kernel (Nyström, Random Fourier Features) ou modelos de árvore/boosting."
+              },
+              {
+                "id": "ch14_q12",
+                "type": [
+                  "svm",
+                  "support_vectors"
+                ],
+                "prompt": "O que é 'support vectors ratio' (proporção de vetores de suporte) e o que ele pode indicar sobre o modelo?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Muitos vetores de suporte podem indicar fronteira complexa/ruído (risco de overfitting) ou separação difícil. Poucos vetores de suporte podem indicar margem bem definida.\nUse como sinal diagnóstico junto com CV e análise de erro."
+              },
+              {
+                "id": "ch14_q13",
+                "type": [
+                  "svm",
+                  "kernel"
+                ],
+                "prompt": "Como escolher um espaço de features adequado para SVM: exemplos de engenharia de features que ajudam.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Crie features que tornem classes mais separáveis: escalas corretas, normalização, interações simples, embeddings para texto, e remoção de colunas ruidosas.\nEm muitos casos, melhorar features dá mais ganho que trocar kernel."
+              },
+              {
+                "id": "ch14_q14",
+                "type": [
+                  "svm",
+                  "C"
+                ],
+                "prompt": "Explique como validar e ajustar hiperparâmetros de SVM de forma correta sem 'p-hacking'.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Defina protocolo (StratifiedKFold), use Pipeline com scaler, faça busca (Grid/Random) em C e gamma, e preserve um teste final intocado.\nReporte média e desvio das dobras e evite ajustar olhando o teste."
+              },
+              {
+                "id": "ch14_q15",
+                "type": [
+                  "svm",
+                  "gamma"
+                ],
+                "prompt": "Como visualizar a fronteira de decisão de um SVM em 2D e por que isso pode ser enganoso em dados de alta dimensão?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Em 2D, plote grade de pontos e use decision_function para desenhar contornos. Em alta dimensão, projeções (PCA) podem ocultar separabilidade real.\nUse visualização como ferramenta didática, não como prova final; confie em validação e análise de erro."
+              },
+              {
+                "id": "ch14_q16",
+                "type": [
+                  "svm",
+                  "scaling"
+                ],
+                "prompt": "Compare SVM com Regressão Logística: quando você escolheria um e não o outro?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Logística fornece probabilidades interpretáveis e é forte como baseline; SVM pode separar melhor margens em certos casos, especialmente com kernels não lineares.\nSe você precisa de probabilidade/calibração e explicação simples, logística; se precisa de fronteira mais flexível e dados não lineares, SVM (com cuidado de custo)."
+              },
+              {
+                "id": "ch14_q17",
+                "type": [
+                  "svm",
+                  "linear_vs_rbf"
+                ],
+                "prompt": "Explique 'kernel linear' em dados esparsos (texto/one-hot). Por que ele é popular?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Em texto/one-hot, há muitas features e o espaço já é rico; um hiperplano linear costuma ser suficiente. Além disso, métodos lineares escalam melhor em n e d.\nLinearSVC ou SGD com hinge loss costuma ser rápido e competitivo."
+              },
+              {
+                "id": "ch14_q18",
+                "type": [
+                  "svm",
+                  "complexidade"
+                ],
+                "prompt": "Descreva um checklist de produção para um modelo SVM: pré-processamento, versionamento e monitoramento.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Empacote o Pipeline (scaler+svm), registre C/gamma, versões de libs e colunas. Monitore drift de features e taxa de erros/alertas.\nTenha fallback e re-treino periódico se houver concept drift; SVM é sensível a mudanças na escala e distribuição."
+              }
+            ]
+          },
+          {
+            "chapter": 15,
+            "id": "svr",
+            "title": "Regressão de Vetores de Suporte (SVR)",
+            "keyTopics": [
+              "SVR",
+              "padronização",
+              "treino",
+              "visualização resultados"
+            ],
+            "questions": [
+              {
+                "id": "ch15_q01",
+                "type": [
+                  "svr"
+                ],
+                "prompt": "Explique o que é SVR (Support Vector Regression) e como ele difere da Regressão Linear tradicional.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SVR é a versão do SVM para regressão. Em vez de separar classes, ele ajusta uma função que mantém a maioria dos pontos dentro de uma 'banda' de erro (epsilon) e controla complexidade pela margem.\nEle pode capturar não linearidade via kernels, diferente da regressão linear simples."
+              },
+              {
+                "id": "ch15_q02",
+                "type": [
+                  "svr",
+                  "padronização"
+                ],
+                "prompt": "Explique a perda epsilon-insensitive. Qual é a intuição por trás de 'não penalizar' erros pequenos?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Erros menores que epsilon não são penalizados: o modelo foca em ajustar tendência e ignora pequenas variações/ruído. Isso pode melhorar robustez.\nEpsilon define tolerância: grande -> mais suavidade/viés; pequeno -> ajuste mais fiel/variância."
+              },
+              {
+                "id": "ch15_q03",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "O que faz C no SVR? Compare efeito de C em SVR vs em SVM de classificação.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "C controla penalização por violações (pontos fora da banda epsilon). C alto força ajuste aos dados (menos regularização), C baixo aceita mais violações (mais suavidade).\nÉ análogo ao SVM: C equilibra ajuste vs margem, mas aqui em erro de regressão."
+              },
+              {
+                "id": "ch15_q04",
+                "type": [
+                  "visualização"
+                ],
+                "prompt": "No SVR com RBF, o que gamma controla? Como ele afeta suavidade da curva?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "gamma alto cria influência local, permitindo curvas muito flexíveis (risco de overfitting). gamma baixo cria função mais suave e global.\nAjuste gamma junto com C e epsilon via validação cruzada."
+              },
+              {
+                "id": "ch15_q05",
+                "type": [
+                  "diagnóstico"
+                ],
+                "prompt": "Por que padronização é essencial em SVR? O que pode dar errado sem ela?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SVR usa distância/produto interno. Features em escala grande dominam a função, distorcendo a curva e piorando convergência.\nUse StandardScaler dentro de Pipeline para treino e predição consistentes, evitando leakage."
+              },
+              {
+                "id": "ch15_q06",
+                "type": [
+                  "debug"
+                ],
+                "prompt": "Quando você escolheria SVR em vez de regressão linear, polinomial ou árvores?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Escolha SVR quando há não linearidade moderada, dataset não muito grande e você quer controle fino via C/epsilon/gamma e boa generalização.\nSe precisa de interpretabilidade simples, linear; se precisa de regras e interações complexas, árvores/boosting; se n é muito grande, SVR pode ser pesado."
+              },
+              {
+                "id": "ch15_q07",
+                "type": [
+                  "tradeoff"
+                ],
+                "prompt": "Explique a complexidade computacional do SVR com kernel. Quando ele se torna impraticável?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "SVR com kernel pode exigir operações O(n^2) e memória alta, ficando lento em milhares/dezenas de milhares de amostras.\nEm grandes dados, use modelos lineares, árvores/boosting ou aproximações de kernel."
+              },
+              {
+                "id": "ch15_q08",
+                "type": [
+                  "avaliação"
+                ],
+                "prompt": "Como avaliar SVR: quais métricas e quais gráficos ajudam a entender erros?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Use MAE/RMSE e, se útil, R². Gráficos: real vs predito, resíduos vs predito e, em 1D, curva ajustada vs pontos.\nTambém avalie por segmentos/faixas para detectar onde o SVR falha (ex.: extremos)."
+              },
+              {
+                "id": "ch15_q09",
+                "type": [
+                  "svr",
+                  "conceito"
+                ],
+                "prompt": "Explique como fazer tuning de SVR de forma eficiente. Por que GridSearch ingênuo pode ser caro?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Há vários hiperparâmetros (C, gamma, epsilon) e combinações crescem rápido. Use busca aleatória ou bayesiana, faixas logarítmicas, e CV com poucas dobras inicialmente.\nDepois refine ao redor das melhores regiões e preserve teste final intocado."
+              },
+              {
+                "id": "ch15_q10",
+                "type": [
+                  "svr",
+                  "epsilon"
+                ],
+                "prompt": "Como escolher epsilon? Dê duas estratégias práticas.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Estratégias: (1) basear em escala do erro aceitável no negócio (ex.: tolerar ±5 unidades); (2) estimar ruído do target (desvio/MAE baseline) e escolher epsilon próximo ao ruído.\nTeste alguns valores em CV e observe trade-off entre suavidade e erro."
+              },
+              {
+                "id": "ch15_q11",
+                "type": [
+                  "svr",
+                  "C"
+                ],
+                "prompt": "Como lidar com outliers em SVR sem simplesmente removê-los?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Aumente epsilon (ignora pequenas variações), diminua C (mais regularização), use transformações no target (log) e trate outliers por regra de domínio.\nValide impacto em CV e verifique se outliers são erros de dado ou eventos reais."
+              },
+              {
+                "id": "ch15_q12",
+                "type": [
+                  "svr",
+                  "kernel"
+                ],
+                "prompt": "Explique a diferença entre SVR linear e SVR com RBF. Quando o linear faz sentido?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "SVR linear aprende função linear com banda epsilon; é mais rápido e escala melhor. RBF captura não linearidade, mas custa mais.\nLinear faz sentido quando relação é quase linear e há muitas features; RBF quando há curvatura e dados não muito grandes."
+              },
+              {
+                "id": "ch15_q13",
+                "type": [
+                  "svr",
+                  "scaling"
+                ],
+                "prompt": "Como você integraria SVR em um Pipeline com pré-processamento de dados mistos (numéricas/categóricas)?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Use ColumnTransformer: numéricas -> imputação+StandardScaler; categóricas -> OneHotEncoder; depois SVR.\nCuidado: OneHot pode criar alta dimensionalidade; SVR RBF pode ficar lento. Considere linear SVR ou reduzir dimensionalidade."
+              },
+              {
+                "id": "ch15_q14",
+                "type": [
+                  "svr",
+                  "tuning"
+                ],
+                "prompt": "Explique por que SVR pode ser sensível à escolha de kernel. Cite alternativas ao RBF.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Kernel define forma da função. RBF é padrão, mas pode overfit/underfit dependendo de gamma. Alternativas: linear (rápido), polinomial (curvatura controlada), sigmoid (menos comum).\nEscolha por CV e pelo tipo de relação esperado; evite kernels exóticos sem evidência."
+              },
+              {
+                "id": "ch15_q15",
+                "type": [
+                  "svr",
+                  "avaliacao"
+                ],
+                "prompt": "Como detectar underfitting vs overfitting em SVR olhando treino vs teste e comportamento da curva?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Underfitting: erro alto em treino e teste, curva muito lisa e não segue tendência. Overfitting: treino muito bom, teste ruim, curva muito ondulada (muito local) e muitos vetores de suporte.\nAjuste C/gamma/epsilon e compare por CV."
+              },
+              {
+                "id": "ch15_q16",
+                "type": [
+                  "svr",
+                  "tradeoff"
+                ],
+                "prompt": "Descreva um checklist de produção para SVR (artefatos, escalas, monitoramento).",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Salve o Pipeline completo (pré-processamento+SVR), registre hiperparâmetros e versões. Monitore drift de features/target e aumento de erro.\nSVR é sensível a escala: valide inputs em produção e tenha fallback/modelo simples quando entrada estiver fora do suporte."
+              }
+            ]
+          },
+          {
+            "chapter": 16,
+            "id": "knn",
+            "title": "K-Nearest Neighbors (K-NN)",
+            "keyTopics": [
+              "descrição K-NN",
+              "maldição da dimensionalidade",
+              "dataset Bank Note Authentication",
+              "importar libs/dados",
+              "EDA",
+              "pré-processamento",
+              "padronização",
+              "divisão amostra",
+              "executar classificação e avaliar"
+            ],
+            "questions": [
+              {
+                "id": "ch16_q01",
+                "type": [
+                  "knn"
+                ],
+                "prompt": "Explique a intuição do K-NN. Por que ele é chamado de método 'lazy' e o que isso implica em tempo de predição?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "K-NN não aprende um modelo paramétrico; ele 'memoriza' os dados e decide pela vizinhança no momento da predição. Por isso é 'lazy'.\nImplica: treino rápido, mas predição pode ser lenta (precisa calcular distâncias para muitos pontos), especialmente em grandes datasets."
+              },
+              {
+                "id": "ch16_q02",
+                "type": [
+                  "knn",
+                  "k"
+                ],
+                "prompt": "Diferencie K-NN para classificação e para regressão. Como a decisão final é tomada em cada caso?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Classificação: vota entre as classes dos k vizinhos (maioria ou ponderado). Regressão: agrega valores (média/mediana) dos k vizinhos.\nO comportamento depende de k e da métrica de distância; em regressão, KNN pode suavizar ruído local."
+              },
+              {
+                "id": "ch16_q03",
+                "type": [
+                  "knn",
+                  "padronização"
+                ],
+                "prompt": "Por que padronização é crítica em K-NN? Dê um exemplo do que ocorre se você não escalar.",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "K-NN depende diretamente de distâncias; uma feature com escala grande domina e distorce vizinhança.\nEx.: renda (0..1e6) domina idade (0..100). Use StandardScaler/MinMax dentro de Pipeline para garantir distância significativa."
+              },
+              {
+                "id": "ch16_q04",
+                "type": [
+                  "dimensionalidade"
+                ],
+                "prompt": "Compare distâncias Euclidiana, Manhattan e Minkowski. Quando Manhattan pode ser melhor?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Euclidiana (L2) é padrão; Manhattan (L1) soma diferenças absolutas; Minkowski generaliza com parâmetro p.\nManhattan pode ser melhor em alta dimensão ou quando diferenças em cada dimensão somam de forma mais robusta, e quando outliers afetam L2."
+              },
+              {
+                "id": "ch16_q05",
+                "type": [
+                  "dataset",
+                  "classificação"
+                ],
+                "prompt": "Explique o trade-off de k (bias–variance). O que acontece com k muito pequeno vs muito grande?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "k pequeno: baixa bias, alta variância (sensível a ruído, overfitting). k grande: alta bias, baixa variância (suaviza demais, underfitting).\nEscolha k por validação cruzada e observe curvas de erro vs k."
+              },
+              {
+                "id": "ch16_q06",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "O que é 'weighted K-NN'? Quando ponderar por distância ajuda?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Em weighted KNN, vizinhos mais próximos têm maior peso (ex.: 1/d). Ajuda quando há ruído e quando vizinhos mais distantes pertencem a outra região.\nPode melhorar fronteiras e reduzir empates, mas ainda exige scaling e escolha de k."
+              },
+              {
+                "id": "ch16_q07",
+                "type": [
+                  "eda"
+                ],
+                "prompt": "Explique a 'maldição da dimensionalidade' e por que ela é especialmente ruim para K-NN.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Em alta dimensão, distâncias ficam menos informativas: pontos tendem a ficar todos 'quase igualmente distantes'. Isso dificulta definir vizinhos reais.\nK-NN perde performance e custo cresce. Mitigue com seleção de features, PCA, embeddings ou modelos que lidam melhor com alta dimensão."
+              },
+              {
+                "id": "ch16_q08",
+                "type": [
+                  "padronização"
+                ],
+                "prompt": "Como escolher k de forma rigorosa usando validação cruzada estratificada?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use Pipeline (scaler + KNN) e GridSearchCV com StratifiedKFold. Teste uma faixa de k (ímpar para evitar empate em binário) e avalie métrica adequada (F1/PR-AUC em desbalanceamento).\nDepois, valide o melhor em teste final."
+              },
+              {
+                "id": "ch16_q09",
+                "type": [
+                  "validação"
+                ],
+                "prompt": "Explique por que escolher k ímpar é uma regra prática em classificação binária. Quando isso não resolve?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ímpar reduz empates (voto). Mas com classes desbalanceadas ou pesos, empates ainda podem ocorrer; e em multiclass, pode haver empate entre várias classes.\nSoluções: pesos por distância, desempate por probabilidade estimada, ou ajustar k/metricas."
+              },
+              {
+                "id": "ch16_q10",
+                "type": [
+                  "métricas"
+                ],
+                "prompt": "Como K-NN se comporta com classes desbalanceadas? O que você faria para melhorar?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "K-NN tende a favorecer a classe majoritária porque ela domina vizinhanças. Use pesos de classe indiretamente via reamostragem, escolha de métrica (recall/PR), ajuste threshold (com probabilidades), e considere radius neighbors.\nTambém avalie por segmento e use features mais discriminantes."
+              },
+              {
+                "id": "ch16_q11",
+                "type": [
+                  "métricas"
+                ],
+                "prompt": "Explique o parâmetro 'metric' e 'p' no KNeighborsClassifier do sklearn. Por que isso importa?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "metric define a distância; p define a Minkowski (p=1 Manhattan, p=2 Euclidiana). Isso muda forma das vizinhanças e pode afetar performance.\nEscolha por CV; combine com scaling. Distância errada pode destruir separação mesmo com bom k."
+              },
+              {
+                "id": "ch16_q12",
+                "type": [
+                  "pré-processamento"
+                ],
+                "prompt": "O que são KD-Tree e Ball-Tree no contexto de K-NN? Quando eles aceleram e quando não ajudam?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "São estruturas para busca de vizinhos. Aceleram em dimensões moderadas e datasets grandes. Em alta dimensão, benefício cai (maldição da dimensionalidade) e pode ficar próximo de brute-force.\nEscolha algoritmo='auto' ou teste, e considere aproximações para escala."
+              },
+              {
+                "id": "ch16_q13",
+                "type": [
+                  "reprodutibilidade"
+                ],
+                "prompt": "Como lidar com features categóricas em K-NN? Por que one-hot pode piorar a distância?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "One-hot cria alta dimensionalidade e torna distâncias Euclidianas menos informativas. Para categóricas puras, prefira métricas específicas (Hamming) ou embeddings.\nAlternativas: usar modelos baseados em árvores, ou reduzir dimensionalidade após one-hot (SVD/PCA)."
+              },
+              {
+                "id": "ch16_q14",
+                "type": [
+                  "knn"
+                ],
+                "prompt": "Explique a diferença entre normalização MinMax e padronização para K-NN. Qual escolher e por quê?",
+                "difficulty": 3,
+                "tags": [],
+                "expected": "Ambas resolvem escala. MinMax coloca em [0,1], útil quando limites importam; StandardScaler centraliza e usa desvio padrão.\nEm geral, StandardScaler funciona bem; MinMax pode ser melhor quando há limites naturais e você quer comparar proporções. Teste por CV."
+              },
+              {
+                "id": "ch16_q15",
+                "type": [
+                  "produção"
+                ],
+                "prompt": "Como fazer análise de erro em K-NN: que tipos de erro ele tende a cometer e por quê?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "K-NN erra em regiões onde classes se misturam, nas bordas e quando há ruído/localidade enganosa. Também sofre com features irrelevantes.\nAnalise FP/FN por região (via projeção) e por segmento; melhore com seleção de features e tuning de distância/k."
+              },
+              {
+                "id": "ch16_q16",
+                "type": [
+                  "dimensionalidade",
+                  "feature_selection"
+                ],
+                "prompt": "Explique o que é 'radius neighbors' e quando ele pode ser melhor que k fixo.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Em vez de k fixo, você escolhe um raio e usa todos os pontos dentro. Pode ser melhor quando densidade de dados varia: em regiões densas, usa mais vizinhos; em regiões esparsas, pode retornar poucos.\nExige escolher raio e lidar com casos sem vizinhos."
+              },
+              {
+                "id": "ch16_q17",
+                "type": [
+                  "outliers"
+                ],
+                "prompt": "Como escolher entre K-NN e SVM em um problema de classificação tabular?",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "K-NN é simples e funciona quando proximidade faz sentido e dimensão é baixa/moderada. SVM é mais robusto em margens e pode lidar melhor com fronteiras complexas (kernels), mas é mais caro para tuning.\nCompare via CV e considere custo de predição e interpretabilidade."
+              },
+              {
+                "id": "ch16_q18",
+                "type": [
+                  "pipeline"
+                ],
+                "prompt": "Descreva um pipeline completo para o dataset 'Bank Note Authentication': EDA, pré-processamento, treino e avaliação (conceitualmente).",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "EDA: checar balanceamento, distribuições e correlações. Pré-processar: split estratificado, scaler, e possivelmente seleção de features.\nTreinar: KNN com busca por k/metric. Avaliar: matriz de confusão, F1/PR-AUC, e análise de erros. Registrar seed e artefatos."
+              },
+              {
+                "id": "ch16_q19",
+                "type": [
+                  "knn",
+                  "distancia"
+                ],
+                "prompt": "Explique por que K-NN pode ser um bom baseline, mas raramente é o melhor em produção em grande escala.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Como baseline, é fácil e rápido de testar. Em produção, predição é lenta e memória cresce com dados. Também é sensível a drift e à escolha de features.\nPara escala, preferem-se modelos paramétricos/ensembles ou aproximados; ou indexação ANN (approx nearest neighbors)."
+              },
+              {
+                "id": "ch16_q20",
+                "type": [
+                  "knn",
+                  "normalizacao"
+                ],
+                "prompt": "Como detectar drift em um sistema baseado em K-NN? Qual é o risco específico desse tipo de modelo?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Se a distribuição muda, os 'vizinhos' deixam de representar o novo mundo. O risco é que o modelo piora sem você perceber.\nMonitore distribuições de features, distância média aos vizinhos, taxa de erros e qualidade por segmento; atualize base de treinamento periodicamente."
+              },
+              {
+                "id": "ch16_q21",
+                "type": [
+                  "knn",
+                  "escolha_k"
+                ],
+                "prompt": "Explique como reduzir dimensionalidade antes de K-NN e por que isso ajuda.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Use PCA/SVD para projetar em menos dimensões com maior variância explicada. Isso torna distâncias mais informativas e reduz custo.\nFaça dentro de Pipeline e CV para evitar leakage; cuidado para não remover sinal útil."
+              },
+              {
+                "id": "ch16_q22",
+                "type": [
+                  "knn",
+                  "ponderado"
+                ],
+                "prompt": "Quais armadilhas comuns levam K-NN a parecer muito bom no notebook e ruim na prática?",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Armadilhas: leakage (escalar antes do split), avaliar com dados muito próximos (mesmo usuário em treino/teste), escolher k olhando o teste, e não estratificar.\nTambém: não tratar drift e usar features pós-evento. Corrija com Pipeline, split por grupo/tempo e teste isolado."
+              },
+              {
+                "id": "ch16_q23",
+                "type": [
+                  "knn",
+                  "dimensionalidade"
+                ],
+                "prompt": "Explique como escolher uma métrica de avaliação adequada para K-NN em desbalanceamento e como isso influencia escolha de k.",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Use métricas focadas na classe positiva (recall, precision@recall, PR-AUC, F1). k que maximiza accuracy pode ser diferente do que maximiza F1.\nFaça tuning usando a métrica correta e considere threshold/ponderação por distância para alinhar ao custo."
+              },
+              {
+                "id": "ch16_q24",
+                "type": [
+                  "knn",
+                  "custo"
+                ],
+                "prompt": "Como interpretar uma predição de K-NN para explicar ao usuário? Dê uma forma simples e uma mais técnica.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "Simples: 'a maioria dos exemplos mais parecidos com este caso pertenciam à classe X'. Técnica: listar k vizinhos, suas distâncias, classes e votos/ponderações.\nIsso dá transparência e ajuda a depurar: se vizinhos parecem errados, a feature space está ruim."
+              },
+              {
+                "id": "ch16_q25",
+                "type": [
+                  "knn",
+                  "regressao"
+                ],
+                "prompt": "Explique como otimizar K-NN para dispositivos/ambiente offline (custo, memória e tempo).",
+                "difficulty": 5,
+                "tags": [],
+                "expected": "Reduza tamanho da base (protótipos, amostragem), comprima features (PCA), use algoritmo eficiente (KD/Ball quando aplicável) e, se possível, ANN.\nPré-calcule e serialize índices, e monitore latência. Para mobile/offline, muitas vezes um modelo linear ou árvore pequena é mais viável."
+              },
+              {
+                "id": "ch16_q26",
+                "type": [
+                  "knn",
+                  "outliers"
+                ],
+                "prompt": "Compare K-NN com modelos baseados em árvores em termos de pré-processamento e robustez a escala/ruído.",
+                "difficulty": 4,
+                "tags": [],
+                "expected": "K-NN exige scaling e sofre com features irrelevantes/alta dimensão. Árvores não precisam de scaling e lidam melhor com não linearidades e interações.\nPor outro lado, K-NN é simples e explicável por exemplos. Em tabular geral, árvores/boosting costumam vencer em performance."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

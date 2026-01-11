@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.trililingo.datastore";
+option java_multiple_files = true;
+
+message DailyChallengeSelection {
+  bool enabled = 1;
+  repeated string item_ids = 2;
+  int64 updated_at_ms = 3;
+}
+
+message UserPrefs {
+  int32 streak_count = 1;
+  int64 total_xp = 3;
+  int64 last_study_epoch_day = 2;
+  string active_language = 4;
+
+  map<string, DailyChallengeSelection> daily_selections = 20;
+}
