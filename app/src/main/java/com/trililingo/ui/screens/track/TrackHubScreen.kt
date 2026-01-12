@@ -21,7 +21,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.trililingo.domain.engine.StudyDifficulty
+import com.trililingo.domain.subject.StudyDifficulty
+import com.trililingo.ui.catalog.CatalogIds
 import com.trililingo.ui.catalog.FeatureUi
 import com.trililingo.ui.catalog.TrackUi
 import com.trililingo.ui.design.NeonButton
@@ -36,6 +37,9 @@ fun TrackHubScreen(
     onOpenFeature: (FeatureUi, StudyDifficulty) -> Unit
 ) {
     val enabledFeatures = track.features.filter { it.enabled }
+
+    val isLanguageTrack = track.subjectId == CatalogIds.SUBJECT_LANGUAGES
+    val effectiveDifficulty = if (isLanguageTrack) selectedDifficulty else StudyDifficulty.BASIC
 
     LazyColumn(
         modifier = Modifier
@@ -58,47 +62,56 @@ fun TrackHubScreen(
 
                 Spacer(Modifier.padding(top = 12.dp))
 
-                Text(
-                    "Dificuldade",
-                    style = MaterialTheme.typography.titleMedium
-                )
-                Spacer(Modifier.padding(top = 6.dp))
-                Text(
-                    "Define como você responde cada pergunta (opções vs digitar).",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+                if (isLanguageTrack) {
+                    Text("Dificuldade", style = MaterialTheme.typography.titleMedium)
+                    Spacer(Modifier.padding(top = 6.dp))
+                    Text(
+                        "Define como você responde cada pergunta (opções vs digitar).",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
 
-                Spacer(Modifier.padding(top = 10.dp))
+                    Spacer(Modifier.padding(top = 10.dp))
 
-                LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    item {
-                        DifficultyChip(
-                            selected = selectedDifficulty == StudyDifficulty.BASIC,
-                            title = StudyDifficulty.BASIC.title,
-                            subtitle = StudyDifficulty.BASIC.subtitle,
-                            onClick = { onDifficultyChange(StudyDifficulty.BASIC) }
-                        )
+                    LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        item {
+                            DifficultyChip(
+                                selected = selectedDifficulty == StudyDifficulty.BASIC,
+                                title = StudyDifficulty.BASIC.title,
+                                subtitle = StudyDifficulty.BASIC.subtitle,
+                                onClick = { onDifficultyChange(StudyDifficulty.BASIC) }
+                            )
+                        }
+                        item {
+                            DifficultyChip(
+                                selected = selectedDifficulty == StudyDifficulty.MIXED,
+                                title = StudyDifficulty.MIXED.title,
+                                subtitle = StudyDifficulty.MIXED.subtitle,
+                                onClick = { onDifficultyChange(StudyDifficulty.MIXED) }
+                            )
+                        }
+                        item {
+                            DifficultyChip(
+                                selected = selectedDifficulty == StudyDifficulty.HARDCORE,
+                                title = StudyDifficulty.HARDCORE.title,
+                                subtitle = StudyDifficulty.HARDCORE.subtitle,
+                                onClick = { onDifficultyChange(StudyDifficulty.HARDCORE) }
+                            )
+                        }
                     }
-                    item {
-                        DifficultyChip(
-                            selected = selectedDifficulty == StudyDifficulty.MIXED,
-                            title = StudyDifficulty.MIXED.title,
-                            subtitle = StudyDifficulty.MIXED.subtitle,
-                            onClick = { onDifficultyChange(StudyDifficulty.MIXED) }
-                        )
-                    }
-                    item {
-                        DifficultyChip(
-                            selected = selectedDifficulty == StudyDifficulty.HARDCORE,
-                            title = StudyDifficulty.HARDCORE.title,
-                            subtitle = StudyDifficulty.HARDCORE.subtitle,
-                            onClick = { onDifficultyChange(StudyDifficulty.HARDCORE) }
-                        )
-                    }
+
+                    Spacer(Modifier.padding(top = 12.dp))
+                } else {
+                    Text("Modo", style = MaterialTheme.typography.titleMedium)
+                    Spacer(Modifier.padding(top = 6.dp))
+                    Text(
+                        "Básico (sempre com opções)",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(Modifier.padding(top = 12.dp))
                 }
 
-                Spacer(Modifier.padding(top = 12.dp))
                 NeonButton("Voltar") { onBack() }
             }
         }
@@ -112,9 +125,7 @@ fun TrackHubScreen(
                 Spacer(Modifier.padding(top = 6.dp))
                 Text(f.subtitle, style = MaterialTheme.typography.bodyMedium)
                 Spacer(Modifier.padding(top = 12.dp))
-
-                // ✅ passa a dificuldade selecionada (mesmo se a feature não usar agora)
-                NeonButton("Abrir") { onOpenFeature(f, selectedDifficulty) }
+                NeonButton("Abrir") { onOpenFeature(f, effectiveDifficulty) }
             }
         }
 
@@ -143,8 +154,7 @@ private fun DifficultyChip(
     val border = if (selected) cs.tertiary.copy(alpha = 0.55f) else cs.outline.copy(alpha = 0.35f)
 
     Surface(
-        modifier = Modifier
-            .clickable(onClick = onClick),
+        modifier = Modifier.clickable(onClick = onClick),
         color = bg,
         contentColor = fg,
         shape = RoundedCornerShape(16.dp),

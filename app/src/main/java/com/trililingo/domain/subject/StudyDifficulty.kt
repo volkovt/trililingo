@@ -1,4 +1,4 @@
-package com.trililingo.domain.engine
+package com.trililingo.domain.subject
 
 enum class StudyDifficulty(val id: String, val title: String, val subtitle: String) {
     BASIC("basic", "Básico", "Sempre 4 opções"),

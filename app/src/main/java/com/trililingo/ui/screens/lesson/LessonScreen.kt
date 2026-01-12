@@ -3,7 +3,6 @@ package com.trililingo.ui.screens.lesson
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,8 +17,6 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
@@ -27,10 +24,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.trililingo.core.language.PronunciationPtResolver
 import com.trililingo.data.repo.ItemMeta
-import com.trililingo.domain.engine.AnswerMode
-import com.trililingo.domain.engine.StudyDifficulty
+import com.trililingo.domain.subject.AnswerMode
+import com.trililingo.domain.subject.StudyDifficulty
+import com.trililingo.ui.design.AnswerOptionCard
 import com.trililingo.ui.design.NeonButton
 import com.trililingo.ui.design.NeonCard
+import com.trililingo.ui.design.OptionVisualState
 import com.trililingo.ui.sound.SoundFx
 import kotlinx.coroutines.delay
 import java.text.Normalizer
@@ -258,26 +257,29 @@ fun LessonScreen(
                             else -> OptionVisualState.DISABLED
                         }
 
-                        LessonOptionButton(
+                        AnswerOptionCard(
                             text = opt,
                             enabled = answering,
-                            visualState = optState
-                        ) {
-                            val responseMs = System.currentTimeMillis() - startedAt
+                            visualState = optState,
+                            maxLinesCollapsed = 2,
+                            sheetTitle = "Opção (Idiomas)",
+                            sheetSubtitle = "Segurar abre o texto completo sem responder.",
+                            onSelect = {
+                                val responseMs = System.currentTimeMillis() - startedAt
 
-                            // ✅ SFX consistente com a tolerância do ViewModel (agnóstico de idioma)
-                            val okForSfx = isCorrectByGenericTolerance(opt, challenge.correct)
-                            if (okForSfx) sfx.correct() else sfx.wrong()
+                                val okForSfx = isCorrectByGenericTolerance(opt, challenge.correct)
+                                if (okForSfx) sfx.correct() else sfx.wrong()
 
-                            vm.submitAnswer(
-                                optionRaw = opt,
-                                responseMs = responseMs,
-                                hintCount = hintCount,
-                                onDone = { _, _, _ -> }
-                            )
+                                vm.submitAnswer(
+                                    optionRaw = opt,
+                                    responseMs = responseMs,
+                                    hintCount = hintCount,
+                                    onDone = { _, _, _ -> }
+                                )
 
-                            startedAt = System.currentTimeMillis()
-                        }
+                                startedAt = System.currentTimeMillis()
+                            }
+                        )
                     }
                 } else {
                     val cs = MaterialTheme.colorScheme
@@ -309,7 +311,6 @@ fun LessonScreen(
                         ) {
                             val responseMs = System.currentTimeMillis() - startedAt
 
-                            // ✅ SFX consistente com a tolerância do ViewModel (agnóstico de idioma)
                             val okForSfx = isCorrectByGenericTolerance(typedAnswer, challenge.correct)
                             if (okForSfx) sfx.correct() else sfx.wrong()
 
@@ -345,7 +346,6 @@ fun LessonScreen(
                         style = MaterialTheme.typography.titleLarge
                     )
 
-                    // ✅ mensagem sutil de variação aceita (vem do ViewModel)
                     if (!r.acceptanceNote.isNullOrBlank()) {
                         Spacer(Modifier.height(4.dp))
                         Text(
@@ -482,72 +482,6 @@ fun LessonScreen(
         correct = finalCorrect,
         wrong = finalWrong
     )
-}
-
-private enum class OptionVisualState {
-    DEFAULT,
-    CORRECT,
-    WRONG_SELECTED,
-    CORRECT_SELECTED,
-    DISABLED
-}
-
-@Composable
-private fun LessonOptionButton(
-    text: String,
-    enabled: Boolean,
-    visualState: OptionVisualState,
-    onClick: () -> Unit
-) {
-    val cs = MaterialTheme.colorScheme
-
-    val border = when (visualState) {
-        OptionVisualState.CORRECT, OptionVisualState.CORRECT_SELECTED -> cs.tertiary
-        OptionVisualState.WRONG_SELECTED -> cs.error
-        else -> cs.outline
-    }.copy(alpha = 0.85f)
-
-    val bg = when (visualState) {
-        OptionVisualState.CORRECT, OptionVisualState.CORRECT_SELECTED -> cs.tertiary.copy(alpha = 0.18f)
-        OptionVisualState.WRONG_SELECTED -> cs.error.copy(alpha = 0.14f)
-        else -> cs.surfaceVariant.copy(alpha = 0.85f)
-    }
-
-    val labelPrefix = when (visualState) {
-        OptionVisualState.CORRECT -> "✅ "
-        OptionVisualState.CORRECT_SELECTED -> "✅ "
-        OptionVisualState.WRONG_SELECTED -> "❌ "
-        else -> ""
-    }
-
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .then(if (enabled) Modifier.clickable(onClick = onClick) else Modifier),
-        color = bg,
-        contentColor = cs.onSurface,
-        border = BorderStroke(1.dp, border),
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Row(
-            modifier = Modifier.padding(horizontal = 14.dp, vertical = 14.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = labelPrefix + text,
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.weight(1f)
-            )
-            if (!enabled) {
-                Box(
-                    modifier = Modifier
-                        .size(10.dp)
-                        .blur(12.dp)
-                )
-            }
-        }
-    }
 }
 
 @Composable

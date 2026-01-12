@@ -125,5 +125,26 @@ data class SubjectStudyQuestion(
     val prompt: String,
     val difficulty: Int = 1,
     val tags: List<String> = emptyList(),
-    val expected: String? = null
+
+    /**
+     * ✅ Respostas esperadas (aceitamos múltiplas variações).
+     *
+     * No novo formato do pack (ex.: ia_fundamentals) isso vem como:
+     *   "expected": ["...","...", ...]
+     *
+     * Para compatibilidade, também aceitamos string simples (packs antigos):
+     *   "expected": "..."
+     */
+    @Serializable(with = StringOrStringListSerializer::class)
+    val expected: List<String> = emptyList(),
+
+    /**
+     * ✅ Respostas distratoras (para múltipla escolha).
+     *
+     * No novo formato:
+     *   "distractionAnswer": ["...","...", ...]
+     */
+    @SerialName("distractionAnswer")
+    @Serializable(with = StringOrStringListSerializer::class)
+    val distractionAnswer: List<String> = emptyList()
 )

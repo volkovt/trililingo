@@ -58,7 +58,6 @@ class SubjectProgressRepository(
 
         db.sessionDao().insert(session)
 
-        // opcional: útil se você já tem/terá pipeline de sync
         db.syncEventDao().insert(
             SyncEventEntity(
                 type = "SUBJECT_SESSION_START",
@@ -84,23 +83,30 @@ class SubjectProgressRepository(
         responseMs: Long,
         chosen: String,
         correct: String,
+        baseXp: Int,
+        hintCount: Int,
+        xpMultiplier: Double,
         xpAwarded: Int
     ) = withContext(Dispatchers.IO) {
         val now = time.nowMs()
+        val itemId = buildItemId(questionId)
 
         db.attemptDao().insert(
             ActivityAttemptEntity(
                 sessionId = sessionId,
-                itemId = buildItemId(questionId),
+                itemId = itemId,
                 isCorrect = isCorrect,
                 responseMs = responseMs,
                 chosenAnswer = chosen,
                 correctAnswer = correct,
+                hintCount = hintCount,
+                baseXp = baseXp,
+                xpMultiplier = xpMultiplier,
+                xpAwarded = xpAwarded,
                 createdAtMs = now
             )
         )
 
-        // opcional: mantém rastreável para sync/analytics
         db.syncEventDao().insert(
             SyncEventEntity(
                 type = "SUBJECT_ATTEMPT",
@@ -108,9 +114,12 @@ class SubjectProgressRepository(
                     {
                       "sessionId":"$sessionId",
                       "questionId":"$questionId",
-                      "itemId":"${buildItemId(questionId)}",
+                      "itemId":"$itemId",
                       "correct":$isCorrect,
                       "responseMs":$responseMs,
+                      "baseXp":$baseXp,
+                      "hintCount":$hintCount,
+                      "xpMultiplier":$xpMultiplier,
                       "xp":$xpAwarded
                     }
                 """.trimIndent(),
@@ -140,7 +149,6 @@ class SubjectProgressRepository(
             abandoned = abandoned
         )
 
-        // mantém o mesmo comportamento do fluxo de idiomas
         prefs.addXpAndUpdateStreak(totalXp)
 
         db.syncEventDao().insert(
@@ -162,7 +170,6 @@ class SubjectProgressRepository(
     ) = withContext(Dispatchers.IO) {
         val end = time.nowMs()
 
-        // Fecha a sessão marcando como abandonada
         db.sessionDao().finish(
             sessionId = sessionId,
             endedAtMs = end,

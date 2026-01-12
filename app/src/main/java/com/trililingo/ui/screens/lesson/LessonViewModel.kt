@@ -5,9 +5,9 @@ import androidx.lifecycle.viewModelScope
 import com.trililingo.data.repo.ItemMeta
 import com.trililingo.data.repo.StudyRepository
 import com.trililingo.domain.engine.ActivityDefinition
-import com.trililingo.domain.engine.AnswerMode
+import com.trililingo.domain.subject.AnswerMode
 import com.trililingo.domain.engine.Challenge
-import com.trililingo.domain.engine.StudyDifficulty
+import com.trililingo.domain.subject.StudyDifficulty
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

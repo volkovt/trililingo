@@ -31,8 +31,9 @@ class SubjectStudyRepository @Inject constructor(
     }
 
     suspend fun getTrack(subjectId: String, trackId: String): SubjectTrack? = withContext(Dispatchers.IO) {
+        val normalizedTrackId = normalizeTrackId(trackId)
         val p = packs().firstOrNull { (it.subjectId ?: "") == subjectId } ?: return@withContext null
-        p.tracks.firstOrNull { it.id == trackId }
+        p.tracks.firstOrNull { it.id == normalizedTrackId }
     }
 
     suspend fun getStudyContent(subjectId: String, trackId: String): SubjectStudyContent? = withContext(Dispatchers.IO) {
@@ -42,7 +43,8 @@ class SubjectStudyRepository @Inject constructor(
     suspend fun getChapters(subjectId: String, trackId: String): List<SubjectStudyChapter> = withContext(Dispatchers.IO) {
         val content = getStudyContent(subjectId, trackId) ?: return@withContext emptyList()
         content.chapters
-            .filter { it.questions.isNotEmpty() }
+            // evita exibir capítulos com questões vazias ou mal-formadas
+            .filter { ch -> ch.questions.any { q -> q.prompt.isNotBlank() && q.expected.isNotEmpty() } }
     }
 
     suspend fun getQuestions(
@@ -53,5 +55,18 @@ class SubjectStudyRepository @Inject constructor(
         val chapters = getChapters(subjectId, trackId)
         val chosen = if (chapterId.isNullOrBlank() || chapterId == "all") chapters else chapters.filter { it.id == chapterId }
         chosen.flatMap { it.questions }
+    }
+
+    /**
+     * Em alguns pontos da UI o Track ID pode vir no formato "topic::subjectId::trackId".
+     * Aqui normalizamos para sempre usar o ID real do pack (ex.: "core").
+     */
+    private fun normalizeTrackId(trackId: String): String {
+        val prefix = "topic::"
+        if (!trackId.startsWith(prefix)) return trackId
+
+        val raw = trackId.removePrefix(prefix)
+        val parts = raw.split("::")
+        return parts.getOrNull(1) ?: trackId
     }
 }

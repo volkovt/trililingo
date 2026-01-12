@@ -12,9 +12,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.trililingo.domain.engine.StudyDifficulty
+import com.trililingo.domain.subject.StudyDifficulty
 import com.trililingo.ui.catalog.CatalogIds
 import com.trililingo.ui.catalog.FeatureType
+import com.trililingo.ui.catalog.FeatureUi
 import com.trililingo.ui.catalog.TopicTrackIds
 import com.trililingo.ui.screens.alphabet.AlphabetScreen
 import com.trililingo.ui.screens.analytics.AnalyticsScreen
@@ -101,7 +102,8 @@ fun NavGraph() {
                 selectedDifficulty = difficulty,
                 onDifficultyChange = setDifficulty,
                 onBack = { nav.popBackStack() },
-                onOpenFeature = { feature, diff ->
+
+                onOpenFeature = onOpenFeature@{ feature: FeatureUi, diff: StudyDifficulty ->
                     if (safeTrack.subjectId == CatalogIds.SUBJECT_LANGUAGES) {
                         val lang = safeTrack.languageCode
                         val skill = safeTrack.skillCode
@@ -119,15 +121,17 @@ fun NavGraph() {
                             FeatureType.PRACTICE ->
                                 if (lang != null && skill != null) nav.navigate(lessonRoute(lang, skill, "practice", diff))
 
-                            else -> {}
+                            else -> { /* ignore */ }
                         }
                     } else {
-                        val decoded = TopicTrackIds.decode(safeTrack.id) ?: return@TrackHubScreen
+                        val decoded = TopicTrackIds.decode(safeTrack.id) ?: return@onOpenFeature
+
                         val mode = when (feature.type) {
                             FeatureType.DAILY_CHALLENGE -> "daily"
                             FeatureType.STUDY -> "study"
-                            else -> return@TrackHubScreen
+                            else -> return@onOpenFeature
                         }
+
                         nav.navigate("subject_pick/$mode/${decoded.subjectId}/${decoded.trackId}")
                     }
                 }
